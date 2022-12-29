@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/page.dart';
+import 'package:scoreboard/views/basketball.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -51,7 +52,19 @@ class MenuDrawer extends StatelessWidget {
                 ),
               );
             }),
-          )
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_basketball),
+            title: const Text('Basketball'),
+            onTap: (() {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushReplacement(
+                CupertinoPageRoute(
+                  builder: (_) => const BasketballPage(),
+                ),
+              );
+            }),
+          ),
         ],
       ),
     );
