@@ -15,8 +15,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Home"),
       ),
-      body: const Text("Hello World!"),
-      drawer: const MenuDrawer(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [const Text('Home')],
+        ),
+      ),
+      endDrawer: const MenuDrawer(),
     );
   }
 }
