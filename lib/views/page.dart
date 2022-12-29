@@ -1,19 +1,19 @@
 import "package:flutter/material.dart";
 import 'package:scoreboard/widgets/menu.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class MyPage extends StatefulWidget {
+  const MyPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyPage> createState() => _MyPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("MyPage"),
       ),
       body: const Text("Hello World!"),
       drawer: const MenuDrawer(),
