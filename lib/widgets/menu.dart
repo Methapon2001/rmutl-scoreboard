@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoreboard/views/home.dart';
-import 'package:scoreboard/views/page.dart';
+import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -42,18 +42,6 @@ class MenuDrawer extends StatelessWidget {
             }),
           ),
           ListTile(
-            leading: const Icon(Icons.pages),
-            title: const Text('Page'),
-            onTap: (() {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushReplacement(
-                CupertinoPageRoute(
-                  builder: (_) => const MyPage(),
-                ),
-              );
-            }),
-          ),
-          ListTile(
             leading: const Icon(Icons.sports_basketball),
             title: const Text('Basketball'),
             onTap: (() {
@@ -61,6 +49,18 @@ class MenuDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacement(
                 CupertinoPageRoute(
                   builder: (_) => const BasketballPage(),
+                ),
+              );
+            }),
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_volleyball),
+            title: const Text('Volleyball'),
+            onTap: (() {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushReplacement(
+                CupertinoPageRoute(
+                  builder: (_) => const Volleyball(),
                 ),
               );
             }),
