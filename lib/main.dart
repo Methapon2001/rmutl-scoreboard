@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/score.dart';
-import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/appintro/intro.dart';
 
 void main() {
