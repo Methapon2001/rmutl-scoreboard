@@ -18,10 +18,10 @@ class Score with ChangeNotifier {
 
   void decrement(int team, int decrement) {
     if (team == 1) {
-      _score1 = _score1 <= 0 ? 0 : _score1 - decrement;
+      _score1 = _score1 <= decrement ? 0 : _score1 - decrement;
     }
     if (team == 2) {
-      _score2 = _score2 <= 0 ? 0 : _score2 - decrement;
+      _score2 = _score2 <= decrement ? 0 : _score2 - decrement;
     }
     notifyListeners();
   }
