@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
+import 'package:scoreboard/models/futsal/foul.dart';
 
 class ButtonFoul extends StatefulWidget {
   const ButtonFoul({Key? key, required this.sport, required this.team})
@@ -25,7 +26,10 @@ class _ButtonFoulState extends State<ButtonFoul> {
         widget.sport == 1
             ? Text(
                 '${widget.team == 1 ? context.watch<FoulBasketball>().getFoulTeam1 : context.watch<FoulBasketball>().getFoulTeam2}')
-            : widget,
+            : widget.sport == 4
+                ? Text(
+                    '${widget.team == 1 ? context.watch<FoulFutsal>().getFoulTeam1 : context.watch<FoulFutsal>().getFoulTeam2}')
+                : widget,
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
@@ -33,6 +37,9 @@ class _ButtonFoulState extends State<ButtonFoul> {
           onPressed: () {
             if (widget.sport == 1) {
               context.read<FoulBasketball>().update(widget.team);
+            }
+            if (widget.sport == 4) {
+              context.read<FoulFutsal>().update(widget.team);
             }
           },
           child: const Text('Foul'),

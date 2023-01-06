@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
 import 'package:scoreboard/models/volleyball/quarter.dart';
 import 'package:scoreboard/models/soccer/quarter.dart';
+import 'package:scoreboard/models/futsal/quarter.dart';
 import 'package:provider/provider.dart';
 
 class ButtonQuarter extends StatefulWidget {
@@ -33,6 +34,9 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
               if (widget.sport == 3) {
                 context.read<QuarterSoccer>().update();
               }
+              if (widget.sport == 4) {
+                context.read<QuarterFutsal>().update();
+              }
             },
             child: widget.sport == 1
                 ? Text(
@@ -49,7 +53,12 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
                             '${context.watch<QuarterSoccer>().getQuarter}',
                             style: const TextStyle(fontSize: 30),
                           )
-                        : widget)
+                        : widget.sport == 4
+                            ? Text(
+                                '${context.watch<QuarterFutsal>().getQuarter}',
+                                style: const TextStyle(fontSize: 30),
+                              )
+                            : widget)
       ],
     );
   }
