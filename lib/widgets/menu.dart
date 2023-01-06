@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scoreboard/icon/icon.dart';
 import 'package:scoreboard/views/home.dart';
-import 'package:scoreboard/views/volleyball.dart';
+import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 
@@ -14,12 +15,42 @@ class MenuDrawer extends StatefulWidget {
 }
 
 class _MenuDrawerState extends State<MenuDrawer> {
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: <Widget>[
+          Container(
+            color: Colors.brown,
+            width: double.infinity,
+            height: 138,
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  height: 70,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'image/scoreboard.png',
+                      ),
+                    ),
+                  ),
+                ),
+                const Text(
+                  "List Sports",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
@@ -55,6 +86,19 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const VolleyballPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const MyIocns(),
+            title: const Text('Soccer'),
+            selected: widget.index == 3,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SoccerPage(),
                 ),
               );
             },
