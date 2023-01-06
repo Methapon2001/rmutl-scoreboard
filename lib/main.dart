@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/name.dart';
 import 'package:scoreboard/appintro/intro.dart';
+import 'package:scoreboard/models/name.dart';
+import 'package:scoreboard/appintro/intro.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
 import 'package:scoreboard/models/basketball/score.dart';
