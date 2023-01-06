@@ -4,6 +4,7 @@ import 'package:scoreboard/models/volleyball/quarter.dart';
 import 'package:scoreboard/models/soccer/quarter.dart';
 import 'package:scoreboard/models/futsal/quarter.dart';
 import 'package:scoreboard/models/badminton/quarter.dart';
+import 'package:scoreboard/models/tabletennis/quarter.dart';
 import 'package:provider/provider.dart';
 
 class ButtonQuarter extends StatefulWidget {
@@ -41,6 +42,9 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
               if (widget.sport == 5) {
                 context.read<QuarterBadminton>().update();
               }
+              if (widget.sport == 6) {
+                context.read<QuarterTabletennis>().update();
+              }
             },
             child: widget.sport == 1
                 ? Text(
@@ -67,7 +71,12 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
                                     '${context.watch<QuarterBadminton>().getQuarter}',
                                     style: const TextStyle(fontSize: 30),
                                   )
-                                : widget)
+                                : widget.sport == 6
+                                    ? Text(
+                                        '${context.watch<QuarterTabletennis>().getQuarter}',
+                                        style: const TextStyle(fontSize: 30),
+                                      )
+                                    : widget)
       ],
     );
   }
