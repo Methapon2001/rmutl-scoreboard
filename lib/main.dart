@@ -13,6 +13,9 @@ import 'package:scoreboard/models/soccer/quarter.dart';
 import 'package:scoreboard/models/futsal/score.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
 import 'package:scoreboard/models/futsal/quarter.dart';
+import 'package:scoreboard/models/badminton/score.dart';
+import 'package:scoreboard/models/badminton/set.dart';
+import 'package:scoreboard/models/badminton/quarter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
         ListenableProvider(create: (_) => FoulFutsal()),
         ListenableProvider(create: (_) => ScoreFutsal()),
         ListenableProvider(create: (_) => QuarterFutsal()),
+        ListenableProvider(create: (_) => ScoreBadminton()),
+        ListenableProvider(create: (_) => SetBadminton()),
+        ListenableProvider(create: (_) => QuarterBadminton()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
