@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:scoreboard/models/score.dart';
+import 'package:scoreboard/models/basketball/score.dart';
+import 'package:scoreboard/models/volleyball/score.dart';
 
 class ButtonScore extends StatefulWidget {
-  const ButtonScore(
-      {Key? key, required this.increment, required this.decrement, required this.team})
-      : super(key: key);
+  const ButtonScore({
+    Key? key,
+    required this.sport,
+    required this.team,
+    required this.increment,
+    required this.decrement,
+  }) : super(key: key);
 
+  final int sport;
+  final int team;
   final int increment;
   final int decrement;
-  final int team;
+
   @override
   State<ButtonScore> createState() => _ButtonScoreState();
 }
@@ -17,28 +24,45 @@ class ButtonScore extends StatefulWidget {
 class _ButtonScoreState extends State<ButtonScore> {
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      ElevatedButton(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: Colors.green[400],
-            // foreground
+            shape: const StadiumBorder(),
           ),
-          onPressed: () => context.read<Score>().increment(widget.team,widget.increment),
-    
-          child: Text("+${widget.increment}")),
-      const SizedBox(
-        width: 8,
-      ),
-      ElevatedButton(
+          onPressed: () {
+            if (widget.sport == 1) {
+              context.read<ScoreBasketball>().increment(widget.team, widget.increment);
+            }
+            if(widget.sport == 2){
+              context.read<ScoreVolleyball>().increment(widget.team, widget.increment);
+            }
+          },
+          child: Text("+${widget.increment}"),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: Colors.red[400],
-            // foreground
+            shape: const StadiumBorder(),
           ),
-          onPressed: () => context.read<Score>().decrement(widget.team,widget.decrement),
-          child: Text("-${widget.decrement}")),
-    ]);
+          onPressed: () {
+            if (widget.sport == 1) {
+              context.read<ScoreBasketball>().decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 2) {
+              context.read<ScoreVolleyball>().decrement(widget.team, widget.decrement);
+            }
+          },
+          child: Text("-${widget.decrement}"),
+        ),
+      ],
+    );
   }
-
 }

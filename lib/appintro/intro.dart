@@ -46,7 +46,7 @@ class _SplashState extends State<Splash> {
                 color: Colors.white,
               ),
             const Text(
-              '\nMultipurpose IoT Scoreboard App',
+              '\nMultipurpose Scoreboard',
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
