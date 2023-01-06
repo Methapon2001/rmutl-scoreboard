@@ -20,6 +20,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
       appBar: AppBar(
         title: const Text("Volleyball"),
       ),
+      endDrawer: const MenuDrawer(index: 2),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
