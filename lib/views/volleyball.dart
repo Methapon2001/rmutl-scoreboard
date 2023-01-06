@@ -1,10 +1,11 @@
 import "package:flutter/material.dart";
-import 'package:scoreboard/widgets/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/volleyball/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_set.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/menu.dart';
+import 'package:scoreboard/widgets/teamname.dart';
 
 class VolleyballPage extends StatefulWidget {
   const VolleyballPage({super.key});
@@ -20,6 +21,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
       appBar: AppBar(
         title: const Text("Volleyball"),
       ),
+      endDrawer: const MenuDrawer(index: 2),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -30,11 +32,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                 children: [
                   Column(
                     children: <Widget>[
-                      const Text(
-                        'Team A',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
+                      const TeamName(team: 1),
                       Text('${context.watch<ScoreVolleyball>().getScoreTeam1}',
                           style: const TextStyle(
                               fontSize: 35, fontWeight: FontWeight.bold)),
@@ -50,11 +48,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                   ),
                   Column(
                     children: <Widget>[
-                      const Text(
-                        'Team B',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
+                      const TeamName(team: 2),
                       Text('${context.watch<ScoreVolleyball>().getScoreTeam2}',
                           style: const TextStyle(
                               fontSize: 35, fontWeight: FontWeight.bold)),
@@ -69,10 +63,6 @@ class _VolleyballPageState extends State<VolleyballPage> {
                     ],
                   ),
                 ],
-              ),
-              const Text(
-                'Quarter',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const ButtonQuarter(sport: 2),
             ],

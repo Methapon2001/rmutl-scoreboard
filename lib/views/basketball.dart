@@ -6,7 +6,8 @@ import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_foul.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
-import 'package:scoreboard/views/countdowntime.dart';
+import 'package:scoreboard/widgets/countdowntime.dart';
+import 'package:scoreboard/widgets/teamname.dart';
 
 class BasketballPage extends StatefulWidget {
   const BasketballPage({super.key});
@@ -33,11 +34,7 @@ class _BasketballPageState extends State<BasketballPage> {
                 children: [
                   Column(
                     children: <Widget>[
-                      const Text(
-                        'Team A',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
+                      const TeamName(team: 1),
                       Text(
                         '${context.watch<ScoreBasketball>().getScoreTeam1}',
                         style: const TextStyle(
@@ -60,11 +57,7 @@ class _BasketballPageState extends State<BasketballPage> {
                   ),
                   Column(
                     children: <Widget>[
-                      const Text(
-                        'Team B',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
+                      const TeamName(team: 2),
                       Text(
                         '${context.watch<ScoreBasketball>().getScoreTeam2}',
                         style: const TextStyle(
@@ -87,14 +80,8 @@ class _BasketballPageState extends State<BasketballPage> {
                   ),
                 ],
               ),
-              const Text(
-                'Quarter',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
               const ButtonQuarter(sport: 1),
-              const Text('Time',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              const CountdownPage(),
+              const CountdownPage(time: 1200,),
             ],
           ),
         ),
