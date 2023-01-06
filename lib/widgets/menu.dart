@@ -4,6 +4,7 @@ import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/futsal.dart';
+import 'package:scoreboard/views/badminton.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
@@ -76,12 +77,25 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ListTile(
             leading: const Icon(Icons.sports_soccer_rounded),
             title: const Text('Futsal'),
-            selected: widget.index == 3,
+            selected: widget.index == 4,
             onTap: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const FutsalPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_tennis),
+            title: const Text('Badminton'),
+            selected: widget.index == 5,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BadmintonPage(),
                 ),
               );
             },

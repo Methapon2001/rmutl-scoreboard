@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/volleyball/set.dart';
+import 'package:scoreboard/models/badminton/set.dart';
 
 class ButtonSet extends StatefulWidget {
-  const ButtonSet({Key? key, required this.team})
+  const ButtonSet({Key? key, required this.sport, required this.team})
       : super(key: key);
 
+  final int sport;
   final int team;
 
   @override
@@ -54,11 +56,27 @@ class _ButtonSetState extends State<ButtonSet> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            image[widget.team == 1 ? context.watch<SetVolleyball>().getSetTeam1 : widget.team == 2 ? context.watch<SetVolleyball>().getSetTeam2 : 0],
-          ],
-        ),
+        widget.sport == 2
+            ? Row(
+                children: [
+                  image[widget.team == 1
+                      ? context.watch<SetVolleyball>().getSetTeam1
+                      : widget.team == 2
+                          ? context.watch<SetVolleyball>().getSetTeam2
+                          : 0],
+                ],
+              )
+            : widget.sport == 5
+                ? Row(
+                    children: [
+                      image[widget.team == 1
+                          ? context.watch<SetBadminton>().getSetTeam1
+                          : widget.team == 2
+                              ? context.watch<SetBadminton>().getSetTeam2
+                              : 0],
+                    ],
+                  )
+                : widget,
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
@@ -66,7 +84,14 @@ class _ButtonSetState extends State<ButtonSet> {
               shape: const StadiumBorder(),
               // foreground
             ),
-            onPressed: () => context.read<SetVolleyball>().update(widget.team),
+            onPressed: () {
+              if (widget.sport == 1) {
+                context.read<SetVolleyball>().update(widget.team);
+              }
+              if (widget.sport == 5) {
+                context.read<SetBadminton>().update(widget.team);
+              }
+            },
             child: const Text("+SET")),
       ],
     );
