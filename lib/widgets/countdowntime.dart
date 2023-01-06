@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:scoreboard/widgets/roud-button.dart';
+import 'package:scoreboard/widgets/roud_button.dart';
 
 class CountdownPage extends StatefulWidget {
   const CountdownPage({Key? key, required this.time}) : super(key: key);
