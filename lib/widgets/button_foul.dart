@@ -18,6 +18,14 @@ class _ButtonFoulState extends State<ButtonFoul> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Text(
+          'Team Foul',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        widget.sport == 1
+            ? Text(
+                '${widget.team == 1 ? context.watch<FoulBasketball>().getFoulTeam1 : context.watch<FoulBasketball>().getFoulTeam2}')
+            : widget,
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
