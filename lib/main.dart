@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/score.dart';
-import 'package:scoreboard/views/home.dart';
+import 'package:scoreboard/appintro/intro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.brown,
         ),
-        home: const MyHomePage(),
+        home: const Splash(),
       ),
     );
   }

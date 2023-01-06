@@ -1,69 +1,62 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoreboard/views/home.dart';
-import 'package:scoreboard/views/page.dart';
+import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 
-class MenuDrawer extends StatelessWidget {
-  const MenuDrawer({super.key});
+class MenuDrawer extends StatefulWidget {
+  const MenuDrawer({Key? key, required this.index}) : super(key: key);
+
+  final int index;
+
+  @override
+  State<MenuDrawer> createState() => _MenuDrawerState();
+}
+
+class _MenuDrawerState extends State<MenuDrawer> {
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.brown,
-            ),
-            child: Center(
-              child: Text(
-                'SCOREBOARD',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-          ),
+        children: <Widget>[
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
-            onTap: (() {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushReplacement(
-                CupertinoPageRoute(
-                  builder: (_) => const MyHomePage(),
+            selected: widget.index == 0,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyHomePage(),
                 ),
               );
-            }),
-          ),
-          ListTile(
-            leading: const Icon(Icons.pages),
-            title: const Text('Page'),
-            onTap: (() {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushReplacement(
-                CupertinoPageRoute(
-                  builder: (_) => const MyPage(),
-                ),
-              );
-            }),
+            },
           ),
           ListTile(
             leading: const Icon(Icons.sports_basketball),
             title: const Text('Basketball'),
-            onTap: (() {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushReplacement(
-                CupertinoPageRoute(
-                  builder: (_) => const BasketballPage(),
+            selected: widget.index == 1,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BasketballPage(),
                 ),
               );
-            }),
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_volleyball),
+            title: const Text('Volleyball'),
+            selected: widget.index == 2,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const VolleyballPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
