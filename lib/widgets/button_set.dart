@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/volleyball/set.dart';
 import 'package:scoreboard/models/badminton/set.dart';
+import 'package:scoreboard/models/tabletennis/set.dart';
 
 class ButtonSet extends StatefulWidget {
   const ButtonSet({Key? key, required this.sport, required this.team})
@@ -76,7 +77,16 @@ class _ButtonSetState extends State<ButtonSet> {
                               : 0],
                     ],
                   )
-                : widget,
+                : widget.sport == 6
+                ? Row(
+                    children: [
+                      image[widget.team == 1
+                          ? context.watch<SetTabletennis>().getSetTeam1
+                          : widget.team == 2
+                              ? context.watch<SetTabletennis>().getSetTeam2
+                              : 0],
+                    ],
+                  ): widget,
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
@@ -90,6 +100,9 @@ class _ButtonSetState extends State<ButtonSet> {
               }
               if (widget.sport == 5) {
                 context.read<SetBadminton>().update(widget.team);
+              }
+              if (widget.sport == 6) {
+                context.read<SetTabletennis>().update(widget.team);
               }
             },
             child: const Text("+SET")),
