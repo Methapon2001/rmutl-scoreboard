@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/score.dart';
 import 'package:scoreboard/models/volleyball/score.dart';
+import 'package:scoreboard/models/soccer/score.dart';
+import 'package:scoreboard/models/futsal/score.dart';
+import 'package:scoreboard/models/badminton/score.dart';
+import 'package:scoreboard/models/tabletennis/score.dart';
 
 class ButtonScore extends StatefulWidget {
   const ButtonScore({
@@ -40,6 +44,18 @@ class _ButtonScoreState extends State<ButtonScore> {
             if(widget.sport == 2){
               context.read<ScoreVolleyball>().increment(widget.team, widget.increment);
             }
+            if(widget.sport == 3){
+              context.read<ScoreSoccer>().increment(widget.team, widget.increment);
+            }
+            if(widget.sport == 4){
+              context.read<ScoreFutsal>().increment(widget.team, widget.increment);
+            }
+            if(widget.sport == 5){
+              context.read<ScoreBadminton>().increment(widget.team, widget.increment);
+            }
+            if(widget.sport == 6){
+              context.read<ScoreTabletennis>().increment(widget.team, widget.increment);
+            }
           },
           child: Text("+${widget.increment}"),
         ),
@@ -58,6 +74,18 @@ class _ButtonScoreState extends State<ButtonScore> {
             }
             if (widget.sport == 2) {
               context.read<ScoreVolleyball>().decrement(widget.team, widget.decrement);
+            }
+            if(widget.sport == 3){
+              context.read<ScoreSoccer>().decrement(widget.team, widget.decrement);
+            }
+            if(widget.sport == 4){
+              context.read<ScoreFutsal>().decrement(widget.team, widget.decrement);
+            }
+            if(widget.sport == 5){
+              context.read<ScoreBadminton>().decrement(widget.team, widget.decrement);
+            }
+            if(widget.sport == 6){
+              context.read<ScoreTabletennis>().decrement(widget.team, widget.decrement);
             }
           },
           child: Text("-${widget.decrement}"),

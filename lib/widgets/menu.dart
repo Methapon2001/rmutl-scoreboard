@@ -4,6 +4,10 @@ import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
+import 'package:scoreboard/views/soccer.dart';
+import 'package:scoreboard/views/futsal.dart';
+import 'package:scoreboard/views/badminton.dart';
+import 'package:scoreboard/views/tabletennis.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
@@ -91,7 +95,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const MyIocns(),
+            leading: const Icon(Icons.sports_soccer),
             title: const Text('Soccer'),
             selected: widget.index == 3,
             onTap: () {
@@ -99,6 +103,45 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const SoccerPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_soccer_rounded),
+            title: const Text('Futsal'),
+            selected: widget.index == 4,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FutsalPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_tennis),
+            title: const Text('Badminton'),
+            selected: widget.index == 5,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BadmintonPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sports_golf),
+            title: const Text('Tabletennis'),
+            selected: widget.index == 6,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Tabletennis(),
                 ),
               );
             },

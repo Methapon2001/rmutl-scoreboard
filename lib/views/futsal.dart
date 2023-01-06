@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:scoreboard/widgets/button_quarter.dart';
-import 'package:scoreboard/widgets/menu.dart';
 import 'package:provider/provider.dart';
-import 'package:scoreboard/models/soccer/score.dart';
-import 'package:scoreboard/widgets/button_score.dart';
+import 'package:scoreboard/models/futsal/score.dart';
+import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/widgets/countdowntime.dart';
+import 'package:scoreboard/widgets/button_score.dart';
+import 'package:scoreboard/widgets/button_foul.dart';
+import 'package:scoreboard/widgets/button_quarter.dart';
 
-class SoccerPage extends StatefulWidget {
-  const SoccerPage({super.key});
+class FutsalPage extends StatefulWidget {
+  const FutsalPage({super.key});
 
   @override
-  State<SoccerPage> createState() => _SoccerPageState();
+  State<FutsalPage> createState() => _FutsalPageState();
 }
 
-class _SoccerPageState extends State<SoccerPage> {
+class _FutsalPageState extends State<FutsalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Soccer"),
+        title: const Text("Futsal"),
       ),
-      endDrawer: const MenuDrawer(index: 3),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -33,11 +33,12 @@ class _SoccerPageState extends State<SoccerPage> {
                   children: <Widget>[
                     const TeamName(team: 1),
                     Text(
-                      '${context.watch<ScoreSoccer>().getScoreTeam1}',
+                      '${context.watch<ScoreFutsal>().getScoreTeam1}',
                       style: const TextStyle(
                           fontSize: 30, fontWeight: FontWeight.bold),
                     ),
-                    const ButtonScore(sport: 3, team: 1, increment: 1, decrement: 1),
+                    const ButtonScore(sport: 4, team: 1, increment: 1, decrement: 1),
+                    const ButtonFoul(sport: 4, team: 1),
                   ],
                 ),
 
@@ -45,21 +46,22 @@ class _SoccerPageState extends State<SoccerPage> {
                   children: <Widget>[
                     const TeamName(team: 2),
                     Text(
-                      '${context.watch<ScoreSoccer>().getScoreTeam2}',
+                      '${context.watch<ScoreFutsal>().getScoreTeam2}',
                       style: const TextStyle(
                           fontSize: 30, fontWeight: FontWeight.bold),
                     ),
-                    const ButtonScore(sport: 3, team: 2, increment: 1, decrement: 1),
+                    const ButtonScore(sport: 4, team: 2, increment: 1, decrement: 1),
+                    const ButtonFoul(sport: 4, team: 2),
                   ],
                 ),
               ],
             ),
-          const ButtonQuarter(sport: 3),
-          const CountdownPage(time: 2700),
-          ]
-          ),
+            const ButtonQuarter(sport: 4),
+            const CountdownPage(time: 1200),
+          ]),
         ),
       ),
+      endDrawer: const MenuDrawer(index: 4),
     );
   }
 }

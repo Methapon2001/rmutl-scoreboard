@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:scoreboard/widgets/roud-button.dart';
 
 class CountdownPage extends StatefulWidget {
-  const CountdownPage({Key? key}) : super(key: key);
+  const CountdownPage({Key? key, required this.time}) : super(key: key);
+
+  final int time;
 
   @override
   State<CountdownPage> createState() => _CountdownPageState();
@@ -27,7 +29,7 @@ class _CountdownPageState extends State<CountdownPage>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 60),
+      duration: Duration(seconds: widget.time),
     );
 
     controller.addListener(() {
@@ -54,6 +56,8 @@ class _CountdownPageState extends State<CountdownPage>
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Text('Time',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         GestureDetector(
           onTap: () {
             if (controller.isDismissed) {
