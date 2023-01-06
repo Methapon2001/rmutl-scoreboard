@@ -43,7 +43,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      const ButtonSet(team: 1),
+                      const ButtonSet(sport: 2, team: 1),
                     ],
                   ),
                   Column(
@@ -59,7 +59,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      const ButtonSet(team: 2),
+                      const ButtonSet(sport: 2, team: 2),
                     ],
                   ),
                 ],
