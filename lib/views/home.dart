@@ -18,10 +18,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [const Text('Home')],
+          children: const [Text('Home')],
         ),
       ),
-      endDrawer: const MenuDrawer(),
+      endDrawer: const MenuDrawer(index: 0),
     );
   }
 }

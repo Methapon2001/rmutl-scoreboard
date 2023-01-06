@@ -1,24 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 
 class MenuDrawer extends StatefulWidget {
-  const MenuDrawer({super.key});
+  const MenuDrawer({Key? key, required this.index}) : super(key: key);
+
+  final int index;
 
   @override
   State<MenuDrawer> createState() => _MenuDrawerState();
 }
 
 class _MenuDrawerState extends State<MenuDrawer> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +22,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
-            selected: _selectedIndex == 0,
+            selected: widget.index == 0,
             onTap: () {
-              _onItemTapped(0);
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MyHomePage(),
+                  builder: (context) => const MyHomePage(),
                 ),
               );
             },
@@ -42,13 +35,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ListTile(
             leading: const Icon(Icons.sports_basketball),
             title: const Text('Basketball'),
-            selected: _selectedIndex == 1,
+            selected: widget.index == 1,
             onTap: () {
-              _onItemTapped(1);
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BasketballPage(),
+                  builder: (context) => const BasketballPage(),
                 ),
               );
             },
@@ -56,13 +48,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ListTile(
             leading: const Icon(Icons.sports_volleyball),
             title: const Text('Volleyball'),
-            selected: _selectedIndex == 2,
+            selected: widget.index == 2,
             onTap: () {
-              _onItemTapped(2);
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => VolleyballPage(),
+                  builder: (context) => const VolleyballPage(),
                 ),
               );
             },

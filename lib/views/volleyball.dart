@@ -18,9 +18,9 @@ class _VolleyballPageState extends State<VolleyballPage> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [const Text('Volleyball')],
+            children: const [Text('Volleyball')],
           ),
         ),
-        endDrawer: const MenuDrawer());
+        endDrawer: const MenuDrawer(index: 2));
   }
 }

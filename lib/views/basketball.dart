@@ -18,7 +18,7 @@ class _BasketballPageState extends State<BasketballPage> {
       appBar: AppBar(
         title: const Text('Basketball'),
       ),
-      endDrawer: const MenuDrawer(),
+      endDrawer: const MenuDrawer(index: 1),
       body: Center(
           child: Padding(
         padding: const EdgeInsets.all(10.0),
