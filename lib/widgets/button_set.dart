@@ -90,7 +90,7 @@ class _ButtonSetState extends State<ButtonSet> {
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
-              backgroundColor: Color.fromARGB(255, 94, 96, 245),
+              backgroundColor: const Color.fromARGB(255, 94, 96, 245),
               shape: const StadiumBorder(),
               // foreground
             ),
