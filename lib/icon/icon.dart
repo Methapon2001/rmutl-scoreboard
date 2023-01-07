@@ -18,31 +18,31 @@ class MyIcons extends StatelessWidget {
     List image = [];
     image1 = Image.asset(
       "image/home.png",
-      width: 30,
+      scale: 9.5,
     );
     image2 = Image.asset(
       "image/basketball.png",
-      width: 35,
+      scale: 9.7,
     );
     image3 = Image.asset(
       "image/volleyball.png",
-      width: 25,
+      scale: 10,
     );
     image4 = Image.asset(
       "image/soccer.png",
-      width: 30,
+      scale: 10,
     );
     image5 = Image.asset(
       "image/futsal.png",
-      width: 30,
+      scale: 10,
     );
     image6 = Image.asset(
       "image/badminton.png",
-      width: 30,
+      scale: 10.5,
     );
     image7 = Image.asset(
       "image/pingpong.png",
-      width: 30,
+      scale: 10,
     );
     image = [image1, image2, image3, image4, image5, image6, image7];
     return image[
