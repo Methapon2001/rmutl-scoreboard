@@ -4,7 +4,6 @@ import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
-import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/futsal.dart';
 import 'package:scoreboard/views/badminton.dart';
 import 'package:scoreboard/views/tabletennis.dart';
@@ -56,7 +55,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
+            leading: const MyIcons(sport: 1),
             title: const Text('Home'),
             selected: widget.index == 0,
             onTap: () {
@@ -69,7 +68,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_basketball),
+            leading: const MyIcons(sport: 2),
             title: const Text('Basketball'),
             selected: widget.index == 1,
             onTap: () {
@@ -82,7 +81,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_volleyball),
+            leading: const MyIcons(sport: 3),
             title: const Text('Volleyball'),
             selected: widget.index == 2,
             onTap: () {
@@ -95,7 +94,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_soccer),
+            leading: const MyIcons(sport: 4),
             title: const Text('Soccer'),
             selected: widget.index == 3,
             onTap: () {
@@ -108,7 +107,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_soccer_rounded),
+            leading: const MyIcons(sport: 5),
             title: const Text('Futsal'),
             selected: widget.index == 4,
             onTap: () {
@@ -121,7 +120,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_tennis),
+            leading: const MyIcons(sport: 6),
             title: const Text('Badminton'),
             selected: widget.index == 5,
             onTap: () {
@@ -134,7 +133,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.sports_golf),
+            leading: const MyIcons(sport: 7),
             title: const Text('Tabletennis'),
             selected: widget.index == 6,
             onTap: () {

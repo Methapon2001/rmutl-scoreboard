@@ -68,6 +68,13 @@ flutter:
       - image/led3.png
       - scoreboard.png
       - test.png
+      - basketball.png
+      - volleyball.png
+      - soccer.png
+      - futsal.png
+      - badminton.png
+      - pingpong.png
+      - home.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
