@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/name.dart';
 import 'package:scoreboard/appintro/intro.dart';
-import 'package:scoreboard/models/name.dart';
-import 'package:scoreboard/appintro/intro.dart';
+import 'package:scoreboard/models/connect.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
 import 'package:scoreboard/models/basketball/score.dart';
@@ -34,6 +33,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ListenableProvider(create: (_) => Name()),
+        ListenableProvider(create: (_) => ConnectBoard()),
         ListenableProvider(create: (_) => FoulBasketball()),
         ListenableProvider(create: (_) => ScoreBasketball()),
         ListenableProvider(create: (_) => QuarterBasketball()),
