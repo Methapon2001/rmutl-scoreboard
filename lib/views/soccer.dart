@@ -21,6 +21,7 @@ class _SoccerPageState extends State<SoccerPage> {
       appBar: AppBar(
         title: const Text("Soccer"),
       ),
+      endDrawer: const MenuDrawer(index: 3),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -59,7 +60,6 @@ class _SoccerPageState extends State<SoccerPage> {
           ),
         ),
       ),
-      endDrawer: const MenuDrawer(index: 3),
     );
   }
 }
