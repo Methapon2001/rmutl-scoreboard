@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:scoreboard/widgets/menu.dart';
-import 'package:scoreboard/widgets/connect_ip.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -18,9 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const ConnectIP(),
-          ],
+          children: const [Text('Home')],
         ),
       ),
       endDrawer: const MenuDrawer(index: 0),

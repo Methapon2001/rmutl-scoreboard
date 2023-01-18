@@ -22,7 +22,7 @@ class MyIcons extends StatelessWidget {
     );
     image2 = Image.asset(
       "image/basketball.png",
-      scale: 9,
+      scale: 9.7,
     );
     image3 = Image.asset(
       "image/volleyball.png",
