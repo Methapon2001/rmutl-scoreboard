@@ -11,24 +11,53 @@ class ConnectIP extends StatefulWidget {
 
 class _ConnectIPState extends State<ConnectIP> {
   late TextEditingController myController1;
-  TextEditingController myController2 = TextEditingController();
+  late TextEditingController myController2;
 
   @override
   void initState() {
     ConnectBoard connectBoard =
         Provider.of<ConnectBoard>(context, listen: false);
     super.initState();
-    myController1 = TextEditingController(text: connectBoard.ip);
+    myController1 = TextEditingController(text: connectBoard.boardip);
+    myController2 = TextEditingController(text: connectBoard.boardport);
   }
 
   @override
   void dispose() {
     myController1.dispose();
+    myController2.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            "Connect_IP to ESP",
+            style: TextStyle(fontSize: 30),
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+              child: inputField(myController1, myController2)),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.brown,
+            ),
+            onPressed: () {
+              print(myController1.text + ":" + myController2.text);
+            },
+            child: const Text('Connect'),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget inputField(myController1, myController2) {
     final ConnectBoard connectBoard = Provider.of<ConnectBoard>(context);
     return Row(
       children: <Widget>[
@@ -57,6 +86,7 @@ class _ConnectIPState extends State<ConnectIP> {
               hintText: 'Port',
             ),
             controller: myController2,
+            onChanged: connectBoard.setPort,
           ),
         ),
       ],
