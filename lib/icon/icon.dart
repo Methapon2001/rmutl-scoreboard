@@ -46,6 +46,5 @@ class MyIcons extends StatelessWidget {
     );
     image = [image1, image2, image3, image4, image5, image6, image7];
     return image[sport-1];
-    return image[sport-1];
   }
 }
