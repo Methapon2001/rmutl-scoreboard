@@ -79,9 +79,14 @@ class _ButtonSetState extends State<ButtonSet> {
     );
 
     ///*****
-    imagevolleyball = [imagevolleyball0, imagevolleyball1, imagevolleyball2, imagevolleyball3];
-    imagebadminton = [imagebadminton0,imagebadminton1,imagebadminton2];
-    imagepingpong = [imagepingpong0,imagepingpong1,imagepingpong2];
+    imagevolleyball = [
+      imagevolleyball0,
+      imagevolleyball1,
+      imagevolleyball2,
+      imagevolleyball3
+    ];
+    imagebadminton = [imagebadminton0, imagebadminton1, imagebadminton2];
+    imagepingpong = [imagepingpong0, imagepingpong1, imagepingpong2];
   }
 
   @override
@@ -90,6 +95,12 @@ class _ButtonSetState extends State<ButtonSet> {
     precacheImage(imagevolleyball1.image, context);
     precacheImage(imagevolleyball2.image, context);
     precacheImage(imagevolleyball3.image, context);
+    precacheImage(imagebadminton0.image, context);
+    precacheImage(imagebadminton1.image, context);
+    precacheImage(imagebadminton2.image, context);
+    precacheImage(imagepingpong0.image, context);
+    precacheImage(imagepingpong1.image, context);
+    precacheImage(imagepingpong2.image, context);
     super.didChangeDependencies();
   }
 
@@ -118,15 +129,16 @@ class _ButtonSetState extends State<ButtonSet> {
                     ],
                   )
                 : widget.sport == 6
-                ? Row(
-                    children: [
-                      imagepingpong[widget.team == 1
-                          ? context.watch<SetTabletennis>().getSetTeam1
-                          : widget.team == 2
-                              ? context.watch<SetTabletennis>().getSetTeam2
-                              : 0],
-                    ],
-                  ): widget,
+                    ? Row(
+                        children: [
+                          imagepingpong[widget.team == 1
+                              ? context.watch<SetTabletennis>().getSetTeam1
+                              : widget.team == 2
+                                  ? context.watch<SetTabletennis>().getSetTeam2
+                                  : 0],
+                        ],
+                      )
+                    : widget,
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
@@ -135,7 +147,7 @@ class _ButtonSetState extends State<ButtonSet> {
               // foreground
             ),
             onPressed: () {
-              if (widget.sport == 1) {
+              if (widget.sport == 2) {
                 context.read<SetVolleyball>().update(widget.team);
               }
               if (widget.sport == 5) {
