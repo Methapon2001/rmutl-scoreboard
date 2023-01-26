@@ -21,27 +21,27 @@ class MyIcons extends StatelessWidget {
       scale: 11,
     );
     image2 = Image.asset(
-      "image/basketball.png",
+      "image/basketball/basketball.png",
       scale: 11,
     );
     image3 = Image.asset(
-      "image/volleyball.png",
+      "image/volleyball/volleyball.png",
       scale: 11,
     );
     image4 = Image.asset(
-      "image/soccer.png",
+      "image/soccer/soccer.png",
       scale: 11,
     );
     image5 = Image.asset(
-      "image/futsal.png",
+      "image/futsal/futsal.png",
       scale: 11,
     );
     image6 = Image.asset(
-      "image/badminton.png",
+      "image/badminton/badminton.png",
       scale: 11,
     );
     image7 = Image.asset(
-      "image/pingpong.png",
+      "image/pingpong/pingpong.png",
       scale: 11,
     );
     image = [image1, image2, image3, image4, image5, image6, image7];
