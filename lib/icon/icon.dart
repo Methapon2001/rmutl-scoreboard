@@ -19,7 +19,6 @@ class MyIcons extends StatelessWidget {
     image1 = Image.asset(
       "image/home.png",
       scale: 11,
-      scale: 11,
     );
     image2 = Image.asset(
       "image/basketball.png",
