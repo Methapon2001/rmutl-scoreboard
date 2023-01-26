@@ -34,7 +34,7 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Colors.green[400],
+            backgroundColor: Color.fromARGB(221, 114, 108, 108),
             shape: const StadiumBorder(),
           ),
           onPressed: () {
