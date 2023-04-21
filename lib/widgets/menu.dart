@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:scoreboard/icon/icon.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
-import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/futsal.dart';
 import 'package:scoreboard/views/badminton.dart';
 import 'package:scoreboard/views/tabletennis.dart';
+// import 'package:scoreboard/opps_screen/opps_screen.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
@@ -45,7 +44,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   ),
                 ),
                 const Text(
-                  "List Sports",
+                  "Sports Category List",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
