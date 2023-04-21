@@ -6,7 +6,6 @@ import 'package:scoreboard/views/basketball.dart';
 import 'package:scoreboard/views/futsal.dart';
 import 'package:scoreboard/views/badminton.dart';
 import 'package:scoreboard/views/tabletennis.dart';
-// import 'package:scoreboard/opps_screen/opps_screen.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
