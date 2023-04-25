@@ -1,5 +1,3 @@
-import 'package:scoreboard/models/score.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class ScoreBadminton extends Score {
-  ScoreBadminton(super.connectBoard);
-}
+class ScoreBadminton extends ConnectBoard {}

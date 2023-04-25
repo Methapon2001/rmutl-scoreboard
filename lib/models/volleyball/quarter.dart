@@ -1,7 +1,7 @@
-import 'package:scoreboard/models/quarter.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class QuarterVolleyball extends Quarter {
-  QuarterVolleyball(super._connectBoard){
+class QuarterVolleyball extends ConnectBoard {
+  QuarterVolleyball(){
     maxQuarter = 5;
   }
 }

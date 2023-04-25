@@ -57,19 +57,11 @@ class _SoccerPageState extends State<SoccerPage> {
                 ),
               ],
             ),
-            const ButtonQuarter(sport: 3),
-            const CountdownPage(time: 2700),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                ButtonStatus(),
-                SizedBox(
-                  width: 10,
-                ),
-                ButtonReset(sport: 3),
-              ],
-            ),
-          ]),
+          const ButtonQuarter(sport: 3),
+          const CountdownPage(time: 2700),
+          const ButtonStatus(),
+          ]
+          ),
         ),
       ),
     );

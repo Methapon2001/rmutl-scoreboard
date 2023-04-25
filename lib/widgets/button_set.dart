@@ -151,13 +151,13 @@ class _ButtonSetState extends State<ButtonSet> {
             ),
             onPressed: () {
               if (widget.sport == 2) {
-                context.read<SetVolleyball>().update(widget.team);
+                context.read<SetVolleyball>().updateset(widget.team);
               }
               if (widget.sport == 5) {
-                context.read<SetBadminton>().update(widget.team);
+                context.read<SetBadminton>().updateset(widget.team);
               }
               if (widget.sport == 6) {
-                context.read<SetTabletennis>().update(widget.team);
+                context.read<SetTabletennis>().updateset(widget.team);
               }
             },
             child: const Text("SET")),

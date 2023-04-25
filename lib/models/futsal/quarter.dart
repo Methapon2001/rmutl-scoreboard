@@ -1,7 +1,7 @@
-import 'package:scoreboard/models/quarter.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class QuarterFutsal extends Quarter {
-  QuarterFutsal(super._connectBoard){
+class QuarterFutsal extends ConnectBoard {
+  QuarterFutsal(){
     maxQuarter = 2;
   }
 }

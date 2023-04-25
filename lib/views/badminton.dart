@@ -63,16 +63,7 @@ class _BadmintonPageState extends State<BadmintonPage> {
                 ],
               ),
               const ButtonQuarter(sport: 5),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                ButtonStatus(),
-                SizedBox(
-                  width: 10,
-                ),
-                ButtonReset(sport: 5),
-              ],
-            ),
+              const ButtonStatus(),
             ],
           ),
         ),

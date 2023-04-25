@@ -67,16 +67,7 @@ class _FutsalPageState extends State<FutsalPage> {
             ),
             const ButtonQuarter(sport: 4),
             const CountdownPage(time: 1200),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                ButtonStatus(),
-                SizedBox(
-                  width: 10,
-                ),
-                ButtonReset(sport: 4),
-              ],
-            ),
+            const ButtonStatus(),
           ]),
         ),
       ),

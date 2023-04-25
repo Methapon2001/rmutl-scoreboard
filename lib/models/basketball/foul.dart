@@ -1,7 +1,7 @@
-import 'package:scoreboard/models/foul.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class FoulBasketball extends Foul {
-  FoulBasketball(super._connectBoard) {
+class FoulBasketball extends ConnectBoard {
+  FoulBasketball() {
     maxFoul = 6;
   }
 }

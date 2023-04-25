@@ -1,7 +1,7 @@
-import 'package:scoreboard/models/set.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class SetBadminton extends Set {
-  SetBadminton(super._connectBoard){
+class SetBadminton extends ConnectBoard {
+  SetBadminton(){
     maxSet = 2;
   }
 }
