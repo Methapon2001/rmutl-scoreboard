@@ -19,7 +19,7 @@ import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
-// import 'package:scoreboard/opps/opps_screen.dart';
+// import 'package:scoreboard/opps/screen_opps.dart';
 
 void main() {
   runApp(const MyApp());
