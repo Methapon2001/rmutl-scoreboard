@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/soccer/score.dart';
@@ -56,6 +57,7 @@ class _SoccerPageState extends State<SoccerPage> {
             ),
           const ButtonQuarter(sport: 3),
           const CountdownPage(time: 2700),
+          const ButtonStatus(),
           ]
           ),
         ),

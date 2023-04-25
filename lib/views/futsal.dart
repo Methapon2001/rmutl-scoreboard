@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/futsal/score.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/widgets/countdowntime.dart';
@@ -37,11 +38,14 @@ class _FutsalPageState extends State<FutsalPage> {
                       style: const TextStyle(
                           fontSize: 30, fontWeight: FontWeight.bold),
                     ),
-                    const ButtonScore(sport: 4, team: 1, increment: 1, decrement: 1),
+                    const ButtonScore(
+                        sport: 4, team: 1, increment: 1, decrement: 1),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     const ButtonFoul(sport: 4, team: 1),
                   ],
                 ),
-
                 Column(
                   children: <Widget>[
                     const TeamName(team: 2),
@@ -50,7 +54,11 @@ class _FutsalPageState extends State<FutsalPage> {
                       style: const TextStyle(
                           fontSize: 30, fontWeight: FontWeight.bold),
                     ),
-                    const ButtonScore(sport: 4, team: 2, increment: 1, decrement: 1),
+                    const ButtonScore(
+                        sport: 4, team: 2, increment: 1, decrement: 1),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     const ButtonFoul(sport: 4, team: 2),
                   ],
                 ),
@@ -58,6 +66,7 @@ class _FutsalPageState extends State<FutsalPage> {
             ),
             const ButtonQuarter(sport: 4),
             const CountdownPage(time: 1200),
+            const ButtonStatus(),
           ]),
         ),
       ),

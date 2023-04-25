@@ -34,30 +34,42 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Color.fromARGB(221, 114, 108, 108),
+            backgroundColor: Colors.red[400],
             shape: const StadiumBorder(),
           ),
           onPressed: () {
             if (widget.sport == 1) {
-              context.read<ScoreBasketball>().increment(widget.team, widget.increment);
+              context
+                  .read<ScoreBasketball>()
+                  .decrement(widget.team, widget.decrement);
             }
-            if(widget.sport == 2){
-              context.read<ScoreVolleyball>().increment(widget.team, widget.increment);
+            if (widget.sport == 2) {
+              context
+                  .read<ScoreVolleyball>()
+                  .decrement(widget.team, widget.decrement);
             }
-            if(widget.sport == 3){
-              context.read<ScoreSoccer>().increment(widget.team, widget.increment);
+            if (widget.sport == 3) {
+              context
+                  .read<ScoreSoccer>()
+                  .decrement(widget.team, widget.decrement);
             }
-            if(widget.sport == 4){
-              context.read<ScoreFutsal>().increment(widget.team, widget.increment);
+            if (widget.sport == 4) {
+              context
+                  .read<ScoreFutsal>()
+                  .decrement(widget.team, widget.decrement);
             }
-            if(widget.sport == 5){
-              context.read<ScoreBadminton>().increment(widget.team, widget.increment);
+            if (widget.sport == 5) {
+              context
+                  .read<ScoreBadminton>()
+                  .decrement(widget.team, widget.decrement);
             }
-            if(widget.sport == 6){
-              context.read<ScoreTabletennis>().increment(widget.team, widget.increment);
+            if (widget.sport == 6) {
+              context
+                  .read<ScoreTabletennis>()
+                  .decrement(widget.team, widget.decrement);
             }
           },
-          child: Text("+${widget.increment}"),
+          child: Text("- ${widget.decrement}"),
         ),
         const SizedBox(
           width: 8,
@@ -65,30 +77,42 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Colors.red[400],
+            backgroundColor: Color.fromARGB(221, 4, 4, 4),
             shape: const StadiumBorder(),
           ),
           onPressed: () {
             if (widget.sport == 1) {
-              context.read<ScoreBasketball>().decrement(widget.team, widget.decrement);
+              context
+                  .read<ScoreBasketball>()
+                  .increment(widget.team, widget.increment);
             }
             if (widget.sport == 2) {
-              context.read<ScoreVolleyball>().decrement(widget.team, widget.decrement);
+              context
+                  .read<ScoreVolleyball>()
+                  .increment(widget.team, widget.increment);
             }
-            if(widget.sport == 3){
-              context.read<ScoreSoccer>().decrement(widget.team, widget.decrement);
+            if (widget.sport == 3) {
+              context
+                  .read<ScoreSoccer>()
+                  .increment(widget.team, widget.increment);
             }
-            if(widget.sport == 4){
-              context.read<ScoreFutsal>().decrement(widget.team, widget.decrement);
+            if (widget.sport == 4) {
+              context
+                  .read<ScoreFutsal>()
+                  .increment(widget.team, widget.increment);
             }
-            if(widget.sport == 5){
-              context.read<ScoreBadminton>().decrement(widget.team, widget.decrement);
+            if (widget.sport == 5) {
+              context
+                  .read<ScoreBadminton>()
+                  .increment(widget.team, widget.increment);
             }
-            if(widget.sport == 6){
-              context.read<ScoreTabletennis>().decrement(widget.team, widget.decrement);
+            if (widget.sport == 6) {
+              context
+                  .read<ScoreTabletennis>()
+                  .increment(widget.team, widget.increment);
             }
           },
-          child: Text("-${widget.decrement}"),
+          child: Text("+ ${widget.increment}"),
         ),
       ],
     );

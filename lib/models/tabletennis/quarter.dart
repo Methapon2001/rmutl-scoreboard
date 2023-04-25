@@ -1,6 +1,6 @@
-import 'package:scoreboard/models/quarter.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class QuarterTabletennis extends Quarter {
+class QuarterTabletennis extends ConnectBoard {
   QuarterTabletennis(){
     maxQuarter = 3;
   }

@@ -108,6 +108,10 @@ class _ButtonSetState extends State<ButtonSet> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Text(
+          'SET Team',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         widget.sport == 2
             ? Row(
                 children: [
@@ -142,22 +146,21 @@ class _ButtonSetState extends State<ButtonSet> {
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
-              backgroundColor: const Color.fromARGB(255, 94, 96, 245),
               shape: const StadiumBorder(),
               // foreground
             ),
             onPressed: () {
               if (widget.sport == 2) {
-                context.read<SetVolleyball>().update(widget.team);
+                context.read<SetVolleyball>().updateset(widget.team);
               }
               if (widget.sport == 5) {
-                context.read<SetBadminton>().update(widget.team);
+                context.read<SetBadminton>().updateset(widget.team);
               }
               if (widget.sport == 6) {
-                context.read<SetTabletennis>().update(widget.team);
+                context.read<SetTabletennis>().updateset(widget.team);
               }
             },
-            child: const Text("+SET")),
+            child: const Text("SET")),
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'package:scoreboard/models/volleyball/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_set.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 
@@ -38,10 +39,8 @@ class _VolleyballPageState extends State<VolleyballPage> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 2, team: 1, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team A',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
                       const ButtonSet(sport: 2, team: 1),
                     ],
@@ -54,10 +53,8 @@ class _VolleyballPageState extends State<VolleyballPage> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 2, team: 2, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team B',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
                       const ButtonSet(sport: 2, team: 2),
                     ],
@@ -65,6 +62,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                 ],
               ),
               const ButtonQuarter(sport: 2),
+              const ButtonStatus(),
             ],
           ),
         ),

@@ -1,3 +1,3 @@
-import 'package:scoreboard/models/score.dart';
+import 'package:scoreboard/models/connect.dart';
 
-class ScoreSoccer extends Score {}
+class ScoreSoccer extends ConnectBoard {}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
@@ -38,12 +39,10 @@ class _TabletennisState extends State<Tabletennis> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 6, team: 1, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team A',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
-                      const ButtonSet(sport: 6,team: 1),
+                      const ButtonSet(sport: 6, team: 1),
                     ],
                   ),
                   Column(
@@ -54,17 +53,16 @@ class _TabletennisState extends State<Tabletennis> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 6, team: 2, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team B',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
-                      const ButtonSet(sport: 6,team: 2),
+                      const ButtonSet(sport: 6, team: 2),
                     ],
                   ),
                 ],
               ),
               const ButtonQuarter(sport: 6),
+              const ButtonStatus(),
             ],
           ),
         ),
