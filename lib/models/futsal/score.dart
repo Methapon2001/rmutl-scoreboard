@@ -1,3 +1,5 @@
-import 'package:scoreboard/models/connect.dart';
+import 'package:scoreboard/models/score.dart';
 
-class ScoreFutsal extends ConnectBoard {}
+class ScoreFutsal extends Score {
+  ScoreFutsal(super.connectBoard);
+}

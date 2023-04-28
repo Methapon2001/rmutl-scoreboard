@@ -15,7 +15,7 @@ class Score with ChangeNotifier {
     if (team != 1 && team != 2) return;
 
     _score[team - 1] = _score[team - 1] + increment;
-    syncBoard();
+    // _connectBoard.sendScore(_score[0].toString(), _score[1].toString());
     notifyListeners();
   }
 
@@ -24,18 +24,7 @@ class Score with ChangeNotifier {
 
     _score[team - 1] =
         _score[team - 1] <= decrement ? 0 : _score[team - 1] - decrement;
-    syncBoard();
-    notifyListeners();
-  }
 
-  void reset(){
-    _score[0] = 0;
-    _score[1] = 0;
-    syncBoard();
     notifyListeners();
-  }
-
-  void syncBoard() {
-    _connectBoard.TestScore(_score[0].toString(), _score[1].toString());
   }
 }
