@@ -28,22 +28,22 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
         TextButton(
             onPressed: () {
               if (widget.sport == 1) {
-                context.read<QuarterBasketball>().updatequarter();
+                context.read<QuarterBasketball>().update();
               }
               if (widget.sport == 2) {
-                context.read<QuarterVolleyball>().updatequarter();
+                context.read<QuarterVolleyball>().update();
               }
               if (widget.sport == 3) {
-                context.read<QuarterSoccer>().updatequarter();
+                context.read<QuarterSoccer>().update();
               }
               if (widget.sport == 4) {
-                context.read<QuarterFutsal>().updatequarter();
+                context.read<QuarterFutsal>().update();
               }
               if (widget.sport == 5) {
-                context.read<QuarterBadminton>().updatequarter();
+                context.read<QuarterBadminton>().update();
               }
               if (widget.sport == 6) {
-                context.read<QuarterTabletennis>().updatequarter();
+                context.read<QuarterTabletennis>().update();
               }
             },
             child: widget.sport == 1
