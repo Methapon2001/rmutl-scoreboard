@@ -167,10 +167,10 @@ class _ButtonFoulState extends State<ButtonFoul> {
           ),
           onPressed: () {
             if (widget.sport == 1) {
-              context.read<FoulBasketball>().updatefoul(widget.team);
+              context.read<FoulBasketball>().update(widget.team);
             }
             if (widget.sport == 4) {
-              context.read<FoulFutsal>().updatefoul(widget.team);
+              context.read<FoulFutsal>().update(widget.team);
             }
           },
           child: const Text('Foul'),
