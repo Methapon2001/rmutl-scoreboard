@@ -34,40 +34,23 @@ class MyApp extends StatelessWidget {
       providers: [
         ListenableProvider(create: (_) => Name()),
         ListenableProvider(create: (_) => ConnectBoard()),
-        ListenableProxyProvider<ConnectBoard, ScoreBasketball>(
-            update: (_, connectBoard, __) => ScoreBasketball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, FoulBasketball>(
-            update: (_, connectBoard, __) => FoulBasketball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterBasketball>(
-            update: (_, connectBoard, __) => QuarterBasketball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, ScoreVolleyball>(
-            update: (_, connectBoard, __) => ScoreVolleyball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, SetVolleyball>(
-            update: (_, connectBoard, __) => SetVolleyball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterVolleyball>(
-            update: (_, connectBoard, __) => QuarterVolleyball(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, ScoreSoccer>(
-            update: (_, connectBoard, __) => ScoreSoccer(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterSoccer>(
-            update: (_, connectBoard, __) => QuarterSoccer(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, FoulFutsal>(
-            update: (_, connectBoard, __) => FoulFutsal(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, ScoreFutsal>(
-            update: (_, connectBoard, __) => ScoreFutsal(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterFutsal>(
-            update: (_, connectBoard, __) => QuarterFutsal(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, ScoreBadminton>(
-            update: (_, connectBoard, __) => ScoreBadminton(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, SetBadminton>(
-            update: (_, connectBoard, __) => SetBadminton(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterBadminton>(
-            update: (_, connectBoard, __) => QuarterBadminton(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, ScoreTabletennis>(
-            update: (_, connectBoard, __) => ScoreTabletennis(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, SetTabletennis>(
-            update: (_, connectBoard, __) => SetTabletennis(connectBoard)),
-        ListenableProxyProvider<ConnectBoard, QuarterTabletennis>(
-            update: (_, connectBoard, __) => QuarterTabletennis(connectBoard)),
+        ListenableProvider(create: (_) => FoulBasketball(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreBasketball(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterBasketball(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreVolleyball(ConnectBoard())),
+        ListenableProvider(create: (_) => SetVolleyball(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterVolleyball(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreSoccer(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterSoccer(ConnectBoard())),
+        ListenableProvider(create: (_) => FoulFutsal(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreFutsal(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterFutsal(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreBadminton(ConnectBoard())),
+        ListenableProvider(create: (_) => SetBadminton(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterBadminton(ConnectBoard())),
+        ListenableProvider(create: (_) => ScoreTabletennis(ConnectBoard())),
+        ListenableProvider(create: (_) => SetTabletennis(ConnectBoard())),
+        ListenableProvider(create: (_) => QuarterTabletennis(ConnectBoard())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
