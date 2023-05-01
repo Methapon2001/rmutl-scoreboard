@@ -18,6 +18,21 @@ class ConnectBoard with ChangeNotifier {
     notifyListeners();
   }
 
+  void TestScore(String a, String b) {
+    print("TEST Update Score");
+  }
+
+  void TestQuarter(String a) {
+    print("TEST Update Quarter");
+  }
+
+  void TestFoul(String a, String b) {
+    print("TEST Update Foul");
+  }
+
+  void TestSet(String a, String b) {
+    print("TEST Update Set");
+  }
   // sendScore(String scoreA, String scoreB) async {
   //   print("Show IP and Port");
   //   print(_boardip);

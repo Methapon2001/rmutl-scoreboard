@@ -17,7 +17,18 @@ class Foul with ChangeNotifier {
     if (team != 1 && team != 2) return;
 
     _foul[team - 1] = _foul[team - 1] >= maxFoul ? 0 : _foul[team - 1] + 1;
-
+    syncBoard();
     notifyListeners();
+  }
+
+  void reset(){
+    _foul[0] = 0;
+    _foul[1] = 0;
+    syncBoard();
+    notifyListeners();
+  }
+
+  void syncBoard() {
+    _connectBoard.TestFoul(_foul[0].toString(),_foul[1].toString());
   }
 }

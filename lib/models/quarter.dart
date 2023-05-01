@@ -12,7 +12,17 @@ class Quarter with ChangeNotifier {
 
   void update() {
     _quarter = _quarter >= maxQuarter ? 1 : _quarter + 1;
-
+    syncBoard();
     notifyListeners();
+  }
+
+  void reset(){
+    _quarter = 1;
+    syncBoard();
+    notifyListeners();
+  }
+
+  void syncBoard() {
+    _connectBoard.TestQuarter(_quarter.toString());
   }
 }

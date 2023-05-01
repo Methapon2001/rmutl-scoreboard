@@ -16,7 +16,18 @@ class Set with ChangeNotifier {
     if (team != 1 && team != 2) return;
 
     _set[team - 1] = _set[team - 1] >= maxSet ? 0 : _set[team - 1] + 1;
-
+    syncBoard();
     notifyListeners();
+  }
+
+  void reset(){
+    _set[0] = 0;
+    _set[1] = 0;
+    syncBoard();
+    notifyListeners();
+  }
+
+  void syncBoard() {
+    _connectBoard.TestSet(_set[0].toString(),_set[1].toString());
   }
 }
