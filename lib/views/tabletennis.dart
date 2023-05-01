@@ -63,7 +63,16 @@ class _TabletennisState extends State<Tabletennis> {
                 ],
               ),
               const ButtonQuarter(sport: 6),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 6),
+              ],
+            ),
             ],
           ),
         ),

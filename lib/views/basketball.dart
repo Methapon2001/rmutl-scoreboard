@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/models/basketball/score.dart';
@@ -78,7 +79,16 @@ class _BasketballPageState extends State<BasketballPage> {
               const CountdownPage(
                 time: 1200,
               ),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 1),
+              ],
+            ),
             ],
           ),
         ),

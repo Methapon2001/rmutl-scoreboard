@@ -63,7 +63,16 @@ class _VolleyballPageState extends State<VolleyballPage> {
                 ],
               ),
               const ButtonQuarter(sport: 2),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 2),
+              ],
+            ),
             ],
           ),
         ),
