@@ -7,6 +7,7 @@ import 'package:scoreboard/models/badminton/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_set.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 
 class BadmintonPage extends StatefulWidget {
   const BadmintonPage({super.key});
@@ -62,7 +63,16 @@ class _BadmintonPageState extends State<BadmintonPage> {
                 ],
               ),
               const ButtonQuarter(sport: 5),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 5),
+              ],
+            ),
             ],
           ),
         ),

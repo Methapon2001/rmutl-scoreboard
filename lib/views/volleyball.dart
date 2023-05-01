@@ -7,6 +7,7 @@ import 'package:scoreboard/widgets/button_quarter.dart';
 import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 
 class VolleyballPage extends StatefulWidget {
   const VolleyballPage({super.key});
@@ -62,7 +63,16 @@ class _VolleyballPageState extends State<VolleyballPage> {
                 ],
               ),
               const ButtonQuarter(sport: 2),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 2),
+              ],
+            ),
             ],
           ),
         ),

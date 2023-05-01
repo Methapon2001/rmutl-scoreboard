@@ -7,6 +7,7 @@ import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_set.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 
 class Tabletennis extends StatefulWidget {
   const Tabletennis({super.key});
@@ -62,7 +63,16 @@ class _TabletennisState extends State<Tabletennis> {
                 ],
               ),
               const ButtonQuarter(sport: 6),
-              const ButtonStatus(),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 6),
+              ],
+            ),
             ],
           ),
         ),

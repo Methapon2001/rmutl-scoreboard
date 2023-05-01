@@ -8,6 +8,7 @@ import 'package:scoreboard/widgets/countdowntime.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_foul.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 
 class FutsalPage extends StatefulWidget {
   const FutsalPage({super.key});
@@ -66,7 +67,16 @@ class _FutsalPageState extends State<FutsalPage> {
             ),
             const ButtonQuarter(sport: 4),
             const CountdownPage(time: 1200),
-            const ButtonStatus(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 4),
+              ],
+            ),
           ]),
         ),
       ),
