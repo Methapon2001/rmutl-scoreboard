@@ -36,6 +36,7 @@ class _ButtonScoreState extends State<ButtonScore> {
             foregroundColor: Colors.white,
             backgroundColor: Colors.red[400],
             shape: const StadiumBorder(),
+            minimumSize: const Size(70, 40),
           ),
           onPressed: () {
             if (widget.sport == 1) {
@@ -77,8 +78,9 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Color.fromARGB(221, 4, 4, 4),
+            backgroundColor: Colors.green,
             shape: const StadiumBorder(),
+            minimumSize: const Size(70, 40),
           ),
           onPressed: () {
             if (widget.sport == 1) {

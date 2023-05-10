@@ -35,8 +35,9 @@ class _ButtonResetState extends State<ButtonReset> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        shape: const StadiumBorder(),
-      ),
+          shape: const StadiumBorder(),
+          minimumSize: const Size(110, 40),
+          backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
         if (widget.sport == 1) {
           context.read<ScoreBasketball>().reset();

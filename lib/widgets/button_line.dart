@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ButtonStatus extends StatefulWidget {
-  const ButtonStatus({super.key});
+class ButtonLine extends StatefulWidget {
+  const ButtonLine({super.key});
 
   @override
-  State<ButtonStatus> createState() => _ButtonStatusState();
+  State<ButtonLine> createState() => _ButtonLineState();
 }
 
-class _ButtonStatusState extends State<ButtonStatus> {
+class _ButtonLineState extends State<ButtonLine> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -17,7 +17,7 @@ class _ButtonStatusState extends State<ButtonStatus> {
         backgroundColor: const Color.fromARGB(255, 23, 36, 113)
       ),
       onPressed: () {},
-      child: const Text('Check Status'),
+      child: const Text('Line'),
     );
   }
 }
