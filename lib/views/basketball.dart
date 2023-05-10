@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scoreboard/models/basketball/quarter.dart';
+import 'package:scoreboard/widgets/bar.dart';
 import 'package:scoreboard/widgets/button_reset.dart';
 import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
@@ -9,6 +11,8 @@ import 'package:scoreboard/widgets/button_foul.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
 import 'package:scoreboard/widgets/countdowntime.dart';
 import 'package:scoreboard/widgets/teamname.dart';
+import 'package:scoreboard/widgets/image_foul.dart';
+import 'package:scoreboard/widgets/button_line.dart';
 
 class BasketballPage extends StatefulWidget {
   const BasketballPage({super.key});
@@ -21,78 +25,210 @@ class _BasketballPageState extends State<BasketballPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Basketball'),
-      ),
-      endDrawer: const MenuDrawer(index: 1),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    children: <Widget>[
-                      const TeamName(team: 1),
-                      Text(
-                        '${context.watch<ScoreBasketball>().getScoreTeam1}',
-                        style: const TextStyle(
-                            fontSize: 35, fontWeight: FontWeight.bold),
+        appBar: Titlebar().appBar("Basketball"),
+        endDrawer: const MenuDrawer(index: 1),
+        body: MediaQuery.removePadding(
+          context: context,
+          removeBottom: true,
+          child: Container(
+            color: const Color.fromARGB(255, 255, 242, 218),
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    flex: 20,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(40),
+                            bottomLeft: Radius.circular(40)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 5,
+                              offset: Offset(2, 10))
+                        ],
                       ),
-                      const ButtonScore(
-                          sport: 1, team: 1, increment: 1, decrement: 1),
-                      const ButtonScore(
-                          sport: 1, team: 1, increment: 2, decrement: 2),
-                      const ButtonScore(
-                          sport: 1, team: 1, increment: 3, decrement: 3),
-                      const SizedBox(
-                        height: 8,
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children: <Widget>[
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  const TeamName(team: 1),
+                                  Text(
+                                    '${context.watch<ScoreBasketball>().getScoreTeam1}',
+                                    style: const TextStyle(
+                                        fontSize: 60,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const ImageFoul(imagesport: 1, team: 1),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text("Quarter",
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold)),
+                                  Text(
+                                      '${context.watch<QuarterBasketball>().getQuarter}',
+                                      style: const TextStyle(
+                                          fontSize: 40,
+                                          fontWeight: FontWeight.bold)),
+                                  const Text('Time',
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold)),
+                                  const CountdownPage(
+                                    time: 1200,
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  const TeamName(team: 2),
+                                  Text(
+                                    '${context.watch<ScoreBasketball>().getScoreTeam2}',
+                                    style: const TextStyle(
+                                        fontSize: 60,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const ImageFoul(imagesport: 1, team: 2),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      const ButtonFoul(sport: 1, team: 1),
-                    ],
+                    ),
                   ),
-                  Column(
-                    children: <Widget>[
-                      const TeamName(team: 2),
-                      Text(
-                        '${context.watch<ScoreBasketball>().getScoreTeam2}',
-                        style: const TextStyle(
-                            fontSize: 35, fontWeight: FontWeight.bold),
+                  Expanded(
+                    flex: 3,
+                    child: Container(),
+                  ),
+                  Expanded(
+                    flex: 45,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(40),
+                            topRight: Radius.circular(40)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 5,
+                              offset: Offset(-2, -10))
+                        ],
                       ),
-                      const ButtonScore(
-                          sport: 1, team: 2, increment: 1, decrement: 1),
-                      const ButtonScore(
-                          sport: 1, team: 2, increment: 2, decrement: 2),
-                      const ButtonScore(
-                          sport: 1, team: 2, increment: 3, decrement: 3),
-                      const SizedBox(
-                        height: 8,
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children: const <Widget>[
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "A",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 1,
+                                      increment: 1,
+                                      decrement: 1),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 1,
+                                      increment: 2,
+                                      decrement: 2),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 1,
+                                      increment: 3,
+                                      decrement: 3),
+                                  ButtonFoul(sport: 1, team: 1),
+                                ],
+                              ),
+                              Column(
+                                children: const <Widget>[
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "B",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 2,
+                                      increment: 1,
+                                      decrement: 1),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 2,
+                                      increment: 2,
+                                      decrement: 2),
+                                  ButtonScore(
+                                      sport: 1,
+                                      team: 2,
+                                      increment: 3,
+                                      decrement: 3),
+                                  ButtonFoul(sport: 1, team: 2),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const ButtonQuarter(sport: 1),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const <Widget>[
+                              ButtonStatus(),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              ButtonReset(sport: 1),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              ButtonLine(),
+                            ],
+                          ),
+                          Image.asset(
+                            "image/basketball/basketballplay.png",
+                            height: 133,
+                            width: 133,
+                          )
+                        ],
                       ),
-                      const ButtonFoul(sport: 1, team: 2),
-                    ],
+                    ),
                   ),
                 ],
               ),
-              const ButtonQuarter(sport: 1),
-              const CountdownPage(
-                time: 1200,
-              ),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                ButtonStatus(),
-                SizedBox(
-                  width: 10,
-                ),
-                ButtonReset(sport: 1),
-              ],
             ),
-            ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -69,13 +69,10 @@ class MyApp extends StatelessWidget {
         ListenableProxyProvider<ConnectBoard, QuarterTabletennis>(
             update: (_, connectBoard, __) => QuarterTabletennis(connectBoard)),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'RMUTL Scoreboard',
-        theme: ThemeData(
-          primarySwatch: Colors.brown,
-        ),
-        home: const Splash(),
+        home: Splash(),
       ),
     );
   }

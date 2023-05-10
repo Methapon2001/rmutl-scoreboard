@@ -56,8 +56,6 @@ class _CountdownPageState extends State<CountdownPage>
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Time',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         GestureDetector(
           onTap: () {
             if (controller.isDismissed) {
@@ -82,7 +80,7 @@ class _CountdownPageState extends State<CountdownPage>
             builder: (context, child) => Text(
               countText,
               style: const TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
