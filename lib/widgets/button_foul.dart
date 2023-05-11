@@ -21,7 +21,7 @@ class _ButtonFoulState extends State<ButtonFoul> {
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-        minimumSize: const Size(80, 40),
+        minimumSize: const Size(75, 40),
       ),
       onPressed: () {
         if (widget.sport == 1) {
@@ -31,7 +31,10 @@ class _ButtonFoulState extends State<ButtonFoul> {
           context.read<FoulFutsal>().update(widget.team);
         }
       },
-      child: const Text('Foul'),
+      child: const Text(
+        'Foul',
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

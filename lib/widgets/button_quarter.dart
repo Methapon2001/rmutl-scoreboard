@@ -47,7 +47,10 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
           context.read<QuarterTabletennis>().update();
         }
       },
-      child: const Text("Quarter"),
+      child: const Text(
+        "Quarter",
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

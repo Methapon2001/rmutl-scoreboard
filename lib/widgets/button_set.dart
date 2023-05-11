@@ -37,6 +37,9 @@ class _ButtonSetState extends State<ButtonSet> {
             context.read<SetTabletennis>().update(widget.team);
           }
         },
-        child: const Text("SET"));
+        child: const Text(
+          "SET",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ));
   }
 }

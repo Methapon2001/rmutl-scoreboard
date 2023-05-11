@@ -34,9 +34,9 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Colors.red[400],
+            backgroundColor: Color.fromARGB(255, 219, 1, 1),
             shape: const StadiumBorder(),
-            minimumSize: const Size(70, 40),
+            minimumSize: const Size(60, 40),
           ),
           onPressed: () {
             if (widget.sport == 1) {
@@ -70,7 +70,7 @@ class _ButtonScoreState extends State<ButtonScore> {
                   .decrement(widget.team, widget.decrement);
             }
           },
-          child: Text("- ${widget.decrement}"),
+          child: Text("- ${widget.decrement}",style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
         ),
         const SizedBox(
           width: 8,
@@ -78,9 +78,9 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromARGB(255, 0, 180, 6),
             shape: const StadiumBorder(),
-            minimumSize: const Size(70, 40),
+            minimumSize: const Size(60, 40),
           ),
           onPressed: () {
             if (widget.sport == 1) {
@@ -114,7 +114,7 @@ class _ButtonScoreState extends State<ButtonScore> {
                   .increment(widget.team, widget.increment);
             }
           },
-          child: Text("+ ${widget.increment}"),
+          child: Text("+ ${widget.increment}",style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
         ),
       ],
     );
