@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:scoreboard/icon/icon.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
@@ -7,6 +8,23 @@ import 'package:scoreboard/views/basketball.dart';
 import 'package:scoreboard/views/futsal.dart';
 import 'package:scoreboard/views/badminton.dart';
 import 'package:scoreboard/views/tabletennis.dart';
+import 'package:scoreboard/models/basketball/score.dart';
+import 'package:scoreboard/models/basketball/foul.dart';
+import 'package:scoreboard/models/basketball/quarter.dart';
+import 'package:scoreboard/models/volleyball/score.dart';
+import 'package:scoreboard/models/volleyball/set.dart';
+import 'package:scoreboard/models/volleyball/quarter.dart';
+import 'package:scoreboard/models/soccer/score.dart';
+import 'package:scoreboard/models/soccer/quarter.dart';
+import 'package:scoreboard/models/futsal/score.dart';
+import 'package:scoreboard/models/futsal/foul.dart';
+import 'package:scoreboard/models/futsal/quarter.dart';
+import 'package:scoreboard/models/badminton/score.dart';
+import 'package:scoreboard/models/badminton/set.dart';
+import 'package:scoreboard/models/badminton/quarter.dart';
+import 'package:scoreboard/models/tabletennis/score.dart';
+import 'package:scoreboard/models/tabletennis/set.dart';
+import 'package:scoreboard/models/tabletennis/quarter.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
@@ -78,6 +96,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const BasketballPage(),
                 ),
               );
+              context.read<ScoreBasketball>().syncBoard();
+              context.read<FoulBasketball>().syncBoard();
+              context.read<QuarterBasketball>().syncBoard();
             },
           ),
           ListTile(
@@ -91,6 +112,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const VolleyballPage(),
                 ),
               );
+              context.read<ScoreVolleyball>().syncBoard();
+              context.read<SetVolleyball>().syncBoard();
+              context.read<QuarterVolleyball>().syncBoard();
             },
           ),
           ListTile(
@@ -104,6 +128,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const SoccerPage(),
                 ),
               );
+              context.read<ScoreSoccer>().syncBoard();
+              context.read<QuarterSoccer>().syncBoard();
             },
           ),
           ListTile(
@@ -117,6 +143,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const FutsalPage(),
                 ),
               );
+              context.read<ScoreFutsal>().syncBoard();
+              context.read<FoulFutsal>().syncBoard();
+              context.read<QuarterFutsal>().syncBoard();
             },
           ),
           ListTile(
@@ -130,6 +159,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const BadmintonPage(),
                 ),
               );
+              context.read<ScoreBadminton>().syncBoard();
+              context.read<SetBadminton>().syncBoard();
+              context.read<QuarterBadminton>().syncBoard();
             },
           ),
           ListTile(
@@ -143,6 +175,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   builder: (context) => const Tabletennis(),
                 ),
               );
+              context.read<ScoreTabletennis>().syncBoard();
+              context.read<SetTabletennis>().syncBoard();
+              context.read<QuarterTabletennis>().syncBoard();
             },
           ),
         ],

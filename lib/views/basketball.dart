@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/models/basketball/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
@@ -45,6 +47,9 @@ class _BasketballPageState extends State<BasketballPage> {
                           sport: 1, team: 1, increment: 2, decrement: 2),
                       const ButtonScore(
                           sport: 1, team: 1, increment: 3, decrement: 3),
+                      const SizedBox(
+                        height: 8,
+                      ),
                       const ButtonFoul(sport: 1, team: 1),
                     ],
                   ),
@@ -62,6 +67,9 @@ class _BasketballPageState extends State<BasketballPage> {
                           sport: 1, team: 2, increment: 2, decrement: 2),
                       const ButtonScore(
                           sport: 1, team: 2, increment: 3, decrement: 3),
+                      const SizedBox(
+                        height: 8,
+                      ),
                       const ButtonFoul(sport: 1, team: 2),
                     ],
                   ),
@@ -71,6 +79,16 @@ class _BasketballPageState extends State<BasketballPage> {
               const CountdownPage(
                 time: 1200,
               ),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 1),
+              ],
+            ),
             ],
           ),
         ),

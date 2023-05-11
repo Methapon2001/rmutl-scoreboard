@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/models/badminton/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_set.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
+import 'package:scoreboard/widgets/button_reset.dart';
 
 class BadmintonPage extends StatefulWidget {
   const BadmintonPage({super.key});
@@ -38,12 +40,10 @@ class _BadmintonPageState extends State<BadmintonPage> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 5, team: 1, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team A',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
-                      const ButtonSet(sport: 5,team: 1),
+                      const ButtonSet(sport: 5, team: 1),
                     ],
                   ),
                   Column(
@@ -54,17 +54,25 @@ class _BadmintonPageState extends State<BadmintonPage> {
                               fontSize: 35, fontWeight: FontWeight.bold)),
                       const ButtonScore(
                           sport: 5, team: 2, increment: 1, decrement: 1),
-                      const Text(
-                        'SET Team B',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 8,
                       ),
-                      const ButtonSet(sport: 5,team: 2),
+                      const ButtonSet(sport: 5, team: 2),
                     ],
                   ),
                 ],
               ),
               const ButtonQuarter(sport: 5),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                ButtonStatus(),
+                SizedBox(
+                  width: 10,
+                ),
+                ButtonReset(sport: 5),
+              ],
+            ),
             ],
           ),
         ),

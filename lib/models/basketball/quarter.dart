@@ -1,7 +1,7 @@
 import 'package:scoreboard/models/quarter.dart';
 
 class QuarterBasketball extends Quarter {
-  QuarterBasketball(){
+  QuarterBasketball(super._connectBoard){
     maxQuarter = 4;
   }
 }
