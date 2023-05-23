@@ -44,7 +44,6 @@ class _ButtonResetState extends State<ButtonReset> {
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();
           context.read<QuarterBasketball>().reset();
-          context.read<TimerBasketball>().reset();
         }
         if (widget.sport == 2) {
           context.read<ScoreVolleyball>().reset();

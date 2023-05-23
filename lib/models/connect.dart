@@ -33,6 +33,10 @@ class ConnectBoard with ChangeNotifier {
   void TestSet(String a, String b) {
     print("TEST Update Set");
   }
+
+  void TestTimer(String a) {
+    print("TEST Update Timer");
+  }
   // sendScore(String scoreA, String scoreB) async {
   //   print("Show IP and Port");
   //   print(_boardip);
