@@ -4,29 +4,29 @@ import 'package:scoreboard/models/connect.dart';
 
 class Timer with ChangeNotifier {
   late ConnectBoard _connectBoard;
-  late Duration duration;
-  late Duration init;
-
+  late Duration _duration;
+  late Duration _init;
   StreamSubscription<int>? _tickSubscription;
   bool isRunning = false;
 
-  get currentTime => duration.inSeconds;
+  get duration => _duration;
+  get currentTime => _duration.inSeconds;
 
   Timer(ConnectBoard connectBoard, int seconds) {
     _connectBoard = connectBoard;
-    init = Duration(seconds: seconds);
-    duration = Duration(seconds: seconds);
+    _init = Duration(seconds: seconds);
+    _duration = Duration(seconds: seconds);
   }
 
   void setDuration(int seconds) {
-    init = Duration(seconds: seconds);
-    duration = Duration(seconds: seconds);
+    _init = Duration(seconds: seconds);
+    _duration = Duration(seconds: seconds);
     notifyListeners();
   }
 
   void toggleTimer() {
     if (!isRunning) {
-      startTimer(duration.inSeconds);
+      startTimer(_duration.inSeconds);
     } else {
       _tickSubscription?.pause();
     }
@@ -41,9 +41,9 @@ class Timer with ChangeNotifier {
       const Duration(seconds: 1),
       (sec) => seconds - sec - 1,
     ).take(seconds).listen((timeLeftInSeconds) {
-      duration = Duration(seconds: timeLeftInSeconds);
+      _duration = Duration(seconds: timeLeftInSeconds);
 
-      if (duration.inSeconds == 0) {
+      if (_duration.inSeconds == 0) {
         isRunning = false;
         _tickSubscription?.cancel();
       }
@@ -53,19 +53,22 @@ class Timer with ChangeNotifier {
   }
 
   void resetTimer() {
-    duration = init;
+    _duration = _init;
     isRunning = false;
     _tickSubscription?.cancel();
     notifyListeners();
   }
 
   String get timeLeftString {
-    print(duration.inSeconds);
     String minutes =
-        ((duration.inSeconds / 60) % 60).floor().toString().padLeft(2, '0');
+        ((_duration.inSeconds / 60) % 60).floor().toString().padLeft(2, '0');
     String seconds =
-        (duration.inSeconds % 60).floor().toString().padLeft(2, '0');
+        (_duration.inSeconds % 60).floor().toString().padLeft(2, '0');
 
     return '$minutes:$seconds';
+  }
+
+  void syncBoard(){
+    _connectBoard.TestTimer(timeLeftString);
   }
 }
