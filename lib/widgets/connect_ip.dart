@@ -53,14 +53,15 @@ class _ConnectIPState extends State<ConnectIP> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  shape: const StadiumBorder(),
-                  foregroundColor: Colors.white,
-                  backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-                  minimumSize: const Size(80, 40),),
+                shape: const StadiumBorder(),
+                foregroundColor: Colors.white,
+                backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+                minimumSize: const Size(80, 40),
+              ),
               onPressed: () {
                 print(myController1.text + ":" + myController2.text);
               },
-              child: const Text('Connect'),
+              child: const Text('Connect',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
             ),
             Image.asset("image/connectesp.png", width: 300, height: 100),
           ],
@@ -83,6 +84,7 @@ class _ConnectIPState extends State<ConnectIP> {
             ),
             controller: myController1,
             onChanged: connectBoard.setIP,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
         const Text(
@@ -99,6 +101,7 @@ class _ConnectIPState extends State<ConnectIP> {
             ),
             controller: myController2,
             onChanged: connectBoard.setPort,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
       ],
