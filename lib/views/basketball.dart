@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
+import 'package:scoreboard/widgets/timer.dart';
 import 'package:scoreboard/widgets/bar.dart';
 import 'package:scoreboard/widgets/button_reset.dart';
 import 'package:scoreboard/widgets/button_status.dart';
@@ -9,7 +10,6 @@ import 'package:scoreboard/models/basketball/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_foul.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
-import 'package:scoreboard/widgets/countdowntime.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/widgets/image_foul.dart';
 import 'package:scoreboard/widgets/button_line.dart';
@@ -36,7 +36,7 @@ class _BasketballPageState extends State<BasketballPage> {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    flex: 20,
+                    flex: 23,
                     child: Container(
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -88,9 +88,10 @@ class _BasketballPageState extends State<BasketballPage> {
                                       style: TextStyle(
                                           fontSize: 25,
                                           fontWeight: FontWeight.bold)),
-                                  const CountdownPage(
-                                    time: 1200,
+                                  const TextTime(
+                                    sport: 1,
                                   ),
+                                  const WidgetTimer(sport: 1),
                                 ],
                               ),
                               Column(
@@ -122,6 +123,11 @@ class _BasketballPageState extends State<BasketballPage> {
                     flex: 45,
                     child: Container(
                       decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "image/basketball/basketballplay.png",
+                            ),
+                            opacity: 0.3),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(40),
                             topRight: Radius.circular(40)),
@@ -164,6 +170,9 @@ class _BasketballPageState extends State<BasketballPage> {
                                       team: 1,
                                       increment: 3,
                                       decrement: 3),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
                                   ButtonFoul(sport: 1, team: 1),
                                 ],
                               ),
@@ -193,12 +202,29 @@ class _BasketballPageState extends State<BasketballPage> {
                                       team: 2,
                                       increment: 3,
                                       decrement: 3),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
                                   ButtonFoul(sport: 1, team: 2),
                                 ],
                               ),
                             ],
                           ),
-                          const ButtonQuarter(sport: 1),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const <Widget>[
+                              ButtonQuarter(sport: 1),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              ButtonSetTime(
+                                sport: 1,
+                              ),
+                            ],
+                          ),
                           const SizedBox(
                             height: 5,
                           ),
@@ -216,11 +242,6 @@ class _BasketballPageState extends State<BasketballPage> {
                               ButtonLine(),
                             ],
                           ),
-                          Image.asset(
-                            "image/basketball/basketballplay.png",
-                            height: 133,
-                            width: 133,
-                          )
                         ],
                       ),
                     ),

@@ -106,6 +106,11 @@ class _BadmintonPageState extends State<BadmintonPage> {
                 flex: 15,
                 child: Container(
                     decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                            "image/badminton/badmintonplay.png",
+                          ),
+                          opacity: 0.3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
@@ -185,11 +190,6 @@ class _BadmintonPageState extends State<BadmintonPage> {
                             ),
                             ButtonLine(),
                           ],
-                        ),
-                        Image.asset(
-                          "image/badminton/badmintonplay.png",
-                          width: 200,
-                          height: 200,
                         ),
                       ],
                     )),

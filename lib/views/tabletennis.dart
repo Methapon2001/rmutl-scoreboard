@@ -100,6 +100,11 @@ class _TabletennisState extends State<Tabletennis> {
                 flex: 15,
                 child: Container(
                   decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "image/pingpong/pingpongplay.png",
+                        ),
+                        opacity: 0.3),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),
@@ -170,11 +175,6 @@ class _TabletennisState extends State<Tabletennis> {
                         ),
                         ButtonLine(),
                       ],
-                    ),
-                    Image.asset(
-                      "image/pingpong/pingpongplay.png",
-                      width: 200,
-                      height: 200,
                     ),
                   ]),
                 ),

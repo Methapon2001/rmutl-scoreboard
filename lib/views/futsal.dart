@@ -5,13 +5,13 @@ import 'package:scoreboard/models/futsal/score.dart';
 import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
 import 'package:scoreboard/widgets/teamname.dart';
-import 'package:scoreboard/widgets/countdowntime.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/button_foul.dart';
 import 'package:scoreboard/widgets/button_quarter.dart';
 import 'package:scoreboard/widgets/button_reset.dart';
 import 'package:scoreboard/widgets/image_foul.dart';
 import 'package:scoreboard/widgets/button_line.dart';
+import 'package:scoreboard/widgets/timer.dart';
 
 import '../widgets/bar.dart';
 
@@ -33,7 +33,7 @@ class _FutsalPageState extends State<FutsalPage> {
         child: Center(
           child: Column(children: <Widget>[
             Expanded(
-              flex: 20,
+              flex: 23,
               child: Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -84,7 +84,8 @@ class _FutsalPageState extends State<FutsalPage> {
                                   style: TextStyle(
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold)),
-                              const CountdownPage(time: 1200),
+                              const TextTime(sport: 4),
+                              const WidgetTimer(sport: 4),
                             ],
                           ),
                           Column(
@@ -114,6 +115,11 @@ class _FutsalPageState extends State<FutsalPage> {
               flex: 45,
               child: Container(
                   decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "image/futsal/futsalplay.png",
+                        ),
+                        opacity: 0.3),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),
@@ -174,9 +180,23 @@ class _FutsalPageState extends State<FutsalPage> {
                           ),
                         ],
                       ),
-                      const ButtonQuarter(sport: 4),
                       const SizedBox(
-                        height: 15,
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          ButtonQuarter(sport: 4),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ButtonSetTime(
+                            sport: 4,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -191,11 +211,6 @@ class _FutsalPageState extends State<FutsalPage> {
                           ),
                           ButtonLine(),
                         ],
-                      ),
-                      Image.asset(
-                        "image/futsal/futsalplay.png",
-                        width: 180,
-                        height: 180,
                       ),
                     ],
                   )),
