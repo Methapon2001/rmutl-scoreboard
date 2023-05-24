@@ -36,64 +36,64 @@ class _ImageFoulState extends State<ImageFoul> {
     //Basketball
     imagebasketball0 = Image.asset(
       "image/basketball/Fouls_Basketball0.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball1 = Image.asset(
       "image/basketball/Fouls_Basketball1.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball2 = Image.asset(
       "image/basketball/Fouls_Basketball2.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball3 = Image.asset(
       "image/basketball/Fouls_Basketball3.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball4 = Image.asset(
       "image/basketball/Fouls_Basketball4.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball5 = Image.asset(
       "image/basketball/Fouls_Basketball5.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
     imagebasketball6 = Image.asset(
       "image/basketball/Fouls_Basketball6.png",
-      width: 60,
+      width: 80,
       gaplessPlayback: true,
     );
 
     //Futsal
     imagefutsal0 = Image.asset(
       "image/futsal/Fouls_Futsal0.png",
-      width: 60,
+      width: 80,
     );
     imagefutsal1 = Image.asset(
       "image/futsal/Fouls_Futsal1.png",
-      width: 60,
+      width: 80,
     );
     imagefutsal2 = Image.asset(
       "image/futsal/Fouls_Futsal2.png",
-      width: 60,
+      width: 80,
     );
     imagefutsal3 = Image.asset(
       "image/futsal/Fouls_Futsal3.png",
-      width: 60,
+      width: 80,
     );
     imagefutsal4 = Image.asset(
       "image/futsal/Fouls_Futsal4.png",
-      width: 60,
+      width: 80,
     );
     imagefutsal5 = Image.asset(
       "image/futsal/Fouls_Futsal5.png",
-      width: 60,
+      width: 80,
     );
 
     //****/
@@ -137,21 +137,21 @@ class _ImageFoulState extends State<ImageFoul> {
   @override
   Widget build(BuildContext context) {
     return widget.imagesport == 1
+        ? Row(
+            children: [
+              imagebasketball[widget.team == 1
+                  ? context.watch<FoulBasketball>().getFoulTeam1
+                  : context.watch<FoulBasketball>().getFoulTeam2],
+            ],
+          )
+        : widget.imagesport == 4
             ? Row(
                 children: [
-                  imagebasketball[widget.team == 1
-                      ? context.watch<FoulBasketball>().getFoulTeam1
-                      : context.watch<FoulBasketball>().getFoulTeam2],
+                  imagefutsal[widget.team == 1
+                      ? context.watch<FoulFutsal>().getFoulTeam1
+                      : context.watch<FoulFutsal>().getFoulTeam2],
                 ],
               )
-            : widget.imagesport == 4
-                ? Row(
-                    children: [
-                      imagefutsal[widget.team == 1
-                          ? context.watch<FoulFutsal>().getFoulTeam1
-                          : context.watch<FoulFutsal>().getFoulTeam2],
-                    ],
-                  )
-                : widget;
+            : widget;
   }
 }

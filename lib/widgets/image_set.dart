@@ -35,47 +35,47 @@ class _ImageSetState extends State<ImageSet> {
     //Volleyball
     imagevolleyball0 = Image.asset(
       "image/volleyball/led0.png",
-      width: 60,
+      width: 75,
     );
     imagevolleyball1 = Image.asset(
       "image/volleyball/led1.png",
-      width: 60,
+      width: 75,
     );
     imagevolleyball2 = Image.asset(
       "image/volleyball/led2.png",
-      width: 60,
+      width: 75,
     );
     imagevolleyball3 = Image.asset(
       "image/volleyball/led3.png",
-      width: 60,
+      width: 75,
     );
 
     //Badminton
     imagebadminton0 = Image.asset(
       "image/badminton/Set_Badminton0.png",
-      width: 60,
+      width: 75,
     );
     imagebadminton1 = Image.asset(
       "image/badminton/Set_Badminton1.png",
-      width: 60,
+      width: 75,
     );
     imagebadminton2 = Image.asset(
       "image/badminton/Set_Badminton2.png",
-      width: 60,
+      width: 75,
     );
 
     //Pingpong
     imagepingpong0 = Image.asset(
       "image/pingpong/Set_Pingpong0.png",
-      width: 60,
+      width: 75,
     );
     imagepingpong1 = Image.asset(
       "image/pingpong/Set_Pingpong1.png",
-      width: 60,
+      width: 75,
     );
     imagepingpong2 = Image.asset(
       "image/pingpong/Set_Pingpong2.png",
-      width: 60,
+      width: 75,
     );
 
     ///*****
