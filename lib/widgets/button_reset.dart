@@ -6,6 +6,7 @@ import 'package:scoreboard/models/badminton/set.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
 import 'package:scoreboard/models/basketball/score.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
+import 'package:scoreboard/models/basketball/timer.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
 import 'package:scoreboard/models/futsal/quarter.dart';
 import 'package:scoreboard/models/futsal/score.dart';
@@ -35,13 +36,15 @@ class _ButtonResetState extends State<ButtonReset> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        shape: const StadiumBorder(),
-      ),
+          shape: const StadiumBorder(),
+          minimumSize: const Size(110, 40),
+          backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
         if (widget.sport == 1) {
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();
           context.read<QuarterBasketball>().reset();
+          context.read<TimerBasketball>().reset();
         }
         if (widget.sport == 2) {
           context.read<ScoreVolleyball>().reset();
@@ -68,7 +71,10 @@ class _ButtonResetState extends State<ButtonReset> {
           context.read<QuarterTabletennis>().reset();
         }
       },
-      child: const Text('Reset'),
+      child: const Text(
+        'Reset',
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

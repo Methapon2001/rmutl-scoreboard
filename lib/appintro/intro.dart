@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.indigo,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,11 +45,11 @@ class _SplashState extends State<Splash> {
                 color: Colors.white,
               ),
             const Text(
-              '\nMultipurpose Scoreboard',
+              '\nDigital Scoreboard',
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                  color: Colors.white),
             )
           ],
         ),

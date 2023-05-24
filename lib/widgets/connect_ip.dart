@@ -32,27 +32,39 @@ class _ConnectIPState extends State<ConnectIP> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            "Connect_IP to ESP",
-            style: TextStyle(fontSize: 30),
-          ),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
-              child: inputField(myController1, myController2)),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.brown,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(
+              height: 20,
             ),
-            onPressed: () {
-              print(myController1.text + ":" + myController2.text);
-            },
-            child: const Text('Connect'),
-          )
-        ],
+            const Text(
+              "Connect_IP to ESP",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            inputField(myController1, myController2),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shape: const StadiumBorder(),
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+                  minimumSize: const Size(80, 40),),
+              onPressed: () {
+                print(myController1.text + ":" + myController2.text);
+              },
+              child: const Text('Connect'),
+            ),
+            Image.asset("image/connectesp.png", width: 300, height: 100),
+          ],
+        ),
       ),
     );
   }
@@ -78,7 +90,7 @@ class _ConnectIPState extends State<ConnectIP> {
           style: TextStyle(fontSize: 30),
         ),
         Flexible(
-          flex: 3,
+          flex: 2,
           child: TextField(
             textAlign: TextAlign.center,
             decoration: const InputDecoration(

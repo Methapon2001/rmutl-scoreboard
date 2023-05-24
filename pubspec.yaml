@@ -64,12 +64,15 @@ flutter:
   assets:
       - image/home.png
       - image/scoreboard.png
+      - image/connectesp.png
       - image/volleyball/led0.png
       - image/volleyball/led1.png
       - image/volleyball/led2.png
       - image/volleyball/led3.png
       - image/volleyball/volleyball.png
+      - image/volleyball/volleyballplay.png
       - image/basketball/basketball.png
+      - image/basketball/basketballplay.png
       - image/basketball/Fouls_Basketball0.png
       - image/basketball/Fouls_Basketball1.png
       - image/basketball/Fouls_Basketball2.png
@@ -78,7 +81,9 @@ flutter:
       - image/basketball/Fouls_Basketball5.png
       - image/basketball/Fouls_Basketball6.png
       - image/soccer/soccer.png
+      - image/soccer/soccerplay.png
       - image/futsal/futsal.png
+      - image/futsal/futsalplay.png
       - image/futsal/Fouls_Futsal0.png
       - image/futsal/Fouls_Futsal1.png
       - image/futsal/Fouls_Futsal2.png
@@ -86,10 +91,12 @@ flutter:
       - image/futsal/Fouls_Futsal4.png
       - image/futsal/Fouls_Futsal5.png
       - image/badminton/badminton.png
+      - image/badminton/badmintonplay.png
       - image/badminton/Set_Badminton0.png
       - image/badminton/Set_Badminton1.png
       - image/badminton/Set_Badminton2.png
       - image/pingpong/pingpong.png
+      - image/pingpong/pingpongplay.png
       - image/pingpong/Set_Pingpong0.png
       - image/pingpong/Set_Pingpong1.png
       - image/pingpong/Set_Pingpong2.png
