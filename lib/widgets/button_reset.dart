@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/badminton/score.dart';
@@ -34,6 +35,37 @@ class ButtonReset extends StatefulWidget {
 }
 
 class _ButtonResetState extends State<ButtonReset> {
+  void showToastSucces(BuildContext context) {
+    FToast fToast = FToast();
+    fToast.init(context);
+    Widget toast = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 9),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15), color: Colors.grey),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: const [
+          Icon(
+            Icons.restore,
+            color: Colors.white,
+          ),
+          SizedBox(
+            width: 12,
+          ),
+          Expanded(
+              child: Text(
+            "Reset Scoreboard.",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ))
+        ],
+      ),
+    );
+    fToast.showToast(
+        child: toast,
+        toastDuration: const Duration(seconds: 3),
+        gravity: ToastGravity.BOTTOM);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -42,6 +74,7 @@ class _ButtonResetState extends State<ButtonReset> {
           minimumSize: const Size(110, 40),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
+        showToastSucces(context);
         if (widget.sport == 1) {
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();

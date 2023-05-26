@@ -56,6 +56,7 @@ class Timer with ChangeNotifier {
     _duration = _init;
     isRunning = false;
     _tickSubscription?.cancel();
+    syncBoard();
     notifyListeners();
   }
 
