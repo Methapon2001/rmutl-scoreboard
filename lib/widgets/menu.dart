@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/icon/icon.dart';
+import 'package:scoreboard/models/basketball/timer.dart';
+import 'package:scoreboard/models/futsal/timer.dart';
+import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
 import 'package:scoreboard/views/volleyball.dart';
@@ -99,6 +102,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
               context.read<ScoreBasketball>().syncBoard();
               context.read<FoulBasketball>().syncBoard();
               context.read<QuarterBasketball>().syncBoard();
+              context.read<TimerBasketball>().syncBoard();
             },
           ),
           ListTile(
@@ -130,6 +134,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
               );
               context.read<ScoreSoccer>().syncBoard();
               context.read<QuarterSoccer>().syncBoard();
+              context.read<TimerSoccer>().syncBoard();
             },
           ),
           ListTile(
@@ -146,6 +151,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
               context.read<ScoreFutsal>().syncBoard();
               context.read<FoulFutsal>().syncBoard();
               context.read<QuarterFutsal>().syncBoard();
+              context.read<TimerFutsal>().syncBoard();
             },
           ),
           ListTile(

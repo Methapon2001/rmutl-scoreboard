@@ -10,8 +10,10 @@ import 'package:scoreboard/models/basketball/timer.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
 import 'package:scoreboard/models/futsal/quarter.dart';
 import 'package:scoreboard/models/futsal/score.dart';
+import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/soccer/quarter.dart';
 import 'package:scoreboard/models/soccer/score.dart';
+import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
@@ -44,7 +46,7 @@ class _ButtonResetState extends State<ButtonReset> {
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();
           context.read<QuarterBasketball>().reset();
-          context.read<TimerBasketball>().reset();
+          context.read<TimerBasketball>().resetTimer();
         }
         if (widget.sport == 2) {
           context.read<ScoreVolleyball>().reset();
@@ -54,11 +56,13 @@ class _ButtonResetState extends State<ButtonReset> {
         if (widget.sport == 3) {
           context.read<ScoreSoccer>().reset();
           context.read<QuarterSoccer>().reset();
+          context.read<TimerSoccer>().resetTimer();
         }
         if (widget.sport == 4) {
           context.read<ScoreFutsal>().reset();
           context.read<FoulFutsal>().reset();
           context.read<QuarterFutsal>().reset();
+          context.read<TimerFutsal>().resetTimer();
         }
         if (widget.sport == 5) {
           context.read<ScoreBadminton>().reset();

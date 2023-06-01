@@ -6,14 +6,17 @@ import 'package:scoreboard/models/connect.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/basketball/quarter.dart';
 import 'package:scoreboard/models/basketball/score.dart';
+import 'package:scoreboard/models/basketball/timer.dart';
 import 'package:scoreboard/models/volleyball/score.dart';
 import 'package:scoreboard/models/volleyball/set.dart';
 import 'package:scoreboard/models/volleyball/quarter.dart';
 import 'package:scoreboard/models/soccer/score.dart';
 import 'package:scoreboard/models/soccer/quarter.dart';
+import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/models/futsal/score.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
 import 'package:scoreboard/models/futsal/quarter.dart';
+import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/badminton/score.dart';
 import 'package:scoreboard/models/badminton/set.dart';
 import 'package:scoreboard/models/badminton/quarter.dart';
@@ -40,6 +43,8 @@ class MyApp extends StatelessWidget {
             update: (_, connectBoard, __) => FoulBasketball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, QuarterBasketball>(
             update: (_, connectBoard, __) => QuarterBasketball(connectBoard)),
+        ListenableProxyProvider<ConnectBoard, TimerBasketball>(
+            update: (_, connectBoard, __) => TimerBasketball(connectBoard, 1200)),
         ListenableProxyProvider<ConnectBoard, ScoreVolleyball>(
             update: (_, connectBoard, __) => ScoreVolleyball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, SetVolleyball>(
@@ -50,12 +55,16 @@ class MyApp extends StatelessWidget {
             update: (_, connectBoard, __) => ScoreSoccer(connectBoard)),
         ListenableProxyProvider<ConnectBoard, QuarterSoccer>(
             update: (_, connectBoard, __) => QuarterSoccer(connectBoard)),
+        ListenableProxyProvider<ConnectBoard, TimerSoccer>(
+            update: (_, connectBoard, __) => TimerSoccer(connectBoard, 2700)),
         ListenableProxyProvider<ConnectBoard, FoulFutsal>(
             update: (_, connectBoard, __) => FoulFutsal(connectBoard)),
         ListenableProxyProvider<ConnectBoard, ScoreFutsal>(
             update: (_, connectBoard, __) => ScoreFutsal(connectBoard)),
         ListenableProxyProvider<ConnectBoard, QuarterFutsal>(
             update: (_, connectBoard, __) => QuarterFutsal(connectBoard)),
+        ListenableProxyProvider<ConnectBoard, TimerFutsal>(
+            update: (_, connectBoard, __) => TimerFutsal(connectBoard, 1200)),
         ListenableProxyProvider<ConnectBoard, ScoreBadminton>(
             update: (_, connectBoard, __) => ScoreBadminton(connectBoard)),
         ListenableProxyProvider<ConnectBoard, SetBadminton>(

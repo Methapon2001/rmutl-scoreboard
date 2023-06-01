@@ -106,6 +106,11 @@ class _VolleyballPageState extends State<VolleyballPage> {
                 flex: 15,
                 child: Container(
                     decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                            "image/volleyball/volleyballplay.png",
+                          ),
+                          opacity: 0.3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
@@ -186,11 +191,6 @@ class _VolleyballPageState extends State<VolleyballPage> {
                             ButtonLine(),
                           ],
                         ),
-                        Image.asset(
-                          "image/volleyball/volleyballplay.png",
-                          width: 200,
-                          height: 200,
-                        )
                       ],
                     )),
               ),

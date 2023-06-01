@@ -14,7 +14,7 @@ class RoundButton extends StatelessWidget {
         horizontal: 5,
       ),
       child: CircleAvatar(
-        radius: 20,
+        radius: 24,
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
         child: Icon(
           icon,

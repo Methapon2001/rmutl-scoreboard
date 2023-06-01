@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 import 'package:scoreboard/models/soccer/score.dart';
 import 'package:scoreboard/widgets/button_score.dart';
 import 'package:scoreboard/widgets/teamname.dart';
-import 'package:scoreboard/widgets/countdowntime.dart';
 import 'package:scoreboard/widgets/button_reset.dart';
 import 'package:scoreboard/widgets/button_line.dart';
+import 'package:scoreboard/widgets/timer.dart';
 
 import '../widgets/bar.dart';
 
@@ -31,7 +31,7 @@ class _SoccerPageState extends State<SoccerPage> {
         child: Center(
           child: Column(children: <Widget>[
             Expanded(
-              flex: 20,
+              flex: 23,
               child: Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -81,7 +81,8 @@ class _SoccerPageState extends State<SoccerPage> {
                                   style: TextStyle(
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold)),
-                              const CountdownPage(time: 2700),
+                              const TextTime(sport: 3),
+                              const WidgetTimer(sport: 3),
                             ],
                           ),
                           Column(
@@ -110,6 +111,11 @@ class _SoccerPageState extends State<SoccerPage> {
               flex: 45,
               child: Container(
                   decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          "image/soccer/soccerplay.png",
+                        ),
+                        opacity: 0.3),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),
@@ -168,9 +174,20 @@ class _SoccerPageState extends State<SoccerPage> {
                           ),
                         ],
                       ),
-                      const ButtonQuarter(sport: 3),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          ButtonQuarter(sport: 3),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ButtonSetTime(
+                            sport: 3,
+                          ),
+                        ],
+                      ),
                       const SizedBox(
-                        height: 15,
+                        height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -185,11 +202,6 @@ class _SoccerPageState extends State<SoccerPage> {
                           ),
                           ButtonLine(),
                         ],
-                      ),
-                      Image.asset(
-                        "image/soccer/soccerplay.png",
-                        width: 180,
-                        height: 180,
                       ),
                     ],
                   )),
