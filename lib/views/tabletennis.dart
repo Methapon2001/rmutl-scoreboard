@@ -26,7 +26,7 @@ class _TabletennisState extends State<Tabletennis> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Tabletennis"),
-      endDrawer: const MenuDrawer(index: 6),
+      drawer: const MenuDrawer(index: 6),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -104,7 +104,7 @@ class _TabletennisState extends State<Tabletennis> {
                         image: AssetImage(
                           "image/pingpong/pingpongplay.png",
                         ),
-                        opacity: 0.3),
+                        opacity: 0.15),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),

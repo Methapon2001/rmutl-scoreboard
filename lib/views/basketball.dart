@@ -26,7 +26,7 @@ class _BasketballPageState extends State<BasketballPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: Titlebar().appBar("Basketball"),
-        endDrawer: const MenuDrawer(index: 1),
+        drawer: const MenuDrawer(index: 1),
         body: MediaQuery.removePadding(
           context: context,
           removeBottom: true,
@@ -127,7 +127,7 @@ class _BasketballPageState extends State<BasketballPage> {
                             image: AssetImage(
                               "image/basketball/basketballplay.png",
                             ),
-                            opacity: 0.3),
+                            opacity: 0.15),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(40),
                             topRight: Radius.circular(40)),

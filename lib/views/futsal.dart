@@ -27,7 +27,7 @@ class _FutsalPageState extends State<FutsalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Futsal"),
-      endDrawer: const MenuDrawer(index: 4),
+      drawer: const MenuDrawer(index: 4),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -119,7 +119,7 @@ class _FutsalPageState extends State<FutsalPage> {
                         image: AssetImage(
                           "image/futsal/futsalplay.png",
                         ),
-                        opacity: 0.3),
+                        opacity: 0.15),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),
