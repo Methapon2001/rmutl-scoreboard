@@ -27,9 +27,11 @@ class _BadmintonPageState extends State<BadmintonPage> {
     return Scaffold(
       appBar: Titlebar().appBar("Badminton"),
       drawer: const MenuDrawer(index: 5),
-      body: Container(
-        color: const Color.fromARGB(255, 255, 242, 218),
-        child: Center(
+      body: SingleChildScrollView(
+        child: Container(
+          color: const Color.fromARGB(255, 255, 242, 218),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           child: Column(
             children: <Widget>[
               Expanded(

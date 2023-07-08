@@ -9,6 +9,7 @@ class ButtonLine extends StatefulWidget {
 }
 
 class _ButtonLineState extends State<ButtonLine> {
+  final TextEditingController messageController = TextEditingController();
   void showToastSucces(BuildContext context) {
     FToast fToast = FToast();
     fToast.init(context);
@@ -48,7 +49,45 @@ class _ButtonLineState extends State<ButtonLine> {
           minimumSize: const Size(110, 40),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
-        showToastSucces(context);
+        showDialog<void>(
+          context: context,
+          barrierDismissible: false, // user must tap button!
+          builder: (BuildContext context) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              title: const Text('Line Message'),
+              content: SingleChildScrollView(
+                  child: SizedBox(
+                height: 100,
+                child: TextField(
+                  controller: messageController,
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                ),
+              )),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Cancel'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: const Text('Submit'),
+                  onPressed: () {
+                    print(messageController.text);
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
       },
       child: const Text(
         'Line',
