@@ -19,6 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: const MenuDrawer(index: 0),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Center(
             child: Padding(
           padding: const EdgeInsets.all(10.0),

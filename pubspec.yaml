@@ -43,6 +43,7 @@ dependencies:
   provider: ^6.0.5
   fluttertoast: ^8.2.2
   quickalert: ^1.0.1
+  http: ^0.13.6
 
 dev_dependencies:
   bloc_test: ^9.0.0
