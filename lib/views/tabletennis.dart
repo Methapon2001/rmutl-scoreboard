@@ -107,7 +107,7 @@ class _TabletennisState extends State<Tabletennis> {
                           image: AssetImage(
                             "image/pingpong/pingpongplay.png",
                           ),
-                          opacity: 0.15),
+                          opacity: 0.15,scale: 2.5),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),

@@ -113,7 +113,8 @@ class _VolleyballPageState extends State<VolleyballPage> {
                             image: AssetImage(
                               "image/volleyball/volleyballplay.png",
                             ),
-                            opacity: 0.15),
+                            opacity: 0.15,
+                            scale: 2.3),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(40),
                             topRight: Radius.circular(40)),

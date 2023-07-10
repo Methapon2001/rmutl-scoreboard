@@ -64,7 +64,8 @@ class _FutsalPageState extends State<FutsalPage> {
                                 Text(
                                   '${context.watch<ScoreFutsal>().getScoreTeam1}',
                                   style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold),
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 const ImageFoul(imagesport: 4, team: 1)
                               ],
@@ -100,7 +101,8 @@ class _FutsalPageState extends State<FutsalPage> {
                                 Text(
                                   '${context.watch<ScoreFutsal>().getScoreTeam2}',
                                   style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold),
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 const ImageFoul(imagesport: 4, team: 2)
                               ],
@@ -122,7 +124,8 @@ class _FutsalPageState extends State<FutsalPage> {
                           image: AssetImage(
                             "image/futsal/futsalplay.png",
                           ),
-                          opacity: 0.15),
+                          opacity: 0.15,
+                          scale: 3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
@@ -147,7 +150,8 @@ class _FutsalPageState extends State<FutsalPage> {
                                 Text(
                                   "A",
                                   style: TextStyle(
-                                      fontSize: 30, fontWeight: FontWeight.bold),
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 ButtonScore(
                                     sport: 4,
@@ -168,7 +172,8 @@ class _FutsalPageState extends State<FutsalPage> {
                                 Text(
                                   "B",
                                   style: TextStyle(
-                                      fontSize: 30, fontWeight: FontWeight.bold),
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 ButtonScore(
                                     sport: 4,

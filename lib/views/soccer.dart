@@ -62,7 +62,8 @@ class _SoccerPageState extends State<SoccerPage> {
                                 Text(
                                   '${context.watch<ScoreSoccer>().getScoreTeam1}',
                                   style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold),
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -97,7 +98,8 @@ class _SoccerPageState extends State<SoccerPage> {
                                 Text(
                                   '${context.watch<ScoreSoccer>().getScoreTeam2}',
                                   style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold),
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -118,7 +120,8 @@ class _SoccerPageState extends State<SoccerPage> {
                           image: AssetImage(
                             "image/soccer/soccerplay.png",
                           ),
-                          opacity: 0.15),
+                          opacity: 0.15,
+                          scale: 3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
@@ -143,7 +146,8 @@ class _SoccerPageState extends State<SoccerPage> {
                                 Text(
                                   "A",
                                   style: TextStyle(
-                                      fontSize: 30, fontWeight: FontWeight.bold),
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 ButtonScore(
                                     sport: 3,
@@ -163,7 +167,8 @@ class _SoccerPageState extends State<SoccerPage> {
                                 Text(
                                   "B",
                                   style: TextStyle(
-                                      fontSize: 30, fontWeight: FontWeight.bold),
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 ButtonScore(
                                     sport: 3,

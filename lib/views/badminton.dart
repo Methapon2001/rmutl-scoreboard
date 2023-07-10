@@ -112,7 +112,8 @@ class _BadmintonPageState extends State<BadmintonPage> {
                           image: AssetImage(
                             "image/badminton/badmintonplay.png",
                           ),
-                          opacity: 0.15),
+                          opacity: 0.15,
+                          scale: 2.7),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
