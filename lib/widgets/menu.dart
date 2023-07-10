@@ -6,6 +6,7 @@ import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
+import 'package:scoreboard/views/test.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 import 'package:scoreboard/views/futsal.dart';
@@ -185,6 +186,19 @@ class _MenuDrawerState extends State<MenuDrawer> {
               context.read<SetTabletennis>().syncBoard();
               context.read<QuarterTabletennis>().syncBoard();
             },
+          ),
+          ListTile(
+            leading: Icon(Icons.access_alarm),
+            title: const Text('Test'),
+            selected: widget.index == 7,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Tester(),
+                ),
+              );
+           },
           ),
         ],
       ),
