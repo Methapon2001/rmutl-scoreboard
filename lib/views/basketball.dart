@@ -28,6 +28,7 @@ class _BasketballPageState extends State<BasketballPage> {
         appBar: Titlebar().appBar("Basketball"),
         drawer: const MenuDrawer(index: 1),
         body: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           child: Container(
             color: const Color.fromARGB(255, 255, 242, 218),
             width: MediaQuery.of(context).size.width,
@@ -126,7 +127,7 @@ class _BasketballPageState extends State<BasketballPage> {
                           image: AssetImage(
                             "image/basketball/basketballplay.png",
                           ),
-                          opacity: 0.15),
+                          opacity: 0.15,scale: 2),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
