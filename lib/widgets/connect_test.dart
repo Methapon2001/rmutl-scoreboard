@@ -9,6 +9,7 @@ class ConnectTest extends StatefulWidget {
 }
 
 class _ConnectTestState extends State<ConnectTest> {
+  final TextEditingController lineToken = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,6 +27,7 @@ class _ConnectTestState extends State<ConnectTest> {
             Expanded(
                 flex: 12,
                 child: TextFormField(
+                  controller: lineToken,
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.all(8),
@@ -64,7 +66,9 @@ class _ConnectTestState extends State<ConnectTest> {
                 backgroundColor: const Color.fromARGB(255, 23, 36, 113),
                 minimumSize: const Size(75, 40),
               ),
-              onPressed: () {},
+              onPressed: () {
+                print(lineToken);
+              },
               child: const Text("Save",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
           const SizedBox(
             width: 10,
@@ -81,7 +85,7 @@ class _ConnectTestState extends State<ConnectTest> {
                     MaterialPageRoute(
                         builder: (context) => const BasketballPage()));
               },
-              child: Icon(Icons.keyboard_double_arrow_right)),
+              child: const Icon(Icons.keyboard_double_arrow_right)),
         ]),
         Image.asset("image/connectesp.png", width: 300, height: 100),
       ]),

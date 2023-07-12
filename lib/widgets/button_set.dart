@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:scoreboard/models/volleyball/set.dart';
 import 'package:scoreboard/models/badminton/set.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonSet extends StatefulWidget {
   const ButtonSet({Key? key, required this.sport, required this.team})
@@ -23,7 +24,7 @@ class _ButtonSetState extends State<ButtonSet> {
           foregroundColor: Colors.white,
           shape: const StadiumBorder(),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-          minimumSize: const Size(80, 40),
+          minimumSize: Size(15.w, 5.h),
           // foreground
         ),
         onPressed: () {
@@ -37,9 +38,9 @@ class _ButtonSetState extends State<ButtonSet> {
             context.read<SetTabletennis>().update(widget.team);
           }
         },
-        child: const Text(
+        child:Text(
           "SET",
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
         ));
   }
 }

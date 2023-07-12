@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:scoreboard/models/volleyball/set.dart';
 import 'package:scoreboard/models/badminton/set.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
+import 'package:sizer/sizer.dart';
 
 class ImageSet extends StatefulWidget {
   const ImageSet({Key? key, required this.imagesport, required this.team})
@@ -35,47 +36,47 @@ class _ImageSetState extends State<ImageSet> {
     //Volleyball
     imagevolleyball0 = Image.asset(
       "image/volleyball/led0.png",
-      width: 75,
+      width: 25.w,
     );
     imagevolleyball1 = Image.asset(
       "image/volleyball/led1.png",
-      width: 75,
+      width: 25.w,
     );
     imagevolleyball2 = Image.asset(
       "image/volleyball/led2.png",
-      width: 75,
+      width: 25.w,
     );
     imagevolleyball3 = Image.asset(
       "image/volleyball/led3.png",
-      width: 75,
+      width: 25.w,
     );
 
     //Badminton
     imagebadminton0 = Image.asset(
       "image/badminton/Set_Badminton0.png",
-      width: 75,
+      width: 25.w,
     );
     imagebadminton1 = Image.asset(
       "image/badminton/Set_Badminton1.png",
-      width: 75,
+      width: 25.w,
     );
     imagebadminton2 = Image.asset(
       "image/badminton/Set_Badminton2.png",
-      width: 75,
+      width: 25.w,
     );
 
     //Pingpong
     imagepingpong0 = Image.asset(
       "image/pingpong/Set_Pingpong0.png",
-      width: 75,
+      width: 25.w,
     );
     imagepingpong1 = Image.asset(
       "image/pingpong/Set_Pingpong1.png",
-      width: 75,
+      width: 25.w,
     );
     imagepingpong2 = Image.asset(
       "image/pingpong/Set_Pingpong2.png",
-      width: 75,
+      width: 25.w,
     );
 
     ///*****
@@ -107,35 +108,35 @@ class _ImageSetState extends State<ImageSet> {
   @override
   Widget build(BuildContext context) {
     return widget.imagesport == 2
+        ? Row(
+            children: [
+              imagevolleyball[widget.team == 1
+                  ? context.watch<SetVolleyball>().getSetTeam1
+                  : widget.team == 2
+                      ? context.watch<SetVolleyball>().getSetTeam2
+                      : 0],
+            ],
+          )
+        : widget.imagesport == 5
             ? Row(
                 children: [
-                  imagevolleyball[widget.team == 1
-                      ? context.watch<SetVolleyball>().getSetTeam1
+                  imagebadminton[widget.team == 1
+                      ? context.watch<SetBadminton>().getSetTeam1
                       : widget.team == 2
-                          ? context.watch<SetVolleyball>().getSetTeam2
+                          ? context.watch<SetBadminton>().getSetTeam2
                           : 0],
                 ],
               )
-            : widget.imagesport == 5
+            : widget.imagesport == 6
                 ? Row(
                     children: [
-                      imagebadminton[widget.team == 1
-                          ? context.watch<SetBadminton>().getSetTeam1
+                      imagepingpong[widget.team == 1
+                          ? context.watch<SetTabletennis>().getSetTeam1
                           : widget.team == 2
-                              ? context.watch<SetBadminton>().getSetTeam2
+                              ? context.watch<SetTabletennis>().getSetTeam2
                               : 0],
                     ],
                   )
-                : widget.imagesport == 6
-                    ? Row(
-                        children: [
-                          imagepingpong[widget.team == 1
-                              ? context.watch<SetTabletennis>().getSetTeam1
-                              : widget.team == 2
-                                  ? context.watch<SetTabletennis>().getSetTeam2
-                                  : 0],
-                        ],
-                      )
-                    : widget;
+                : widget;
   }
 }
