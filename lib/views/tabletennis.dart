@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
 import 'package:scoreboard/widgets/button_status.dart';
 import 'package:scoreboard/widgets/menu.dart';
@@ -36,7 +37,7 @@ class _TabletennisState extends State<Tabletennis> {
             child: Column(
               children: <Widget>[
                 Expanded(
-                  flex: 5,
+                  flex: 6,
                   child: Container(
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -55,38 +56,42 @@ class _TabletennisState extends State<Tabletennis> {
                         children: [
                           Column(
                             children: <Widget>[
-                              const SizedBox(
-                                height: 15,
+                              SizedBox(
+                                height: 0.1.h,
                               ),
                               const TeamName(team: 1),
                               Text(
                                   '${context.watch<ScoreTabletennis>().getScoreTeam1}',
-                                  style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold)),
+                                  style: TextStyle(
+                                      fontSize: 55.sp,
+                                      fontWeight: FontWeight.bold)),
                               const ImageSet(imagesport: 6, team: 1),
                             ],
                           ),
                           Column(
                             children: <Widget>[
-                              const Text("Quarter",
+                              Text("Quarter",
                                   style: TextStyle(
-                                      fontSize: 25, fontWeight: FontWeight.bold)),
+                                      fontSize: 25.sp,
+                                      fontWeight: FontWeight.bold)),
                               Text(
                                   '${context.watch<QuarterTabletennis>().getQuarter}',
-                                  style: const TextStyle(
-                                      fontSize: 40, fontWeight: FontWeight.bold)),
+                                  style: TextStyle(
+                                      fontSize: 40.sp,
+                                      fontWeight: FontWeight.bold)),
                             ],
                           ),
                           Column(
                             children: <Widget>[
-                              const SizedBox(
-                                height: 15,
+                              SizedBox(
+                                height: 0.1.h,
                               ),
                               const TeamName(team: 2),
                               Text(
                                   '${context.watch<ScoreTabletennis>().getScoreTeam2}',
-                                  style: const TextStyle(
-                                      fontSize: 60, fontWeight: FontWeight.bold)),
+                                  style: TextStyle(
+                                      fontSize: 55.sp,
+                                      fontWeight: FontWeight.bold)),
                               const ImageSet(imagesport: 6, team: 2),
                             ],
                           ),
@@ -102,17 +107,18 @@ class _TabletennisState extends State<Tabletennis> {
                 Expanded(
                   flex: 15,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(
+                          image: const AssetImage(
                             "image/pingpong/pingpongplay.png",
                           ),
-                          opacity: 0.15,scale: 2.5),
-                      borderRadius: BorderRadius.only(
+                          opacity: 0.15,
+                          scale: 2.5.sp),
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black,
                             blurRadius: 5,
@@ -124,59 +130,65 @@ class _TabletennisState extends State<Tabletennis> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
-                            children: const <Widget>[
+                            children:  <Widget>[
                               SizedBox(
-                                height: 15,
+                                height: 2.h,
                               ),
                               Text(
                                 "A",
                                 style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
+                                    fontSize: 30.sp, fontWeight: FontWeight.bold),
                               ),
-                              ButtonScore(
-                                  sport: 6, team: 1, increment: 1, decrement: 1),
+                              const ButtonScore(
+                                  sport: 6,
+                                  team: 1,
+                                  increment: 1,
+                                  decrement: 1),
                               SizedBox(
-                                height: 8,
+                                height: 1.h,
                               ),
-                              ButtonSet(sport: 6, team: 1),
+                              const ButtonSet(sport: 6, team: 1),
                             ],
                           ),
                           Column(
-                            children: const <Widget>[
+                            children: <Widget>[
                               SizedBox(
-                                height: 15,
+                                height: 2.h,
                               ),
                               Text(
                                 "B",
                                 style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
+                                    fontSize: 30.sp, fontWeight: FontWeight.bold),
                               ),
-                              ButtonScore(
-                                  sport: 6, team: 2, increment: 1, decrement: 1),
+                              const ButtonScore(
+                                  sport: 6,
+                                  team: 2,
+                                  increment: 1,
+                                  decrement: 1),
                               SizedBox(
-                                height: 8,
+                                height: 1.h,
                               ),
-                              ButtonSet(sport: 6, team: 2),
+                              const ButtonSet(sport: 6, team: 2),
                             ],
                           ),
                         ],
                       ),
                       const ButtonQuarter(sport: 6),
-                      const SizedBox(
-                        height: 15,
+                      SizedBox(
+                        height: 1.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          ButtonStatus(),
+                        children: <Widget>[
+                          const ButtonStatus(),
                           SizedBox(
-                            width: 10,
+                            width: 3.w,
                           ),
-                          ButtonReset(sport: 6),
+                          const ButtonReset(sport: 6),
                           SizedBox(
-                            width: 10,
+                            width: 3.w,
                           ),
-                          ButtonLine(),
+                          const ButtonLine(),
                         ],
                       ),
                     ]),

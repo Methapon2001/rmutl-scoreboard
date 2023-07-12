@@ -45,6 +45,8 @@ dependencies:
   quickalert: ^1.0.1
   http: ^0.13.6
   font_awesome_flutter: ^10.4.0
+  responsive_framework: ^1.0.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   bloc_test: ^9.0.0
