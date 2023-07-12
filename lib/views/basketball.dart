@@ -13,6 +13,7 @@ import 'package:scoreboard/widgets/button_quarter.dart';
 import 'package:scoreboard/widgets/teamname.dart';
 import 'package:scoreboard/widgets/image_foul.dart';
 import 'package:scoreboard/widgets/button_line.dart';
+import 'package:sizer/sizer.dart';
 
 class BasketballPage extends StatefulWidget {
   const BasketballPage({super.key});
@@ -36,7 +37,7 @@ class _BasketballPageState extends State<BasketballPage> {
             child: Column(
               children: <Widget>[
                 Expanded(
-                  flex: 23,
+                  flex: 25,
                   child: Container(
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -57,14 +58,14 @@ class _BasketballPageState extends State<BasketballPage> {
                           children: [
                             Column(
                               children: <Widget>[
-                                const SizedBox(
-                                  height: 15,
+                                SizedBox(
+                                  height: 0.1.h,
                                 ),
                                 const TeamName(team: 1),
                                 Text(
                                   '${context.watch<ScoreBasketball>().getScoreTeam1}',
-                                  style: const TextStyle(
-                                      fontSize: 60,
+                                  style: TextStyle(
+                                      fontSize: 55.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 const ImageFoul(imagesport: 1, team: 1),
@@ -72,21 +73,21 @@ class _BasketballPageState extends State<BasketballPage> {
                             ),
                             Column(
                               children: <Widget>[
-                                const SizedBox(
-                                  height: 20,
+                                SizedBox(
+                                  height: 0.5.h,
                                 ),
-                                const Text("Quarter",
+                                Text("Quarter",
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 25.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text(
                                     '${context.watch<QuarterBasketball>().getQuarter}',
-                                    style: const TextStyle(
-                                        fontSize: 40,
-                                        fontWeight: FontWeight.bold)),
-                                const Text('Time',
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 40.sp,
+                                        fontWeight: FontWeight.bold)),
+                                Text('Time',
+                                    style: TextStyle(
+                                        fontSize: 25.sp,
                                         fontWeight: FontWeight.bold)),
                                 const TextTime(
                                   sport: 1,
@@ -96,14 +97,14 @@ class _BasketballPageState extends State<BasketballPage> {
                             ),
                             Column(
                               children: <Widget>[
-                                const SizedBox(
-                                  height: 15,
+                                SizedBox(
+                                  height: 0.1.h,
                                 ),
                                 const TeamName(team: 2),
                                 Text(
                                   '${context.watch<ScoreBasketball>().getScoreTeam2}',
-                                  style: const TextStyle(
-                                      fontSize: 60,
+                                  style: TextStyle(
+                                      fontSize: 55.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 const ImageFoul(imagesport: 1, team: 2),
@@ -122,17 +123,18 @@ class _BasketballPageState extends State<BasketballPage> {
                 Expanded(
                   flex: 45,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(
+                          image: const AssetImage(
                             "image/basketball/basketballplay.png",
                           ),
-                          opacity: 0.15,scale: 2),
-                      borderRadius: BorderRadius.only(
+                          opacity: 0.15,
+                          scale: 2.5.sp),
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black,
                             blurRadius: 5,
@@ -145,101 +147,101 @@ class _BasketballPageState extends State<BasketballPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Column(
-                              children: const <Widget>[
+                              children: <Widget>[
                                 SizedBox(
-                                  height: 10,
+                                  height: 0.1.h,
                                 ),
                                 Text(
                                   "A",
                                   style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 30.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 1,
                                     increment: 1,
                                     decrement: 1),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 1,
                                     increment: 2,
                                     decrement: 2),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 1,
                                     increment: 3,
                                     decrement: 3),
                                 SizedBox(
-                                  height: 8,
+                                  height: 1.h,
                                 ),
-                                ButtonFoul(sport: 1, team: 1),
+                                const ButtonFoul(sport: 1, team: 1),
                               ],
                             ),
                             Column(
-                              children: const <Widget>[
+                              children: <Widget>[
                                 SizedBox(
-                                  height: 10,
+                                  height: 0.1.h,
                                 ),
                                 Text(
                                   "B",
                                   style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 30.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 2,
                                     increment: 1,
                                     decrement: 1),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 2,
                                     increment: 2,
                                     decrement: 2),
-                                ButtonScore(
+                                const ButtonScore(
                                     sport: 1,
                                     team: 2,
                                     increment: 3,
                                     decrement: 3),
                                 SizedBox(
-                                  height: 8,
+                                  height: 1.h,
                                 ),
-                                ButtonFoul(sport: 1, team: 2),
+                                const ButtonFoul(sport: 1, team: 2),
                               ],
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: 1.h,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
-                            ButtonQuarter(sport: 1),
+                          children: <Widget>[
+                            const ButtonQuarter(sport: 1),
                             SizedBox(
-                              width: 10,
+                              width: 3.w,
                             ),
-                            ButtonSetTime(
+                            const ButtonSetTime(
                               sport: 1,
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: 1.h,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
-                            ButtonStatus(),
+                          children: <Widget>[
+                            const ButtonStatus(),
                             SizedBox(
-                              width: 10,
+                              width: 3.w,
                             ),
-                            ButtonReset(sport: 1),
+                            const ButtonReset(sport: 1),
                             SizedBox(
-                              width: 10,
+                              width: 3.w,
                             ),
-                            ButtonLine(),
+                            const ButtonLine(),
                           ],
                         ),
                       ],
