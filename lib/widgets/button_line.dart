@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonLine extends StatefulWidget {
   const ButtonLine({super.key});
@@ -46,7 +47,7 @@ class _ButtonLineState extends State<ButtonLine> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
-          minimumSize: const Size(110, 40),
+          minimumSize: Size(25.w, 5.h),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
         showDialog<void>(
@@ -89,9 +90,9 @@ class _ButtonLineState extends State<ButtonLine> {
           },
         );
       },
-      child: const Text(
+      child: Text(
         'Line',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
       ),
     );
   }

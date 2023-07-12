@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonStatus extends StatefulWidget {
   const ButtonStatus({super.key});
@@ -77,18 +78,18 @@ class _ButtonStatusState extends State<ButtonStatus> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
-          minimumSize: const Size(110, 40),
+          minimumSize: Size(25.w, 5.h),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
         if (a == 1) {
           showToastSucces(context);
-        }else{
+        } else {
           showToastError(context);
         }
       },
-      child: const Text(
-        'Check Status',
-        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+      child:Text(
+        'Status',
+        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
       ),
     );
   }

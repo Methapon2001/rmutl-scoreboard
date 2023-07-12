@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
+import 'package:sizer/sizer.dart';
 
 class ImageFoul extends StatefulWidget {
   const ImageFoul({Key? key, required this.imagesport, required this.team})
@@ -36,64 +37,64 @@ class _ImageFoulState extends State<ImageFoul> {
     //Basketball
     imagebasketball0 = Image.asset(
       "image/basketball/Fouls_Basketball0.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball1 = Image.asset(
       "image/basketball/Fouls_Basketball1.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball2 = Image.asset(
       "image/basketball/Fouls_Basketball2.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball3 = Image.asset(
       "image/basketball/Fouls_Basketball3.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball4 = Image.asset(
       "image/basketball/Fouls_Basketball4.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball5 = Image.asset(
       "image/basketball/Fouls_Basketball5.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
     imagebasketball6 = Image.asset(
       "image/basketball/Fouls_Basketball6.png",
-      width: 80,
+      width: 25.w,
       gaplessPlayback: true,
     );
 
     //Futsal
     imagefutsal0 = Image.asset(
       "image/futsal/Fouls_Futsal0.png",
-      width: 80,
+      width: 25.w,
     );
     imagefutsal1 = Image.asset(
       "image/futsal/Fouls_Futsal1.png",
-      width: 80,
+      width: 25.w,
     );
     imagefutsal2 = Image.asset(
       "image/futsal/Fouls_Futsal2.png",
-      width: 80,
+      width: 25.w,
     );
     imagefutsal3 = Image.asset(
       "image/futsal/Fouls_Futsal3.png",
-      width: 80,
+      width: 25.w,
     );
     imagefutsal4 = Image.asset(
       "image/futsal/Fouls_Futsal4.png",
-      width: 80,
+      width: 25.w,
     );
     imagefutsal5 = Image.asset(
       "image/futsal/Fouls_Futsal5.png",
-      width: 80,
+      width: 25.w,
     );
 
     //****/

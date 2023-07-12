@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/name.dart';
+import 'package:sizer/sizer.dart';
 
 class TeamName extends StatefulWidget {
   const TeamName({Key? key, required this.team}) : super(key: key);
@@ -18,7 +19,7 @@ class _TeamNameState extends State<TeamName> {
       widget.team == 1
           ? context.watch<Name>().getTeamName1
           : context.watch<Name>().getTeamName2,
-      style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 27.sp, fontWeight: FontWeight.bold),
     );
   }
 }

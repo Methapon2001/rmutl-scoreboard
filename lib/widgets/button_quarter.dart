@@ -6,6 +6,7 @@ import 'package:scoreboard/models/futsal/quarter.dart';
 import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonQuarter extends StatefulWidget {
   const ButtonQuarter({Key? key, required this.sport}) : super(key: key);
@@ -24,7 +25,7 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
         foregroundColor: Colors.white,
         shape: const StadiumBorder(),
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-        minimumSize: const Size(90, 40),
+        minimumSize: Size(15.w, 5.h),
         // foreground
       ),
       onPressed: () {
@@ -47,9 +48,9 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
           context.read<QuarterTabletennis>().update();
         }
       },
-      child: const Text(
+      child: Text(
         "Quarter",
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
       ),
     );
   }

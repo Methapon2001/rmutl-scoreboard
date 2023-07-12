@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonFoul extends StatefulWidget {
   const ButtonFoul({Key? key, required this.sport, required this.team})
@@ -21,7 +22,7 @@ class _ButtonFoulState extends State<ButtonFoul> {
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-        minimumSize: const Size(75, 40),
+        minimumSize: Size(15.w, 5.h),
       ),
       onPressed: () {
         if (widget.sport == 1) {
@@ -31,9 +32,9 @@ class _ButtonFoulState extends State<ButtonFoul> {
           context.read<FoulFutsal>().update(widget.team);
         }
       },
-      child: const Text(
+      child: Text(
         'Foul',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
       ),
     );
   }
