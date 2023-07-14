@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:scoreboard/models/connect.dart';
 
 class ConnectIP extends StatefulWidget {
@@ -27,6 +28,28 @@ class _ConnectIPState extends State<ConnectIP> {
     myController1.dispose();
     myController2.dispose();
     super.dispose();
+  }
+
+  void showAlertSucces() {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.success,
+      title: "Successful",
+      text: "Connect To Scoreboard Compled!",
+      confirmBtnText: "Close",
+      confirmBtnColor: const Color.fromARGB(255, 23, 36, 113),
+    );
+  }
+
+  void showAlertError() {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.error,
+      title: "Failed",
+      text: "Something went wrong!\n Please try again.",
+      confirmBtnText: "Close",
+      confirmBtnColor: const Color.fromARGB(255, 23, 36, 113),
+    );
   }
 
   @override
@@ -59,9 +82,18 @@ class _ConnectIPState extends State<ConnectIP> {
                 minimumSize: const Size(80, 40),
               ),
               onPressed: () {
-                print(myController1.text + ":" + myController2.text);
+                if (myController1.text == "192.168.1.1" &&
+                    myController2.text == "80") {
+                  showAlertSucces();
+                  print(myController1.text + ":" + myController2.text);
+                } else {
+                  showAlertError();
+                }
               },
-              child: const Text('Connect',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              child: const Text(
+                'Connect',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ),
             Image.asset("image/connectesp.png", width: 300, height: 100),
           ],

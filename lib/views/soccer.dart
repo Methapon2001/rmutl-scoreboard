@@ -25,7 +25,7 @@ class _SoccerPageState extends State<SoccerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Soccer"),
-      endDrawer: const MenuDrawer(index: 3),
+      drawer: const MenuDrawer(index: 3),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -115,7 +115,7 @@ class _SoccerPageState extends State<SoccerPage> {
                         image: AssetImage(
                           "image/soccer/soccerplay.png",
                         ),
-                        opacity: 0.3),
+                        opacity: 0.15),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),

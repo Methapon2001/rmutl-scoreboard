@@ -26,7 +26,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Volleyball"),
-      endDrawer: const MenuDrawer(index: 2),
+      drawer: const MenuDrawer(index: 2),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -110,7 +110,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                           image: AssetImage(
                             "image/volleyball/volleyballplay.png",
                           ),
-                          opacity: 0.3),
+                          opacity: 0.15),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),

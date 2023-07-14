@@ -16,6 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Home"),
+      drawer: const MenuDrawer(index: 0),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -48,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )),
       ),
-      endDrawer: const MenuDrawer(index: 0),
     );
   }
 }

@@ -26,7 +26,7 @@ class _BadmintonPageState extends State<BadmintonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Titlebar().appBar("Badminton"),
-      endDrawer: const MenuDrawer(index: 5),
+      drawer: const MenuDrawer(index: 5),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
         child: Center(
@@ -110,7 +110,7 @@ class _BadmintonPageState extends State<BadmintonPage> {
                           image: AssetImage(
                             "image/badminton/badmintonplay.png",
                           ),
-                          opacity: 0.3),
+                          opacity: 0.15),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40)),
