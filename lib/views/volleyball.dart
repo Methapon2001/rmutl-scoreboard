@@ -26,11 +26,12 @@ class _VolleyballPageState extends State<VolleyballPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Volleyball"),
+      appBar: Titlebar().appBar("V O L L E Y B A L L"),
       drawer: const MenuDrawer(index: 2),
+      backgroundColor: MyBackgroundColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 255, 242, 218),
+        physics: const NeverScrollableScrollPhysics(),
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Center(
@@ -71,7 +72,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                             ),
                             Column(
                               children: <Widget>[
-                                Text("Quarter",
+                                Text("Set",
                                     style: TextStyle(
                                         fontSize: 25.sp,
                                         fontWeight: FontWeight.bold)),
@@ -178,7 +179,7 @@ class _VolleyballPageState extends State<VolleyballPage> {
                               ),
                             ],
                           ),
-                          const ButtonQuarter(sport: 2),
+                          const ButtonQuarter(sport: 2,name: 'Set',),
                           SizedBox(
                             height: 1.h,
                           ),

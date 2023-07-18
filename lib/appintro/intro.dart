@@ -45,7 +45,7 @@ class _SplashState extends State<Splash> {
                 color: Colors.white,
               ),
             const Text(
-              '\nDigital Scoreboard',
+              '\nDIGITAL SCOREBORAD',
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,

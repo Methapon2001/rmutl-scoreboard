@@ -9,9 +9,10 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class ButtonQuarter extends StatefulWidget {
-  const ButtonQuarter({Key? key, required this.sport}) : super(key: key);
+  const ButtonQuarter({Key? key, required this.sport,required this.name}) : super(key: key);
 
   final int sport;
+  final String name;
 
   @override
   State<ButtonQuarter> createState() => _ButtonQuarterState();
@@ -49,7 +50,7 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
         }
       },
       child: Text(
-        "Quarter",
+        widget.name,
         style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
       ),
     );
