@@ -8,3 +8,5 @@ class Titlebar {
     );
   }
 }
+
+var MyBackgroundColor = const Color.fromARGB(255, 255, 242, 218);

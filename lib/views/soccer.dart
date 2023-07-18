@@ -25,11 +25,12 @@ class _SoccerPageState extends State<SoccerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Soccer"),
+      appBar: Titlebar().appBar("S O C C E R"),
       drawer: const MenuDrawer(index: 3),
+      backgroundColor: MyBackgroundColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 255, 242, 218),
+        physics: const NeverScrollableScrollPhysics(),
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Center(
@@ -186,7 +187,7 @@ class _SoccerPageState extends State<SoccerPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            const ButtonQuarter(sport: 3),
+                            const ButtonQuarter(sport: 3,name: 'Quarter',),
                             SizedBox(
                               width: 3.w,
                             ),

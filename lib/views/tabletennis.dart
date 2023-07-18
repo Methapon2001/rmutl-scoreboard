@@ -15,22 +15,23 @@ import 'package:scoreboard/widgets/button_line.dart';
 
 import '../widgets/bar.dart';
 
-class Tabletennis extends StatefulWidget {
-  const Tabletennis({super.key});
+class TabletennisPage extends StatefulWidget {
+  const TabletennisPage({super.key});
 
   @override
-  State<Tabletennis> createState() => _TabletennisState();
+  State<TabletennisPage> createState() => _TabletennisPageState();
 }
 
-class _TabletennisState extends State<Tabletennis> {
+class _TabletennisPageState extends State<TabletennisPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Tabletennis"),
+      appBar: Titlebar().appBar("T A B L E T E N N I S"),
       drawer: const MenuDrawer(index: 6),
+      backgroundColor: MyBackgroundColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 255, 242, 218),
+        physics: const NeverScrollableScrollPhysics(),
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Center(
@@ -70,7 +71,7 @@ class _TabletennisState extends State<Tabletennis> {
                           ),
                           Column(
                             children: <Widget>[
-                              Text("Quarter",
+                              Text("Set",
                                   style: TextStyle(
                                       fontSize: 25.sp,
                                       fontWeight: FontWeight.bold)),
@@ -173,7 +174,7 @@ class _TabletennisState extends State<Tabletennis> {
                           ),
                         ],
                       ),
-                      const ButtonQuarter(sport: 6),
+                      const ButtonQuarter(sport: 6,name: 'Set',),
                       SizedBox(
                         height: 1.h,
                       ),

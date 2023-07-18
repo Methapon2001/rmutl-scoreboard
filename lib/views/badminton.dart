@@ -26,11 +26,12 @@ class _BadmintonPageState extends State<BadmintonPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Badminton"),
+      appBar: Titlebar().appBar("B A D M I N T O N"),
       drawer: const MenuDrawer(index: 5),
+      backgroundColor: MyBackgroundColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 255, 242, 218),
+        physics: const NeverScrollableScrollPhysics(),
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(
@@ -71,7 +72,7 @@ class _BadmintonPageState extends State<BadmintonPage> {
                             ),
                             Column(
                               children: <Widget>[
-                                Text("Quarter",
+                                Text("Set",
                                     style: TextStyle(
                                         fontSize: 25.sp,
                                         fontWeight: FontWeight.bold)),
@@ -177,7 +178,7 @@ class _BadmintonPageState extends State<BadmintonPage> {
                             ),
                           ],
                         ),
-                        const ButtonQuarter(sport: 5),
+                        const ButtonQuarter(sport: 5,name: 'Set',),
                         SizedBox(
                           height: 1.h,
                         ),
