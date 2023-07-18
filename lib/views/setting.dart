@@ -1,21 +1,21 @@
 import "package:flutter/material.dart";
 import 'package:scoreboard/widgets/menu.dart';
-import 'package:scoreboard/widgets/connect_test.dart';
+import 'package:scoreboard/widgets/connect_database.dart';
 
 import '../widgets/bar.dart';
 
-class Tester extends StatefulWidget {
-  const Tester({super.key});
+class SettingPage extends StatefulWidget {
+  const SettingPage({super.key});
 
   @override
-  State<Tester> createState() => _TesterState();
+  State<SettingPage> createState() => _SettingPageState();
 }
 
-class _TesterState extends State<Tester> {
+class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Test"),
+      appBar: Titlebar().appBar("S E T T I N G"),
       drawer: const MenuDrawer(index: 7),
       body: Container(
         color: const Color.fromARGB(255, 255, 242, 218),
@@ -42,7 +42,7 @@ class _TesterState extends State<Tester> {
                       blurRadius: 5,
                       offset: Offset(4, 19))
                 ]),
-              child: ConnectTest(),
+              child: ConnectDatabase(),
           ),
         ],
           ),
