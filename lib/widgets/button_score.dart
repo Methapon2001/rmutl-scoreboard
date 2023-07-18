@@ -35,53 +35,6 @@ class _ButtonScoreState extends State<ButtonScore> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Color.fromARGB(255, 219, 1, 1),
-            shape: const StadiumBorder(),
-            minimumSize: Size(10.w, 5.h),
-          ),
-          onPressed: () {
-            if (widget.sport == 1) {
-              context
-                  .read<ScoreBasketball>()
-                  .decrement(widget.team, widget.decrement);
-            }
-            if (widget.sport == 2) {
-              context
-                  .read<ScoreVolleyball>()
-                  .decrement(widget.team, widget.decrement);
-            }
-            if (widget.sport == 3) {
-              context
-                  .read<ScoreSoccer>()
-                  .decrement(widget.team, widget.decrement);
-            }
-            if (widget.sport == 4) {
-              context
-                  .read<ScoreFutsal>()
-                  .decrement(widget.team, widget.decrement);
-            }
-            if (widget.sport == 5) {
-              context
-                  .read<ScoreBadminton>()
-                  .decrement(widget.team, widget.decrement);
-            }
-            if (widget.sport == 6) {
-              context
-                  .read<ScoreTabletennis>()
-                  .decrement(widget.team, widget.decrement);
-            }
-          },
-          child: Text(
-            "- ${widget.decrement}",
-            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
-          ),
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
             backgroundColor: Color.fromARGB(255, 0, 180, 6),
             shape: const StadiumBorder(),
             minimumSize: Size(10.w, 5.h),
@@ -123,6 +76,54 @@ class _ButtonScoreState extends State<ButtonScore> {
             style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
           ),
         ),
+        const SizedBox(
+          width: 8,
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white,
+            backgroundColor: Color.fromARGB(255, 219, 1, 1),
+            shape: const StadiumBorder(),
+            minimumSize: Size(10.w, 5.h),
+          ),
+          onPressed: () {
+            if (widget.sport == 1) {
+              context
+                  .read<ScoreBasketball>()
+                  .decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 2) {
+              context
+                  .read<ScoreVolleyball>()
+                  .decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 3) {
+              context
+                  .read<ScoreSoccer>()
+                  .decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 4) {
+              context
+                  .read<ScoreFutsal>()
+                  .decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 5) {
+              context
+                  .read<ScoreBadminton>()
+                  .decrement(widget.team, widget.decrement);
+            }
+            if (widget.sport == 6) {
+              context
+                  .read<ScoreTabletennis>()
+                  .decrement(widget.team, widget.decrement);
+            }
+          },
+          child: Text(
+            "- ${widget.decrement}",
+            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          ),
+        ),
+        
       ],
     );
   }
