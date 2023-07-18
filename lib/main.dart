@@ -24,8 +24,12 @@ import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -83,7 +87,7 @@ class MyApp extends StatelessWidget {
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'RMUTL Scoreboard',
+          title: 'Digital Scoreboard',
           home: Splash(),
         );
       }),
