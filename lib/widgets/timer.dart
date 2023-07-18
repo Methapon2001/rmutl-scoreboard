@@ -97,18 +97,18 @@ class _TextTimeState extends State<TextTime> {
     return widget.sport == 1
         ? Text(
             context.watch<TimerBasketball>().timeLeftString,
-            style: TextStyle(fontSize: 37.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
           )
         : widget.sport == 3
             ? Text(
                 context.watch<TimerSoccer>().timeLeftString,
-                style: TextStyle(fontSize: 37.sp, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
               )
             : widget.sport == 4
                 ? Text(
                     context.watch<TimerFutsal>().timeLeftString,
                     style:
-                        TextStyle(fontSize: 37.sp, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
                   )
                 : widget;
   }

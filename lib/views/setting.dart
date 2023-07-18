@@ -42,7 +42,7 @@ class _SettingPageState extends State<SettingPage> {
                       blurRadius: 5,
                       offset: Offset(4, 19))
                 ]),
-              child: ConnectDatabase(),
+              child: const ConnectDatabase(),
           ),
         ],
           ),

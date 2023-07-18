@@ -76,16 +76,16 @@ class _SoccerPageState extends State<SoccerPage> {
                                 ),
                                 Text("Quarter",
                                     style: TextStyle(
-                                        fontSize: 25.sp,
+                                        fontSize: 22.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text(
                                     '${context.watch<QuarterSoccer>().getQuarter}',
                                     style: TextStyle(
-                                        fontSize: 40.sp,
+                                        fontSize: 35.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text('Time',
                                     style: TextStyle(
-                                        fontSize: 25.sp,
+                                        fontSize: 23.sp,
                                         fontWeight: FontWeight.bold)),
                                 const TextTime(sport: 3),
                                 const WidgetTimer(sport: 3),

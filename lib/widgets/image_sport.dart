@@ -66,8 +66,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'BASKETBALL',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -108,8 +107,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'VOLLEYBALL',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -150,8 +148,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'SOCCER',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -192,8 +189,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'FUTSAL',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -234,8 +230,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'BADMINTON',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -276,8 +271,7 @@ class _ImageSportsState extends State<ImageSports> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           'TABLETENNIS',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -321,11 +315,9 @@ class _ImageSportsState extends State<ImageSports> {
                               color: Colors.black,
                             ),
                             label: Text(
-                              'SETTING',
+                              'S E T T I N G',
                               style: TextStyle(
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
+                                  fontSize: 15.sp, color: Colors.black,fontWeight: FontWeight.bold),
                             ))),
                   ),
                 ],

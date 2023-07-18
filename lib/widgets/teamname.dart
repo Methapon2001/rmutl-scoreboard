@@ -19,7 +19,7 @@ class _TeamNameState extends State<TeamName> {
       widget.team == 1
           ? context.watch<Name>().getTeamName1
           : context.watch<Name>().getTeamName2,
-      style: TextStyle(fontSize: 27.sp, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
     );
   }
 }
