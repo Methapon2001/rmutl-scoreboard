@@ -27,11 +27,12 @@ class _FutsalPageState extends State<FutsalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Titlebar().appBar("Futsal"),
+      appBar: Titlebar().appBar("F U T S A L"),
       drawer: const MenuDrawer(index: 4),
+      backgroundColor: MyBackgroundColor,
       body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 255, 242, 218),
+        physics: const NeverScrollableScrollPhysics(),
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Center(
@@ -195,7 +196,7 @@ class _FutsalPageState extends State<FutsalPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            const ButtonQuarter(sport: 4),
+                            const ButtonQuarter(sport: 4,name: 'Quarter',),
                             SizedBox(
                               width: 3.w,
                             ),
