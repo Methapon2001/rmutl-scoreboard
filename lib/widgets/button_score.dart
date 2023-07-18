@@ -37,7 +37,7 @@ class _ButtonScoreState extends State<ButtonScore> {
             foregroundColor: Colors.white,
             backgroundColor: Color.fromARGB(255, 0, 180, 6),
             shape: const StadiumBorder(),
-            minimumSize: Size(10.w, 5.h),
+            minimumSize: Size(17.w, 5.h),
           ),
           onPressed: () {
             if (widget.sport == 1) {
@@ -84,7 +84,7 @@ class _ButtonScoreState extends State<ButtonScore> {
             foregroundColor: Colors.white,
             backgroundColor: Color.fromARGB(255, 219, 1, 1),
             shape: const StadiumBorder(),
-            minimumSize: Size(10.w, 5.h),
+            minimumSize: Size(17.w, 5.h),
           ),
           onPressed: () {
             if (widget.sport == 1) {

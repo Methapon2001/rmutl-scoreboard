@@ -74,12 +74,12 @@ class _VolleyballPageState extends State<VolleyballPage> {
                               children: <Widget>[
                                 Text("Set",
                                     style: TextStyle(
-                                        fontSize: 25.sp,
+                                        fontSize: 22.sp,
                                         fontWeight: FontWeight.bold)),
                                 Text(
                                     '${context.watch<QuarterVolleyball>().getQuarter}',
                                     style: TextStyle(
-                                        fontSize: 40.sp,
+                                        fontSize: 35.sp,
                                         fontWeight: FontWeight.bold)),
                               ],
                             ),

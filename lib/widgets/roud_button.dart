@@ -12,14 +12,14 @@ class RoundButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 1.h,
+        horizontal: 0.9.h,
       ),
       child: CircleAvatar(
-        radius: 2.5.h,
+        radius: 3.h,
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
         child: Icon(
           icon,
-          size: 3.h,
+          size: 4.h,
           color: Colors.white,
         ),
       ),

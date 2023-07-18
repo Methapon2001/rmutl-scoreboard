@@ -86,6 +86,11 @@ class MyApp extends StatelessWidget {
       ],
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp(
+          theme: ThemeData(
+            textTheme: Theme.of(context).textTheme.apply(
+                  fontFamily: 'Tektur',
+                ),
+          ),
           debugShowCheckedModeBanner: false,
           title: 'Digital Scoreboard',
           home: Splash(),
