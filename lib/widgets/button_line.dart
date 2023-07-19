@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:scoreboard/widgets/bar.dart';
 import 'package:sizer/sizer.dart';
 
 class ButtonLine extends StatefulWidget {
@@ -81,8 +82,12 @@ class _ButtonLineState extends State<ButtonLine> {
                 TextButton(
                   child: const Text('Submit'),
                   onPressed: () {
-                    print(messageController.text);
-                    Navigator.of(context).pop();
+                    FocusScope.of(context).unfocus();
+                    Future.delayed(const Duration(milliseconds: 200), () {
+                      print(messageController.text);
+                      Navigator.of(context).pop();
+                      showToastMessage(context);
+                    });
                   },
                 ),
               ],

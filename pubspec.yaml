@@ -78,6 +78,7 @@ flutter:
       - image/home.png
       - image/scoreboard.png
       - image/connectesp.png
+      - image/iconsetting.png
       - image/volleyball/led0.png
       - image/volleyball/led1.png
       - image/volleyball/led2.png
