@@ -37,12 +37,12 @@ class _SplashState extends State<Splash> {
               height: 30,
             ),
             if (Platform.isAndroid)
-              const CupertinoActivityIndicator(
-                radius: 20,
-              )
-            else
               const CircularProgressIndicator(
                 color: Colors.white,
+              )
+            else
+              const CupertinoActivityIndicator(
+                radius: 20,
               ),
             const Text(
               '\nDIGITAL SCOREBORAD',

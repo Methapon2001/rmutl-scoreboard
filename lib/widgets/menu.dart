@@ -188,7 +188,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: const Icon(Icons.settings),
             title: const Text('S E T T I N G'),
             selected: widget.index == 7,
             onTap: () {
