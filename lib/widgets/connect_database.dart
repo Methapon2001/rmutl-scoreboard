@@ -80,7 +80,7 @@ class _ConnectDatabaseState extends State<ConnectDatabase> {
                 minimumSize: const Size(75, 40),
               ),
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const MyHomePage()));
