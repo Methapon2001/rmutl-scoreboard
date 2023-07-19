@@ -27,6 +27,7 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: Titlebar().appBar("S E T T I N G"),
       drawer: const MenuDrawer(index: 7),
       body: WillPopScope(
@@ -38,7 +39,7 @@ class _SettingPageState extends State<SettingPage> {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MediaQuery.of(context).viewInsets.bottom != 0 ? MainAxisAlignment.start : MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
                 Container(

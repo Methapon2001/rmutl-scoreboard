@@ -49,7 +49,7 @@ class _ConnectDatabaseState extends State<ConnectDatabase> {
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.all(8),
-                    labelText: 'Database Text',
+                    labelText: 'Database',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                   ),
