@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:scoreboard/models/name.dart';
 import 'package:scoreboard/appintro/intro.dart';
 import 'package:scoreboard/models/connect.dart';
@@ -23,8 +24,12 @@ import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -44,7 +49,8 @@ class MyApp extends StatelessWidget {
         ListenableProxyProvider<ConnectBoard, QuarterBasketball>(
             update: (_, connectBoard, __) => QuarterBasketball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, TimerBasketball>(
-            update: (_, connectBoard, __) => TimerBasketball(connectBoard, 1200)),
+            update: (_, connectBoard, __) =>
+                TimerBasketball(connectBoard, 1200)),
         ListenableProxyProvider<ConnectBoard, ScoreVolleyball>(
             update: (_, connectBoard, __) => ScoreVolleyball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, SetVolleyball>(
@@ -78,11 +84,18 @@ class MyApp extends StatelessWidget {
         ListenableProxyProvider<ConnectBoard, QuarterTabletennis>(
             update: (_, connectBoard, __) => QuarterTabletennis(connectBoard)),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'RMUTL Scoreboard',
-        home: Splash(),
-      ),
+      child: Sizer(builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          theme: ThemeData(
+            textTheme: Theme.of(context).textTheme.apply(
+                  fontFamily: 'Tektur',
+                ),
+          ),
+          debugShowCheckedModeBanner: false,
+          title: 'Digital Scoreboard',
+          home: Splash(),
+        );
+      }),
     );
   }
 }

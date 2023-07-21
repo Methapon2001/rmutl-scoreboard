@@ -43,6 +43,10 @@ dependencies:
   provider: ^6.0.5
   fluttertoast: ^8.2.2
   quickalert: ^1.0.1
+  http: ^0.13.6
+  font_awesome_flutter: ^10.4.0
+  responsive_framework: ^1.0.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   bloc_test: ^9.0.0
@@ -74,6 +78,7 @@ flutter:
       - image/home.png
       - image/scoreboard.png
       - image/connectesp.png
+      - image/iconsetting.png
       - image/volleyball/led0.png
       - image/volleyball/led1.png
       - image/volleyball/led2.png
@@ -122,11 +127,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: Tektur
+      fonts:
+        - asset: asset/fonts/Tektur-Regular.ttf
+        # - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

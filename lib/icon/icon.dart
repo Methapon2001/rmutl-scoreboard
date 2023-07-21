@@ -14,6 +14,7 @@ class MyIcons extends StatelessWidget {
     late Image image5;
     late Image image6;
     late Image image7;
+    late Image image8;
 
     List image = [];
     image1 = Image.asset(
@@ -44,7 +45,11 @@ class MyIcons extends StatelessWidget {
       "image/pingpong/pingpong.png",
       scale: 11,
     );
-    image = [image1, image2, image3, image4, image5, image6, image7];
+    image8 = Image.asset(
+      "image/iconsetting.png",
+      scale: 11,
+    );
+    image = [image1, image2, image3, image4, image5, image6, image7, image8];
     return image[sport-1];
   }
 }

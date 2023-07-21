@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:scoreboard/widgets/bar.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonLine extends StatefulWidget {
   const ButtonLine({super.key});
@@ -9,6 +11,7 @@ class ButtonLine extends StatefulWidget {
 }
 
 class _ButtonLineState extends State<ButtonLine> {
+  final TextEditingController messageController = TextEditingController();
   void showToastSucces(BuildContext context) {
     FToast fToast = FToast();
     fToast.init(context);
@@ -45,14 +48,56 @@ class _ButtonLineState extends State<ButtonLine> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
-          minimumSize: const Size(110, 40),
+          minimumSize: Size(25.w, 5.h),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
-        showToastSucces(context);
+        showDialog<void>(
+          context: context,
+          barrierDismissible: false, // user must tap button!
+          builder: (BuildContext context) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              title: const Text('Line Message'),
+              content: SingleChildScrollView(
+                  child: SizedBox(
+                height: 100,
+                child: TextField(
+                  controller: messageController,
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                ),
+              )),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Cancel'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: const Text('Submit'),
+                  onPressed: () {
+                    FocusScope.of(context).unfocus();
+                    Future.delayed(const Duration(milliseconds: 200), () {
+                      print(messageController.text);
+                      Navigator.of(context).pop();
+                      showToastMessage(context);
+                    });
+                  },
+                ),
+              ],
+            );
+          },
+        );
       },
-      child: const Text(
+      child: Text(
         'Line',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
       ),
     );
   }

@@ -54,50 +54,48 @@ class _ConnectIPState extends State<ConnectIP> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const SizedBox(
-              height: 20,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "Connect_IP to ESP",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          inputField(myController1, myController2),
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              foregroundColor: Colors.white,
+              backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+              minimumSize: const Size(80, 40),
             ),
-            const Text(
-              "Connect_IP to ESP",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            onPressed: () {
+              if (myController1.text == "192.168.1.1" &&
+                  myController2.text == "80") {
+                showAlertSucces();
+                print(myController1.text + ":" + myController2.text);
+              } else {
+                showAlertError();
+              }
+            },
+            child: const Text(
+              'Connect',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            inputField(myController1, myController2),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: const StadiumBorder(),
-                foregroundColor: Colors.white,
-                backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-                minimumSize: const Size(80, 40),
-              ),
-              onPressed: () {
-                if (myController1.text == "192.168.1.1" &&
-                    myController2.text == "80") {
-                  showAlertSucces();
-                  print(myController1.text + ":" + myController2.text);
-                } else {
-                  showAlertError();
-                }
-              },
-              child: const Text(
-                'Connect',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Image.asset("image/connectesp.png", width: 300, height: 100),
-          ],
-        ),
+          ),
+          Image.asset("image/connectesp.png", width: 300, height: 100),
+        ],
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/widgets/roud_button.dart';
+import 'package:sizer/sizer.dart';
 
 class WidgetTimer extends StatefulWidget {
   const WidgetTimer({Key? key, required this.sport}) : super(key: key);
@@ -96,19 +97,18 @@ class _TextTimeState extends State<TextTime> {
     return widget.sport == 1
         ? Text(
             context.watch<TimerBasketball>().timeLeftString,
-            style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
           )
         : widget.sport == 3
             ? Text(
                 context.watch<TimerSoccer>().timeLeftString,
-                style:
-                    const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
               )
             : widget.sport == 4
                 ? Text(
                     context.watch<TimerFutsal>().timeLeftString,
-                    style: const TextStyle(
-                        fontSize: 40, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 32.sp, fontWeight: FontWeight.bold),
                   )
                 : widget;
   }
@@ -130,19 +130,19 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
           foregroundColor: Colors.white,
           shape: const StadiumBorder(),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-          minimumSize: const Size(90, 40),
+          minimumSize: Size(15.w, 5.h),
           // foreground
         ),
-        child: const Text(
+        child: Text(
           "Set Time",
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
         ),
         onPressed: () {
           if (widget.sport == 1) {
             showModalBottomSheet(
                 context: context,
                 builder: (context) => SizedBox(
-                      height: 300,
+                      height: 28.h,
                       child: CupertinoTimerPicker(
                           initialTimerDuration:
                               context.read<TimerBasketball>().duration,
@@ -159,7 +159,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
             showModalBottomSheet(
                 context: context,
                 builder: (context) => SizedBox(
-                      height: 300,
+                      height: 28.h,
                       child: CupertinoTimerPicker(
                           initialTimerDuration:
                               context.read<TimerSoccer>().duration,
@@ -176,7 +176,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
             showModalBottomSheet(
                 context: context,
                 builder: (context) => SizedBox(
-                      height: 300,
+                      height: 28.h,
                       child: CupertinoTimerPicker(
                           initialTimerDuration:
                               context.read<TimerFutsal>().duration,

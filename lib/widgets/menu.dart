@@ -6,6 +6,7 @@ import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/views/home.dart';
 import 'package:scoreboard/views/soccer.dart';
+import 'package:scoreboard/views/setting.dart';
 import 'package:scoreboard/views/volleyball.dart';
 import 'package:scoreboard/views/basketball.dart';
 import 'package:scoreboard/views/futsal.dart';
@@ -65,7 +66,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   ),
                 ),
                 const Text(
-                  "List Sports",
+                  "M E N U",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -77,7 +78,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 1),
-            title: const Text('Home'),
+            title: const Text('H O M E'),
             selected: widget.index == 0,
             onTap: () {
               Navigator.pushReplacement(
@@ -90,7 +91,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 2),
-            title: const Text('Basketball'),
+            title: const Text('B A S K E T B A L L'),
             selected: widget.index == 1,
             onTap: () {
               Navigator.pushReplacement(
@@ -107,7 +108,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 3),
-            title: const Text('Volleyball'),
+            title: const Text('V O L L E Y B A L L'),
             selected: widget.index == 2,
             onTap: () {
               Navigator.pushReplacement(
@@ -123,7 +124,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 4),
-            title: const Text('Soccer'),
+            title: const Text('S O C C E R'),
             selected: widget.index == 3,
             onTap: () {
               Navigator.pushReplacement(
@@ -139,7 +140,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 5),
-            title: const Text('Futsal'),
+            title: const Text('F U T S A L'),
             selected: widget.index == 4,
             onTap: () {
               Navigator.pushReplacement(
@@ -156,7 +157,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 6),
-            title: const Text('Badminton'),
+            title: const Text('B A D M I N T O N'),
             selected: widget.index == 5,
             onTap: () {
               Navigator.pushReplacement(
@@ -172,18 +173,31 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             leading: const MyIcons(sport: 7),
-            title: const Text('Tabletennis'),
+            title: const Text('T A B L E T E N N I S'),
             selected: widget.index == 6,
             onTap: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const Tabletennis(),
+                  builder: (context) => const TabletennisPage(),
                 ),
               );
               context.read<ScoreTabletennis>().syncBoard();
               context.read<SetTabletennis>().syncBoard();
               context.read<QuarterTabletennis>().syncBoard();
+            },
+          ),
+          ListTile(
+            leading: const MyIcons(sport: 8),
+            title: const Text('S E T T I N G'),
+            selected: widget.index == 7,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingPage(),
+                ),
+              );
             },
           ),
         ],

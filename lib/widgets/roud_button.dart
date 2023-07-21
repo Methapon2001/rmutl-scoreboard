@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class RoundButton extends StatelessWidget {
   const RoundButton({
@@ -10,15 +11,15 @@ class RoundButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 5,
+      padding: EdgeInsets.symmetric(
+        horizontal: 0.9.h,
       ),
       child: CircleAvatar(
-        radius: 24,
+        radius: 3.h,
         backgroundColor: const Color.fromARGB(255, 23, 36, 113),
         child: Icon(
           icon,
-          size: 25,
+          size: 4.h,
           color: Colors.white,
         ),
       ),
