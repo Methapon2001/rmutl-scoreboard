@@ -139,55 +139,97 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
         ),
         onPressed: () {
           if (widget.sport == 1) {
-            showModalBottomSheet(
+            showCupertinoModalPopup(
                 context: context,
-                builder: (context) => SizedBox(
-                      height: 28.h,
-                      child: CupertinoTimerPicker(
-                          initialTimerDuration:
-                              context.read<TimerBasketball>().duration,
-                          onTimerDurationChanged: (time) {
-                            setState(() {
-                              context
-                                  .read<TimerBasketball>()
-                                  .setDuration(time.inSeconds);
-                            });
-                          }),
-                    ));
+                builder: (context) {
+                  return Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    color: Colors.white,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                          Expanded(
+                            child: CupertinoTimerPicker(
+                                initialTimerDuration:
+                                    context.read<TimerBasketball>().duration,
+                                onTimerDurationChanged: (time) {
+                                  setState(() {
+                                    context
+                                        .read<TimerBasketball>()
+                                        .setDuration(time.inSeconds);
+                                  });
+                                }),
+                          )
+                        ]),
+                  );
+                });
           }
           if (widget.sport == 3) {
-            showModalBottomSheet(
+            showCupertinoModalPopup(
                 context: context,
-                builder: (context) => SizedBox(
-                      height: 28.h,
-                      child: CupertinoTimerPicker(
-                          initialTimerDuration:
-                              context.read<TimerSoccer>().duration,
-                          onTimerDurationChanged: (time) {
-                            setState(() {
-                              context
-                                  .read<TimerSoccer>()
-                                  .setDuration(time.inSeconds);
-                            });
-                          }),
-                    ));
+                builder: (context) {
+                  return Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    color: Colors.white,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                          Expanded(
+                            child: CupertinoTimerPicker(
+                                initialTimerDuration:
+                                    context.read<TimerSoccer>().duration,
+                                onTimerDurationChanged: (time) {
+                                  setState(() {
+                                    context
+                                        .read<TimerSoccer>()
+                                        .setDuration(time.inSeconds);
+                                  });
+                                }),
+                          )
+                        ]),
+                  );
+                });
           }
           if (widget.sport == 4) {
-            showModalBottomSheet(
+            showCupertinoModalPopup(
                 context: context,
-                builder: (context) => SizedBox(
-                      height: 28.h,
-                      child: CupertinoTimerPicker(
-                          initialTimerDuration:
-                              context.read<TimerFutsal>().duration,
-                          onTimerDurationChanged: (time) {
-                            setState(() {
-                              context
-                                  .read<TimerFutsal>()
-                                  .setDuration(time.inSeconds);
-                            });
-                          }),
-                    ));
+                builder: (context) {
+                  return Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    color: Colors.white,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                          Expanded(
+                            child: CupertinoTimerPicker(
+                                initialTimerDuration:
+                                    context.read<TimerFutsal>().duration,
+                                onTimerDurationChanged: (time) {
+                                  setState(() {
+                                    context
+                                        .read<TimerFutsal>()
+                                        .setDuration(time.inSeconds);
+                                  });
+                                }),
+                          )
+                        ]),
+                  );
+                });
           }
         });
   }

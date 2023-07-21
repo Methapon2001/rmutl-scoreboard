@@ -29,6 +29,7 @@ import 'package:scoreboard/models/badminton/quarter.dart';
 import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
+import 'package:scoreboard/webview/linewebview.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key, required this.index}) : super(key: key);
@@ -196,6 +197,19 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const SettingPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.login),
+            title: const Text('W E B V I E W'),
+            selected: widget.index == 8,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LineWebview(),
                 ),
               );
             },
