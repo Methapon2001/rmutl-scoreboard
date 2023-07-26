@@ -3,20 +3,19 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:scoreboard/widgets/bar.dart';
-import 'package:scoreboard/widgets/menu.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class LineWebview extends StatefulWidget {
-  const LineWebview({super.key});
+class WebViewLine extends StatefulWidget {
+  const WebViewLine({super.key});
 
   @override
-  State<LineWebview> createState() => _LineWebviewState();
+  State<WebViewLine> createState() => _WebViewLineState();
 }
 
-class _LineWebviewState extends State<LineWebview> {
-  bool clickWebview = false;
+class _WebViewLineState extends State<WebViewLine> {
+  final getToken = const FlutterSecureStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +35,10 @@ class _LineWebviewState extends State<LineWebview> {
               );
 
               String token = jsonDecode(res.body)['access_token'];
-              inspect(token);
+              getToken.write(key: 'Token', value: token);
             }
 
-            setState(() {
-              clickWebview = false;
-            });
+            Navigator.of(this.context).pop();
 
             return NavigationDecision.prevent;
           }
@@ -52,27 +49,6 @@ class _LineWebviewState extends State<LineWebview> {
       ..loadRequest(Uri.parse(
           'https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=N5XKUsHXVSMCbNAbun3XCa&redirect_uri=http://localhost&scope=notify&state=benz'));
 
-    return Scaffold(
-      appBar: Titlebar().appBar('TESTLINE'),
-      backgroundColor: MyBackgroundColor,
-      drawer: const MenuDrawer(index: 8),
-      body: clickWebview
-          ? WebViewWidget(
-              controller: controller,
-            )
-          : Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            clickWebview = true;
-                          });
-                        },
-                        child: Text('Line'))
-                  ]),
-            ),
-    );
+    return SafeArea(child: WebViewWidget(controller: controller));
   }
 }

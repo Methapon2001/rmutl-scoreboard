@@ -59,8 +59,8 @@ class _ImageSportsState extends State<ImageSports> {
                           ),
                           Image.asset(
                             'image/basketball/basketballplay.png',
-                            width: 16.w,
-                            height: 16.h,
+                            width: 15.5.w,
+                            height: 15.5.h,
                           ),
                           Text(
                             'BASKETBALL',

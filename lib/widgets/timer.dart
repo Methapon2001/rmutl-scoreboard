@@ -143,7 +143,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                 context: context,
                 builder: (context) {
                   return Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: 200.sp,
                     color: Colors.white,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -174,7 +174,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                 context: context,
                 builder: (context) {
                   return Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: 200.sp,
                     color: Colors.white,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -205,7 +205,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                 context: context,
                 builder: (context) {
                   return Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: 200.sp,
                     color: Colors.white,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
