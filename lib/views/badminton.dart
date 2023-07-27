@@ -192,9 +192,12 @@ class _BadmintonPageState extends State<BadmintonPage> {
                               ),
                             ],
                           ),
+                          SizedBox(
+                            height: 1.h,
+                          ),
                           const ButtonQuarter(
                             sport: 5,
-                            name: 'Set',
+                            name: 'Time',
                           ),
                           SizedBox(
                             height: 1.h,

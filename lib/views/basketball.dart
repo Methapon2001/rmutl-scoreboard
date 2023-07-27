@@ -229,20 +229,15 @@ class _BasketballPageState extends State<BasketballPage> {
                           SizedBox(
                             height: 1.h,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const ButtonQuarter(
-                                sport: 1,
-                                name: 'Quarter',
-                              ),
-                              SizedBox(
-                                width: 3.w,
-                              ),
-                              const ButtonSetTime(
-                                sport: 1,
-                              ),
-                            ],
+                          const ButtonQuarter(
+                            sport: 1,
+                            name: 'Quarter',
+                          ),
+                          SizedBox(
+                            height: 1.h,
+                          ),
+                          const ButtonSetTime(
+                            sport: 1,
                           ),
                           SizedBox(
                             height: 1.h,

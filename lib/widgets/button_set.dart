@@ -19,28 +19,58 @@ class ButtonSet extends StatefulWidget {
 class _ButtonSetState extends State<ButtonSet> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white,
-          shape: const StadiumBorder(),
-          backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-          minimumSize: Size(15.w, 5.h),
-          // foreground
+    return Row(
+      children: [
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              shape: const StadiumBorder(),
+              backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+              minimumSize: Size(20.w, 5.h),
+              // foreground
+            ),
+            onPressed: () {
+              if (widget.sport == 2) {
+                context.read<SetVolleyball>().increment(widget.team);
+              }
+              if (widget.sport == 5) {
+                context.read<SetBadminton>().increment(widget.team);
+              }
+              if (widget.sport == 6) {
+                context.read<SetTabletennis>().increment(widget.team);
+              }
+            },
+            child: Text(
+              "+ SET",
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+            )),
+        SizedBox(
+          width: 2.w,
         ),
-        onPressed: () {
-          if (widget.sport == 2) {
-            context.read<SetVolleyball>().update(widget.team);
-          }
-          if (widget.sport == 5) {
-            context.read<SetBadminton>().update(widget.team);
-          }
-          if (widget.sport == 6) {
-            context.read<SetTabletennis>().update(widget.team);
-          }
-        },
-        child:Text(
-          "SET",
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
-        ));
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              shape: const StadiumBorder(),
+              backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+              minimumSize: Size(20.w, 5.h),
+              // foreground
+            ),
+            onPressed: () {
+              if (widget.sport == 2) {
+                context.read<SetVolleyball>().decrement(widget.team);
+              }
+              if (widget.sport == 5) {
+                context.read<SetBadminton>().decrement(widget.team);
+              }
+              if (widget.sport == 6) {
+                context.read<SetTabletennis>().decrement(widget.team);
+              }
+            },
+            child: Text(
+              "- SET",
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+            )),
+      ],
+    );
   }
 }

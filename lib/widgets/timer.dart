@@ -135,7 +135,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
         ),
         child: Text(
           "Set Time",
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
         ),
         onPressed: () {
           if (widget.sport == 1) {

@@ -18,24 +18,50 @@ class ButtonFoul extends StatefulWidget {
 class _ButtonFoulState extends State<ButtonFoul> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: const StadiumBorder(),
-        backgroundColor: const Color.fromARGB(255, 23, 36, 113),
-        minimumSize: Size(15.w, 5.h),
-      ),
-      onPressed: () {
-        if (widget.sport == 1) {
-          context.read<FoulBasketball>().update(widget.team);
-        }
-        if (widget.sport == 4) {
-          context.read<FoulFutsal>().update(widget.team);
-        }
-      },
-      child: Text(
-        'Foul',
-        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
-      ),
+    return Row(
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            minimumSize: Size(21.w, 5.h),
+          ),
+          onPressed: () {
+            if (widget.sport == 1) {
+              context.read<FoulBasketball>().increment(widget.team);
+            }
+            if (widget.sport == 4) {
+              context.read<FoulFutsal>().increment(widget.team);
+            }
+          },
+          child: Text(
+            '+ Foul',
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(
+          width: 2.w,
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            minimumSize: Size(21.w, 5.h),
+          ),
+          onPressed: () {
+            if (widget.sport == 1) {
+              context.read<FoulBasketball>().decrement(widget.team);
+            }
+            if (widget.sport == 4) {
+              context.read<FoulFutsal>().decrement(widget.team);
+            }
+          },
+          child: Text(
+            '- Foul',
+            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
     );
   }
 }

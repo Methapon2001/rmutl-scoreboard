@@ -13,7 +13,6 @@ class ConnectDatabase extends StatefulWidget {
 }
 
 class _ConnectDatabaseState extends State<ConnectDatabase> {
-  final TextEditingController lineToken = TextEditingController();
   final TextEditingController firebase = TextEditingController();
   String getTokenWebView = '';
   final getToken = const FlutterSecureStorage();

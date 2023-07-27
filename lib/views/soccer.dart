@@ -88,7 +88,7 @@ class _SoccerPageState extends State<SoccerPage> {
                                   SizedBox(
                                     height: 0.5.h,
                                   ),
-                                  Text("Quarter",
+                                  Text("Quater",
                                       style: TextStyle(
                                           fontSize: 22.sp,
                                           fontWeight: FontWeight.bold)),
@@ -198,20 +198,15 @@ class _SoccerPageState extends State<SoccerPage> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const ButtonQuarter(
-                                sport: 3,
-                                name: 'Quarter',
-                              ),
-                              SizedBox(
-                                width: 3.w,
-                              ),
-                              const ButtonSetTime(
-                                sport: 3,
-                              ),
-                            ],
+                          const ButtonQuarter(
+                            sport: 3,
+                            name: 'Quarter',
+                          ),
+                          SizedBox(
+                            height: 1.h,
+                          ),
+                          const ButtonSetTime(
+                            sport: 3,
                           ),
                           SizedBox(
                             height: 1.h,

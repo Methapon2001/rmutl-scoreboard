@@ -12,7 +12,7 @@ class Set with ChangeNotifier {
 
   Set(this._connectBoard);
 
-  void update(int team) {
+  void increment(int team) {
     if (team != 1 && team != 2) return;
 
     _set[team - 1] = _set[team - 1] >= maxSet ? 0 : _set[team - 1] + 1;
@@ -20,7 +20,15 @@ class Set with ChangeNotifier {
     notifyListeners();
   }
 
-  void reset(){
+  void decrement(int team) {
+    if (team != 1 && team != 2) return;
+
+    _set[team - 1] = _set[team - 1] <= 1 ? 0 : _set[team - 1] - 1;
+    syncBoard();
+    notifyListeners();
+  }
+
+  void reset() {
     _set[0] = 0;
     _set[1] = 0;
     syncBoard();
@@ -28,6 +36,6 @@ class Set with ChangeNotifier {
   }
 
   void syncBoard() {
-    _connectBoard.TestSet(_set[0].toString(),_set[1].toString());
+    _connectBoard.TestSet(_set[0].toString(), _set[1].toString());
   }
 }

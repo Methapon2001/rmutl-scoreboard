@@ -190,9 +190,12 @@ class _TabletennisPageState extends State<TabletennisPage> {
                             ),
                           ],
                         ),
+                        SizedBox(
+                          height: 1.h,
+                        ),
                         const ButtonQuarter(
                           sport: 6,
-                          name: 'Set',
+                          name: 'Time',
                         ),
                         SizedBox(
                           height: 1.h,

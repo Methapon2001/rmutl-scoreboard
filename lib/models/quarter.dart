@@ -10,8 +10,14 @@ class Quarter with ChangeNotifier {
 
   Quarter(this._connectBoard);
 
-  void update() {
+  void increment() {
     _quarter = _quarter >= maxQuarter ? 1 : _quarter + 1;
+    syncBoard();
+    notifyListeners();
+  }
+
+  void decrement() {
+    _quarter = _quarter <= 1 ? 1 : _quarter - 1;
     syncBoard();
     notifyListeners();
   }

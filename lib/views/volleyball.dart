@@ -192,7 +192,10 @@ class _VolleyballPageState extends State<VolleyballPage> {
                                 ),
                               ],
                             ),
-                            const ButtonQuarter(sport: 2,name: 'Set',),
+                            SizedBox(
+                              height: 1.h,
+                            ),
+                            const ButtonQuarter(sport: 2,name: 'Time',),
                             SizedBox(
                               height: 1.h,
                             ),
