@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:scoreboard/models/notify.dart';
 import 'package:scoreboard/widgets/bar.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ButtonLine extends StatefulWidget {
   const ButtonLine({super.key});
@@ -12,6 +14,21 @@ class ButtonLine extends StatefulWidget {
 
 class _ButtonLineState extends State<ButtonLine> {
   final TextEditingController messageController = TextEditingController();
+  String getTokenWebView = '';
+  final getToken = const FlutterSecureStorage();
+
+  @override
+  void initState() {
+    checkToken();
+    super.initState();
+  }
+
+  void checkToken() {
+    getToken
+        .read(key: 'Token')
+        .then((value) => setState(() => getTokenWebView = value ?? ''));
+  }
+
   void showToastSucces(BuildContext context) {
     FToast fToast = FToast();
     fToast.init(context);
@@ -86,6 +103,9 @@ class _ButtonLineState extends State<ButtonLine> {
                     Future.delayed(const Duration(milliseconds: 200), () {
                       print(messageController.text);
                       Navigator.of(context).pop();
+                      LineNotify().sendNotify(
+                          getTokenWebView,
+                          messageController.text);
                       showToastMessage(context);
                     });
                   },

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:scoreboard/models/basketball/foul.dart';
 import 'package:scoreboard/models/futsal/foul.dart';
 import 'package:sizer/sizer.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class ButtonFoul extends StatefulWidget {
   const ButtonFoul({Key? key, required this.sport, required this.team})
@@ -16,6 +17,14 @@ class ButtonFoul extends StatefulWidget {
 }
 
 class _ButtonFoulState extends State<ButtonFoul> {
+  late DatabaseReference dbRef;
+
+  @override
+  void initState() {
+    super.initState();
+    dbRef = FirebaseDatabase.instance.ref().child('FlutterData');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -29,9 +38,35 @@ class _ButtonFoulState extends State<ButtonFoul> {
           onPressed: () {
             if (widget.sport == 1) {
               context.read<FoulBasketball>().increment(widget.team);
+              if (widget.team == 1) {
+                Map<String, String> alldatas = {
+                  'FoulA':
+                      context.read<FoulBasketball>().getFoulTeam1.toString(),
+                };
+                dbRef.update(alldatas);
+              }
+              if (widget.team == 2) {
+                Map<String, String> alldatas = {
+                  'FoulB':
+                      context.read<FoulBasketball>().getFoulTeam2.toString(),
+                };
+                dbRef.update(alldatas);
+              }
             }
             if (widget.sport == 4) {
               context.read<FoulFutsal>().increment(widget.team);
+              if (widget.team == 1) {
+                Map<String, String> alldatas = {
+                  'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
+                };
+                dbRef.update(alldatas);
+              }
+              if (widget.team == 2) {
+                Map<String, String> alldatas = {
+                  'FoulB': context.read<FoulFutsal>().getFoulTeam2.toString(),
+                };
+                dbRef.update(alldatas);
+              }
             }
           },
           child: Text(
@@ -51,9 +86,35 @@ class _ButtonFoulState extends State<ButtonFoul> {
           onPressed: () {
             if (widget.sport == 1) {
               context.read<FoulBasketball>().decrement(widget.team);
+              if (widget.team == 1) {
+                Map<String, String> alldatas = {
+                  'FoulA':
+                      context.read<FoulBasketball>().getFoulTeam1.toString(),
+                };
+                dbRef.update(alldatas);
+              }
+              if (widget.team == 2) {
+                Map<String, String> alldatas = {
+                  'FoulB':
+                      context.read<FoulBasketball>().getFoulTeam2.toString(),
+                };
+                dbRef.update(alldatas);
+              }
             }
             if (widget.sport == 4) {
               context.read<FoulFutsal>().decrement(widget.team);
+              if (widget.team == 1) {
+                Map<String, String> alldatas = {
+                  'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
+                };
+                dbRef.update(alldatas);
+              }
+              if (widget.team == 2) {
+                Map<String, String> alldatas = {
+                  'FoulB': context.read<FoulFutsal>().getFoulTeam2.toString(),
+                };
+                dbRef.update(alldatas);
+              }
             }
           },
           child: Text(

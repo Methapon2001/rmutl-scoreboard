@@ -19,7 +19,6 @@ class _ConnectDatabaseState extends State<ConnectDatabase> {
 
   @override
   void initState() {
-    // TODO: implement initState
     checkToken();
     super.initState();
   }

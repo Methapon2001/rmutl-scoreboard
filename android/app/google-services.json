@@ -1,0 +1,40 @@
+{
+    "project_info": {
+      "project_number": "472209562992",
+      "firebase_url": "https://rmutl-scoreboard-default-rtdb.asia-southeast1.firebasedatabase.app",
+      "project_id": "rmutl-scoreboard",
+      "storage_bucket": "rmutl-scoreboard.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:472209562992:android:a191d24da66090f37083b5",
+          "android_client_info": {
+            "package_name": "com.example.scoreboard"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "472209562992-rb43ni8255aatt090nds3cjc1jb3in51.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyC7SlfsoMr0fM-gPFAEhhSeths-e93cHaw"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "472209562992-rb43ni8255aatt090nds3cjc1jb3in51.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

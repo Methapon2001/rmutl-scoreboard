@@ -6,6 +6,7 @@ import 'package:scoreboard/models/futsal/timer.dart';
 import 'package:scoreboard/models/soccer/timer.dart';
 import 'package:scoreboard/widgets/roud_button.dart';
 import 'package:sizer/sizer.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class WidgetTimer extends StatefulWidget {
   const WidgetTimer({Key? key, required this.sport}) : super(key: key);
@@ -17,6 +18,15 @@ class WidgetTimer extends StatefulWidget {
 }
 
 class _WidgetTimerState extends State<WidgetTimer> {
+  late DatabaseReference dbRef;
+  late bool status = false;
+
+  @override
+  void initState() {
+    super.initState();
+    dbRef = FirebaseDatabase.instance.ref().child('FlutterData');
+  }
+
   @override
   Widget build(BuildContext context) {
     return widget.sport == 1
@@ -25,6 +35,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
               GestureDetector(
                 onTap: () {
                   context.read<TimerBasketball>().toggleTimer();
+                  status = context.read<TimerBasketball>().isRunning;
+                  Map<String, String> alldatas = {
+                    'Time': context
+                        .read<TimerBasketball>()
+                        .timeLeftString
+                        .toString(),
+                    'RunStatus': '$status',
+                  };
+                  dbRef.update(alldatas);
                 },
                 child: RoundButton(
                   icon: (context.watch<TimerBasketball>().isRunning
@@ -35,6 +54,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
               GestureDetector(
                   onTap: () {
                     context.read<TimerBasketball>().resetTimer();
+                    status = context.read<TimerBasketball>().isRunning;
+                    Map<String, String> alldatas = {
+                      'Time': context
+                          .read<TimerBasketball>()
+                          .timeLeftString
+                          .toString(),
+                      'RunStatus': '$status',
+                    };
+                    dbRef.update(alldatas);
                   },
                   child: const RoundButton(icon: Icons.replay)),
             ],
@@ -45,6 +73,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
                   GestureDetector(
                     onTap: () {
                       context.read<TimerSoccer>().toggleTimer();
+                      status = context.read<TimerSoccer>().isRunning;
+                      Map<String, String> alldatas = {
+                        'Time': context
+                            .read<TimerSoccer>()
+                            .timeLeftString
+                            .toString(),
+                        'RunStatus': '$status',
+                      };
+                      dbRef.update(alldatas);
                     },
                     child: RoundButton(
                       icon: (context.watch<TimerSoccer>().isRunning
@@ -55,6 +92,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
                   GestureDetector(
                       onTap: () {
                         context.read<TimerSoccer>().resetTimer();
+                        status = context.read<TimerSoccer>().isRunning;
+                        Map<String, String> alldatas = {
+                          'Time': context
+                              .read<TimerSoccer>()
+                              .timeLeftString
+                              .toString(),
+                          'RunStatus': '$status',
+                        };
+                        dbRef.update(alldatas);
                       },
                       child: const RoundButton(icon: Icons.replay)),
                 ],
@@ -65,6 +111,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
                       GestureDetector(
                         onTap: () {
                           context.read<TimerFutsal>().toggleTimer();
+                          status = context.read<TimerFutsal>().isRunning;
+                          Map<String, String> alldatas = {
+                            'Time': context
+                                .read<TimerFutsal>()
+                                .timeLeftString
+                                .toString(),
+                            'RunStatus': '$status',
+                          };
+                          dbRef.update(alldatas);
                         },
                         child: RoundButton(
                           icon: (context.watch<TimerFutsal>().isRunning
@@ -75,6 +130,15 @@ class _WidgetTimerState extends State<WidgetTimer> {
                       GestureDetector(
                           onTap: () {
                             context.read<TimerFutsal>().resetTimer();
+                            status = context.read<TimerFutsal>().isRunning;
+                            Map<String, String> alldatas = {
+                              'Time': context
+                                  .read<TimerFutsal>()
+                                  .timeLeftString
+                                  .toString(),
+                              'RunStatus': '$status',
+                            };
+                            dbRef.update(alldatas);
                           },
                           child: const RoundButton(icon: Icons.replay)),
                     ],
@@ -123,6 +187,14 @@ class ButtonSetTime extends StatefulWidget {
 }
 
 class _ButtonSetTimeState extends State<ButtonSetTime> {
+  late DatabaseReference dbRef;
+
+  @override
+  void initState() {
+    super.initState();
+    dbRef = FirebaseDatabase.instance.ref().child('FlutterData');
+  }
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -151,8 +223,18 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
+                                Map<String, String> alldatas = {
+                                  'Time': context
+                                      .read<TimerBasketball>()
+                                      .timeLeftString
+                                      .toString(),
+                                };
+                                dbRef.update(alldatas);
                               },
-                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                              child: Text(
+                                'Save',
+                                style: TextStyle(fontSize: 15.sp),
+                              )),
                           Expanded(
                             child: CupertinoTimerPicker(
                                 initialTimerDuration:
@@ -182,8 +264,18 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
+                                Map<String, String> alldatas = {
+                                  'Time': context
+                                      .read<TimerSoccer>()
+                                      .timeLeftString
+                                      .toString(),
+                                };
+                                dbRef.update(alldatas);
                               },
-                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                              child: Text(
+                                'Save',
+                                style: TextStyle(fontSize: 15.sp),
+                              )),
                           Expanded(
                             child: CupertinoTimerPicker(
                                 initialTimerDuration:
@@ -213,8 +305,18 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
+                                Map<String, String> alldatas = {
+                                  'Time': context
+                                      .read<TimerFutsal>()
+                                      .timeLeftString
+                                      .toString(),
+                                };
+                                dbRef.update(alldatas);
                               },
-                              child: Text('Save',style: TextStyle(fontSize: 15.sp),)),
+                              child: Text(
+                                'Save',
+                                style: TextStyle(fontSize: 15.sp),
+                              )),
                           Expanded(
                             child: CupertinoTimerPicker(
                                 initialTimerDuration:

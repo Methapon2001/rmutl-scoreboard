@@ -25,9 +25,11 @@ import 'package:scoreboard/models/tabletennis/score.dart';
 import 'package:scoreboard/models/tabletennis/set.dart';
 import 'package:scoreboard/models/tabletennis/quarter.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
