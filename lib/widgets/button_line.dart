@@ -97,7 +97,7 @@ class _ButtonLineState extends State<ButtonLine> {
       },
       child: Text(
         'Line',
-        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
       ),
     );
   }

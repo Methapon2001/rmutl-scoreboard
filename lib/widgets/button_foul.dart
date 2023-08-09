@@ -36,7 +36,7 @@ class _ButtonFoulState extends State<ButtonFoul> {
           },
           child: Text(
             '+ Foul',
-            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(
@@ -58,7 +58,7 @@ class _ButtonFoulState extends State<ButtonFoul> {
           },
           child: Text(
             '- Foul',
-            style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
         ),
       ],

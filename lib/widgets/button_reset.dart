@@ -81,7 +81,7 @@ class _ButtonResetState extends State<ButtonReset> {
       },
       child: Text(
         'Reset',
-        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
       ),
     );
   }
