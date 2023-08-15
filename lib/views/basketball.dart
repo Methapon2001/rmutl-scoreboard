@@ -63,68 +63,70 @@ class _BasketballPageState extends State<BasketballPage> {
                             offset: Offset(2, 10))
                       ],
                     ),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Column(
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 0.1.h,
-                                ),
-                                const TeamName(team: 1),
-                                Text(
-                                  '${context.watch<ScoreBasketball>().getScoreTeam1}',
-                                  style: TextStyle(
-                                      fontSize: 55.sp,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                const ImageFoul(imagesport: 1, team: 1),
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 0.5.h,
-                                ),
-                                Text("Quarter",
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 0.1.h,
+                                  ),
+                                  const TeamName(team: 1),
+                                  Text(
+                                    '${context.watch<ScoreBasketball>().getScoreTeam1}',
                                     style: TextStyle(
-                                        fontSize: 22.sp,
-                                        fontWeight: FontWeight.bold)),
-                                Text(
-                                    '${context.watch<QuarterBasketball>().getQuarter}',
+                                        fontSize: 55.sp,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const ImageFoul(imagesport: 1, team: 1),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 0.5.h,
+                                  ),
+                                  Text("Quarter",
+                                      style: TextStyle(
+                                          fontSize: 22.sp,
+                                          fontWeight: FontWeight.bold)),
+                                  Text(
+                                      '${context.watch<QuarterBasketball>().getQuarter}',
+                                      style: TextStyle(
+                                          fontSize: 35.sp,
+                                          fontWeight: FontWeight.bold)),
+                                  Text('Time',
+                                      style: TextStyle(
+                                          fontSize: 23.sp,
+                                          fontWeight: FontWeight.bold)),
+                                  const TextTime(
+                                    sport: 1,
+                                  ),
+                                  const WidgetTimer(sport: 1),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 0.1.h,
+                                  ),
+                                  const TeamName(team: 2),
+                                  Text(
+                                    '${context.watch<ScoreBasketball>().getScoreTeam2}',
                                     style: TextStyle(
-                                        fontSize: 35.sp,
-                                        fontWeight: FontWeight.bold)),
-                                Text('Time',
-                                    style: TextStyle(
-                                        fontSize: 23.sp,
-                                        fontWeight: FontWeight.bold)),
-                                const TextTime(
-                                  sport: 1,
-                                ),
-                                const WidgetTimer(sport: 1),
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 0.1.h,
-                                ),
-                                const TeamName(team: 2),
-                                Text(
-                                  '${context.watch<ScoreBasketball>().getScoreTeam2}',
-                                  style: TextStyle(
-                                      fontSize: 55.sp,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                const ImageFoul(imagesport: 1, team: 2),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                                        fontSize: 55.sp,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const ImageFoul(imagesport: 1, team: 2),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
