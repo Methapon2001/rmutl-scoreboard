@@ -58,8 +58,12 @@ class _ButtonResetState extends State<ButtonReset> {
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();
           context.read<QuarterBasketball>().reset();
+          Map<String, String> alldatas1 = {
+            'Time': context.read<TimerBasketball>().timeLeftString.toString(),
+          };
+          dbRef.update(alldatas1);
           context.read<TimerBasketball>().resetTimer();
-          Map<String, String> alldatas = {
+          Map<String, String> alldatas2 = {
             'FoulA': context.read<FoulBasketball>().getFoulTeam1.toString(),
             'FoulB': context.read<FoulBasketball>().getFoulTeam1.toString(),
             'Quarter': context.read<QuarterBasketball>().getQuarter.toString(),
@@ -68,7 +72,7 @@ class _ButtonResetState extends State<ButtonReset> {
             'ScoreB': context.read<ScoreBasketball>().getScoreTeam2.toString(),
             'Time': context.read<TimerBasketball>().timeLeftString.toString(),
           };
-          dbRef.update(alldatas);
+          dbRef.update(alldatas2);
         }
         if (widget.sport == 2) {
           context.read<ScoreVolleyball>().reset();
@@ -86,22 +90,30 @@ class _ButtonResetState extends State<ButtonReset> {
         if (widget.sport == 3) {
           context.read<ScoreSoccer>().reset();
           context.read<QuarterSoccer>().reset();
+          Map<String, String> alldatas1 = {
+            'Time': context.read<TimerSoccer>().timeLeftString.toString(),
+          };
+          dbRef.update(alldatas1);
           context.read<TimerSoccer>().resetTimer();
-          Map<String, String> alldatas = {
+          Map<String, String> alldatas2 = {
             'Quarter': context.read<QuarterSoccer>().getQuarter.toString(),
             'RunStatus': context.read<TimerSoccer>().isRunning.toString(),
             'ScoreA': context.read<ScoreSoccer>().getScoreTeam1.toString(),
             'ScoreB': context.read<ScoreSoccer>().getScoreTeam2.toString(),
             'Time': context.read<TimerSoccer>().timeLeftString.toString(),
           };
-          dbRef.update(alldatas);
+          dbRef.update(alldatas2);
         }
         if (widget.sport == 4) {
           context.read<ScoreFutsal>().reset();
           context.read<FoulFutsal>().reset();
           context.read<QuarterFutsal>().reset();
+          Map<String, String> alldatas1 = {
+            'Time': context.read<TimerFutsal>().timeLeftString.toString(),
+          };
+          dbRef.update(alldatas1);
           context.read<TimerFutsal>().resetTimer();
-          Map<String, String> alldatas = {
+          Map<String, String> alldatas2 = {
             'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
             'FoulB': context.read<FoulFutsal>().getFoulTeam1.toString(),
             'Quarter': context.read<QuarterFutsal>().getQuarter.toString(),
@@ -110,7 +122,7 @@ class _ButtonResetState extends State<ButtonReset> {
             'ScoreB': context.read<ScoreFutsal>().getScoreTeam2.toString(),
             'Time': context.read<TimerFutsal>().timeLeftString.toString(),
           };
-          dbRef.update(alldatas);
+          dbRef.update(alldatas2);
         }
         if (widget.sport == 5) {
           context.read<ScoreBadminton>().reset();

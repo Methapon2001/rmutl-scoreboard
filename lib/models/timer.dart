@@ -69,7 +69,7 @@ class Timer with ChangeNotifier {
     return '$minutes:$seconds';
   }
 
-  void syncBoard(){
+  void syncBoard() {
     _connectBoard.TestTimer(timeLeftString);
   }
 }

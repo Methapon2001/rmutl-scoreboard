@@ -68,6 +68,7 @@ class _ButtonLineState extends State<ButtonLine> {
           minimumSize: Size(25.w, 5.h),
           backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
+        messageController.text = '';
         showDialog<void>(
           context: context,
           barrierDismissible: false, // user must tap button!

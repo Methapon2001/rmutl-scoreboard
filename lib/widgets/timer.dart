@@ -53,16 +53,24 @@ class _WidgetTimerState extends State<WidgetTimer> {
               ),
               GestureDetector(
                   onTap: () {
-                    context.read<TimerBasketball>().resetTimer();
-                    status = context.read<TimerBasketball>().isRunning;
-                    Map<String, String> alldatas = {
+                    Map<String, String> alldatas1 = {
                       'Time': context
                           .read<TimerBasketball>()
                           .timeLeftString
                           .toString(),
                       'RunStatus': '$status',
                     };
-                    dbRef.update(alldatas);
+                    dbRef.update(alldatas1);
+                    context.read<TimerBasketball>().resetTimer();
+                    status = context.read<TimerBasketball>().isRunning;
+                    Map<String, String> alldatas2 = {
+                      'Time': context
+                          .read<TimerBasketball>()
+                          .timeLeftString
+                          .toString(),
+                      'RunStatus': '$status',
+                    };
+                    dbRef.update(alldatas2);
                   },
                   child: const RoundButton(icon: Icons.replay)),
             ],
@@ -91,16 +99,24 @@ class _WidgetTimerState extends State<WidgetTimer> {
                   ),
                   GestureDetector(
                       onTap: () {
-                        context.read<TimerSoccer>().resetTimer();
-                        status = context.read<TimerSoccer>().isRunning;
-                        Map<String, String> alldatas = {
+                        Map<String, String> alldatas1 = {
                           'Time': context
                               .read<TimerSoccer>()
                               .timeLeftString
                               .toString(),
                           'RunStatus': '$status',
                         };
-                        dbRef.update(alldatas);
+                        dbRef.update(alldatas1);
+                        context.read<TimerSoccer>().resetTimer();
+                        status = context.read<TimerSoccer>().isRunning;
+                        Map<String, String> alldatas2 = {
+                          'Time': context
+                              .read<TimerSoccer>()
+                              .timeLeftString
+                              .toString(),
+                          'RunStatus': '$status',
+                        };
+                        dbRef.update(alldatas2);
                       },
                       child: const RoundButton(icon: Icons.replay)),
                 ],
@@ -129,16 +145,24 @@ class _WidgetTimerState extends State<WidgetTimer> {
                       ),
                       GestureDetector(
                           onTap: () {
-                            context.read<TimerFutsal>().resetTimer();
-                            status = context.read<TimerFutsal>().isRunning;
-                            Map<String, String> alldatas = {
+                            Map<String, String> alldatas1 = {
                               'Time': context
                                   .read<TimerFutsal>()
                                   .timeLeftString
                                   .toString(),
                               'RunStatus': '$status',
                             };
-                            dbRef.update(alldatas);
+                            dbRef.update(alldatas1);
+                            context.read<TimerFutsal>().resetTimer();
+                            status = context.read<TimerFutsal>().isRunning;
+                            Map<String, String> alldatas2 = {
+                              'Time': context
+                                  .read<TimerFutsal>()
+                                  .timeLeftString
+                                  .toString(),
+                              'RunStatus': '$status',
+                            };
+                            dbRef.update(alldatas2);
                           },
                           child: const RoundButton(icon: Icons.replay)),
                     ],
@@ -237,6 +261,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                               )),
                           Expanded(
                             child: CupertinoTimerPicker(
+                                mode: CupertinoTimerPickerMode.ms,
                                 initialTimerDuration:
                                     context.read<TimerBasketball>().duration,
                                 onTimerDurationChanged: (time) {
@@ -278,6 +303,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                               )),
                           Expanded(
                             child: CupertinoTimerPicker(
+                                mode: CupertinoTimerPickerMode.ms,
                                 initialTimerDuration:
                                     context.read<TimerSoccer>().duration,
                                 onTimerDurationChanged: (time) {
@@ -319,6 +345,7 @@ class _ButtonSetTimeState extends State<ButtonSetTime> {
                               )),
                           Expanded(
                             child: CupertinoTimerPicker(
+                                mode: CupertinoTimerPickerMode.ms,
                                 initialTimerDuration:
                                     context.read<TimerFutsal>().duration,
                                 onTimerDurationChanged: (time) {
