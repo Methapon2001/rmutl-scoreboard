@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             update: (_, connectBoard, __) => QuarterBasketball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, TimerBasketball>(
             update: (_, connectBoard, __) =>
-                TimerBasketball(connectBoard, 1200)),
+                TimerBasketball(connectBoard, 600)),
         ListenableProxyProvider<ConnectBoard, ScoreVolleyball>(
             update: (_, connectBoard, __) => ScoreVolleyball(connectBoard)),
         ListenableProxyProvider<ConnectBoard, SetVolleyball>(

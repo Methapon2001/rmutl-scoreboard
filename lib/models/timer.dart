@@ -60,6 +60,15 @@ class Timer with ChangeNotifier {
     notifyListeners();
   }
 
+  void clearTimer(int seconds) {
+    _init = Duration(seconds: seconds);
+    _duration = _init;
+    isRunning = false;
+    _tickSubscription?.cancel();
+    syncBoard();
+    notifyListeners();
+  }
+
   String get timeLeftString {
     String minutes =
         ((_duration.inSeconds / 60) % 60).floor().toString().padLeft(2, '0');
