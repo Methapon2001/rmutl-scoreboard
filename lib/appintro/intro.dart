@@ -23,35 +23,37 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.indigo,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'image/scoreboard.png',
-              height: 130,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            if (Platform.isAndroid)
-              const CircularProgressIndicator(
-                color: Colors.white,
-              )
-            else
-              const CupertinoActivityIndicator(
-                radius: 20,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.indigo,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'image/scoreboard.png',
+                height: 130,
               ),
-            const Text(
-              '\nDIGITAL SCOREBORAD',
-              style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            )
-          ],
+              const SizedBox(
+                height: 30,
+              ),
+              if (Platform.isAndroid)
+                const CircularProgressIndicator(
+                  color: Colors.white,
+                )
+              else
+                const CupertinoActivityIndicator(
+                  radius: 20,
+                ),
+              const Text(
+                '\nDIGITAL SCOREBORAD',
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              )
+            ],
+          ),
         ),
       ),
     );
