@@ -12,6 +12,7 @@ class ButtonStatus extends StatefulWidget {
 }
 
 class _ButtonStatusState extends State<ButtonStatus> {
+  bool onClick = false;
   @override
   Widget build(BuildContext context) {
     const int a = 0;
@@ -19,12 +20,30 @@ class _ButtonStatusState extends State<ButtonStatus> {
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
           minimumSize: Size(25.w, 5.h),
-          backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
+          backgroundColor: onClick
+              ? const Color.fromARGB(255, 56, 56, 56)
+              : const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
-        if (a == 1) {
+        if (a == 1 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           showToastSucces(context);
-        } else {
+          Future.delayed(const Duration(seconds: 2), () {
+            setState(() {
+              onClick = false;
+            });
+          });
+        } else if (a == 0 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           showToastError(context);
+          Future.delayed(const Duration(seconds: 2), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
       },
       child: Text(

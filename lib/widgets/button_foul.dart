@@ -18,7 +18,10 @@ class ButtonFoul extends StatefulWidget {
 
 class _ButtonFoulState extends State<ButtonFoul> {
   late DatabaseReference dbRef;
-
+  List<bool> onClick = <bool>[
+    false,
+    false,
+  ];
   @override
   void initState() {
     super.initState();
@@ -32,40 +35,76 @@ class _ButtonFoulState extends State<ButtonFoul> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            backgroundColor: onClick[0]
+                ? const Color.fromARGB(255, 56, 56, 56)
+                : const Color.fromARGB(255, 23, 36, 113),
             minimumSize: Size(21.w, 5.h),
           ),
           onPressed: () {
             if (widget.sport == 1) {
-              context.read<FoulBasketball>().increment(widget.team);
-              if (widget.team == 1) {
+              if (widget.team == 1 && !onClick[0]) {
+                setState(() {
+                  onClick[0] = true;
+                });
+                context.read<FoulBasketball>().increment(widget.team);
                 Map<String, String> alldatas = {
                   'FoulA':
                       context.read<FoulBasketball>().getFoulTeam1.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[0] = false;
+                  });
+                });
               }
-              if (widget.team == 2) {
+              if (widget.team == 2 && !onClick[0]) {
+                setState(() {
+                  onClick[0] = true;
+                });
+                context.read<FoulBasketball>().increment(widget.team);
                 Map<String, String> alldatas = {
                   'FoulB':
                       context.read<FoulBasketball>().getFoulTeam2.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[0] = false;
+                  });
+                });
               }
             }
             if (widget.sport == 4) {
-              context.read<FoulFutsal>().increment(widget.team);
-              if (widget.team == 1) {
+              if (widget.team == 1 && !onClick[0]) {
+                setState(() {
+                  onClick[0] = true;
+                });
+                context.read<FoulFutsal>().increment(widget.team);
                 Map<String, String> alldatas = {
                   'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[0] = false;
+                  });
+                });
               }
-              if (widget.team == 2) {
+              if (widget.team == 2 && !onClick[0]) {
+                setState(() {
+                  onClick[0] = true;
+                });
+                context.read<FoulFutsal>().increment(widget.team);
                 Map<String, String> alldatas = {
                   'FoulB': context.read<FoulFutsal>().getFoulTeam2.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[0] = false;
+                  });
+                });
               }
             }
           },
@@ -80,40 +119,76 @@ class _ButtonFoulState extends State<ButtonFoul> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            backgroundColor: onClick[1]
+                ? const Color.fromARGB(255, 56, 56, 56)
+                : const Color.fromARGB(255, 23, 36, 113),
             minimumSize: Size(21.w, 5.h),
           ),
           onPressed: () {
             if (widget.sport == 1) {
-              context.read<FoulBasketball>().decrement(widget.team);
-              if (widget.team == 1) {
+              if (widget.team == 1 && !onClick[1]) {
+                setState(() {
+                  onClick[1] = true;
+                });
+                context.read<FoulBasketball>().decrement(widget.team);
                 Map<String, String> alldatas = {
                   'FoulA':
                       context.read<FoulBasketball>().getFoulTeam1.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[1] = false;
+                  });
+                });
               }
-              if (widget.team == 2) {
+              if (widget.team == 2 && !onClick[1]) {
+                setState(() {
+                  onClick[1] = true;
+                });
+                context.read<FoulBasketball>().decrement(widget.team);
                 Map<String, String> alldatas = {
                   'FoulB':
                       context.read<FoulBasketball>().getFoulTeam2.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[1] = false;
+                  });
+                });
               }
             }
             if (widget.sport == 4) {
-              context.read<FoulFutsal>().decrement(widget.team);
-              if (widget.team == 1) {
+              if (widget.team == 1 && !onClick[1]) {
+                setState(() {
+                  onClick[1] = true;
+                });
+                context.read<FoulFutsal>().decrement(widget.team);
                 Map<String, String> alldatas = {
                   'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[1] = false;
+                  });
+                });
               }
-              if (widget.team == 2) {
+              if (widget.team == 2 && !onClick[1]) {
+                setState(() {
+                  onClick[1] = true;
+                });
+                context.read<FoulFutsal>().decrement(widget.team);
                 Map<String, String> alldatas = {
                   'FoulB': context.read<FoulFutsal>().getFoulTeam2.toString(),
                 };
                 dbRef.update(alldatas);
+                Future.delayed(const Duration(milliseconds: 800), () {
+                  setState(() {
+                    onClick[1] = false;
+                  });
+                });
               }
             }
           },

@@ -38,6 +38,7 @@ class ButtonReset extends StatefulWidget {
 
 class _ButtonResetState extends State<ButtonReset> {
   late DatabaseReference dbRef;
+  bool onClick = false;
 
   @override
   void initState() {
@@ -51,10 +52,15 @@ class _ButtonResetState extends State<ButtonReset> {
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
           minimumSize: Size(25.w, 5.h),
-          backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
+          backgroundColor: onClick
+              ? const Color.fromARGB(255, 56, 56, 56)
+              : const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
         showToastReset(context);
-        if (widget.sport == 1) {
+        if (widget.sport == 1 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreBasketball>().reset();
           context.read<FoulBasketball>().reset();
           context.read<QuarterBasketball>().reset();
@@ -62,7 +68,7 @@ class _ButtonResetState extends State<ButtonReset> {
             'Time': context.read<TimerBasketball>().timeLeftString.toString(),
           };
           dbRef.update(alldatas1);
-          context.read<TimerBasketball>().resetTimer();
+          context.read<TimerBasketball>().clearTimer(600);
           Map<String, String> alldatas2 = {
             'FoulA': context.read<FoulBasketball>().getFoulTeam1.toString(),
             'FoulB': context.read<FoulBasketball>().getFoulTeam1.toString(),
@@ -73,8 +79,16 @@ class _ButtonResetState extends State<ButtonReset> {
             'Time': context.read<TimerBasketball>().timeLeftString.toString(),
           };
           dbRef.update(alldatas2);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
-        if (widget.sport == 2) {
+        if (widget.sport == 2 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreVolleyball>().reset();
           context.read<SetVolleyball>().reset();
           context.read<QuarterVolleyball>().reset();
@@ -86,15 +100,23 @@ class _ButtonResetState extends State<ButtonReset> {
             'SetB': context.read<SetVolleyball>().getSetTeam2.toString(),
           };
           dbRef.update(alldatas);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
-        if (widget.sport == 3) {
+        if (widget.sport == 3 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreSoccer>().reset();
           context.read<QuarterSoccer>().reset();
           Map<String, String> alldatas1 = {
             'Time': context.read<TimerSoccer>().timeLeftString.toString(),
           };
           dbRef.update(alldatas1);
-          context.read<TimerSoccer>().resetTimer();
+          context.read<TimerSoccer>().clearTimer(2700);
           Map<String, String> alldatas2 = {
             'Quarter': context.read<QuarterSoccer>().getQuarter.toString(),
             'RunStatus': context.read<TimerSoccer>().isRunning.toString(),
@@ -103,8 +125,16 @@ class _ButtonResetState extends State<ButtonReset> {
             'Time': context.read<TimerSoccer>().timeLeftString.toString(),
           };
           dbRef.update(alldatas2);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
-        if (widget.sport == 4) {
+        if (widget.sport == 4 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreFutsal>().reset();
           context.read<FoulFutsal>().reset();
           context.read<QuarterFutsal>().reset();
@@ -112,7 +142,7 @@ class _ButtonResetState extends State<ButtonReset> {
             'Time': context.read<TimerFutsal>().timeLeftString.toString(),
           };
           dbRef.update(alldatas1);
-          context.read<TimerFutsal>().resetTimer();
+          context.read<TimerFutsal>().clearTimer(1200);
           Map<String, String> alldatas2 = {
             'FoulA': context.read<FoulFutsal>().getFoulTeam1.toString(),
             'FoulB': context.read<FoulFutsal>().getFoulTeam1.toString(),
@@ -123,8 +153,16 @@ class _ButtonResetState extends State<ButtonReset> {
             'Time': context.read<TimerFutsal>().timeLeftString.toString(),
           };
           dbRef.update(alldatas2);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
-        if (widget.sport == 5) {
+        if (widget.sport == 5 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreBadminton>().reset();
           context.read<SetBadminton>().reset();
           context.read<QuarterBadminton>().reset();
@@ -136,8 +174,16 @@ class _ButtonResetState extends State<ButtonReset> {
             'SetB': context.read<SetBadminton>().getSetTeam2.toString(),
           };
           dbRef.update(alldatas);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
-        if (widget.sport == 6) {
+        if (widget.sport == 6 && !onClick) {
+          setState(() {
+            onClick = true;
+          });
           context.read<ScoreTabletennis>().reset();
           context.read<SetTabletennis>().reset();
           context.read<QuarterTabletennis>().reset();
@@ -149,6 +195,11 @@ class _ButtonResetState extends State<ButtonReset> {
             'SetB': context.read<SetTabletennis>().getSetTeam2.toString(),
           };
           dbRef.update(alldatas);
+          Future.delayed(const Duration(milliseconds: 800), () {
+            setState(() {
+              onClick = false;
+            });
+          });
         }
       },
       child: Text(

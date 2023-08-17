@@ -22,6 +22,10 @@ class ButtonQuarter extends StatefulWidget {
 
 class _ButtonQuarterState extends State<ButtonQuarter> {
   late DatabaseReference dbRef;
+  List<bool> onClick = <bool>[
+    false,
+    false,
+  ];
 
   @override
   void initState() {
@@ -38,56 +42,106 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
             shape: const StadiumBorder(),
-            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            backgroundColor: onClick[0]
+                ? const Color.fromARGB(255, 56, 56, 56)
+                : const Color.fromARGB(255, 23, 36, 113),
             minimumSize: Size(20.w, 5.h),
             // foreground
           ),
           onPressed: () {
-            if (widget.sport == 1) {
+            if (widget.sport == 1 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterBasketball>().increment();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterBasketball>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
-            if (widget.sport == 2) {
+            if (widget.sport == 2 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterVolleyball>().increment();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterVolleyball>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
-            if (widget.sport == 3) {
+            if (widget.sport == 3 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterSoccer>().increment();
               Map<String, String> alldatas = {
                 'Quarter': context.read<QuarterSoccer>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
-            if (widget.sport == 4) {
+            if (widget.sport == 4 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterFutsal>().increment();
               Map<String, String> alldatas = {
                 'Quarter': context.read<QuarterFutsal>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
-            if (widget.sport == 5) {
+            if (widget.sport == 5 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterBadminton>().increment();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterBadminton>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
-            if (widget.sport == 6) {
+            if (widget.sport == 6 && !onClick[0]) {
+              setState(() {
+                onClick[0] = true;
+              });
               context.read<QuarterTabletennis>().increment();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterTabletennis>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[0] = false;
+                });
+              });
             }
           },
           child: Text(
@@ -102,56 +156,106 @@ class _ButtonQuarterState extends State<ButtonQuarter> {
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
             shape: const StadiumBorder(),
-            backgroundColor: const Color.fromARGB(255, 23, 36, 113),
+            backgroundColor: onClick[1]
+                ? const Color.fromARGB(255, 56, 56, 56)
+                : const Color.fromARGB(255, 23, 36, 113),
             minimumSize: Size(20.w, 5.h),
             // foreground
           ),
           onPressed: () {
-            if (widget.sport == 1) {
+            if (widget.sport == 1 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterBasketball>().decrement();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterBasketball>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
-            if (widget.sport == 2) {
+            if (widget.sport == 2 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterVolleyball>().decrement();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterVolleyball>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
-            if (widget.sport == 3) {
+            if (widget.sport == 3 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterSoccer>().decrement();
               Map<String, String> alldatas = {
                 'Quarter': context.read<QuarterSoccer>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
-            if (widget.sport == 4) {
+            if (widget.sport == 4 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterFutsal>().decrement();
               Map<String, String> alldatas = {
                 'Quarter': context.read<QuarterFutsal>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
-            if (widget.sport == 5) {
+            if (widget.sport == 5 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterBadminton>().decrement();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterBadminton>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
-            if (widget.sport == 6) {
+            if (widget.sport == 6 && !onClick[1]) {
+              setState(() {
+                onClick[1] = true;
+              });
               context.read<QuarterTabletennis>().decrement();
               Map<String, String> alldatas = {
                 'Quarter':
                     context.read<QuarterTabletennis>().getQuarter.toString(),
               };
               dbRef.update(alldatas);
+              Future.delayed(const Duration(milliseconds: 800), () {
+                setState(() {
+                  onClick[1] = false;
+                });
+              });
             }
           },
           child: Text(

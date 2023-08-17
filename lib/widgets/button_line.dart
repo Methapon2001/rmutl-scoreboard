@@ -16,6 +16,7 @@ class _ButtonLineState extends State<ButtonLine> {
   final TextEditingController messageController = TextEditingController();
   String getTokenWebView = '';
   final getToken = const FlutterSecureStorage();
+  bool onClick = false;
 
   @override
   void initState() {
@@ -66,8 +67,13 @@ class _ButtonLineState extends State<ButtonLine> {
       style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
           minimumSize: Size(25.w, 5.h),
-          backgroundColor: const Color.fromARGB(255, 23, 36, 113)),
+          backgroundColor: onClick
+              ? const Color.fromARGB(255, 56, 56, 56)
+              : const Color.fromARGB(255, 23, 36, 113)),
       onPressed: () {
+        setState(() {
+          onClick = true;
+        });
         messageController.text = '';
         showDialog<void>(
           context: context,
@@ -104,9 +110,8 @@ class _ButtonLineState extends State<ButtonLine> {
                     Future.delayed(const Duration(milliseconds: 200), () {
                       print(messageController.text);
                       Navigator.of(context).pop();
-                      LineNotify().sendNotify(
-                          getTokenWebView,
-                          messageController.text);
+                      LineNotify()
+                          .sendNotify(getTokenWebView, messageController.text);
                       showToastMessage(context);
                     });
                   },
@@ -115,6 +120,11 @@ class _ButtonLineState extends State<ButtonLine> {
             );
           },
         );
+        Future.delayed(const Duration(milliseconds: 800), () {
+          setState(() {
+            onClick = false;
+          });
+        });
       },
       child: Text(
         'Line',
