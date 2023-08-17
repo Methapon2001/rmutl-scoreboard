@@ -14,20 +14,22 @@ class _MyHomePageState extends State<MyHomePage> {
   DateTime? currentBackPressTime;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: Titlebar().appBar("H O M E"),
-        // drawer: const MenuDrawer(index: 0),
-        backgroundColor: MyBackgroundColor,
-        body: WillPopScope(
-          onWillPop: onWillPop,
-          child: SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: const ImageSports()),
-          ),
-        ));
+    return SafeArea(
+      child: Scaffold(
+          appBar: Titlebar().appBar("H O M E"),
+          // drawer: const MenuDrawer(index: 0),
+          backgroundColor: MyBackgroundColor,
+          body: WillPopScope(
+            onWillPop: onWillPop,
+            child: SingleChildScrollView(
+              physics: const NeverScrollableScrollPhysics(),
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: const ImageSports()),
+            ),
+          )),
+    );
   }
 
   Future<bool> onWillPop() {
